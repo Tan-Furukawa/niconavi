@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <title>
+  Data Acquisition · NicoNicoNnavi
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="NicoNavi">
+<meta name="description" content="This page outlines how to capture microscope videos that NicolNavi can process. Start with the pre-shoot checklist, then choose the workflow that matches your goal: capturing a rotating-stage video or collecting the datasets required for quartz c-axis orientation analysis.
+
+  Preparation Before Filming
+  
+    
+    Link to heading
+  
+
+Confirm the following before you begin.
+
+You can record and save microscope videos on the system in use.
+The microscope stage has angle markings for rotation.
+When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor.
+
+
+Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.
+
+The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.
+
+
+  Workflow 1: Capture a Rotation Video (Baseline Texture Analysis)
+  
+    
+    Link to heading
+  
+
+Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.">
+<meta name="keywords" content="blog,developer,personal">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Data Acquisition">
+  <meta name="twitter:description" content="This page outlines how to capture microscope videos that NicolNavi can process. Start with the pre-shoot checklist, then choose the workflow that matches your goal: capturing a rotating-stage video or collecting the datasets required for quartz c-axis orientation analysis.
+Preparation Before Filming Link to heading Confirm the following before you begin.
+You can record and save microscope videos on the system in use. The microscope stage has angle markings for rotation. When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor. Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor. The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction. Workflow 1: Capture a Rotation Video (Baseline Texture Analysis) Link to heading Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.">
+
+<meta property="og:url" content="http://localhost:1313/acquisition/">
+  <meta property="og:site_name" content="NicoNicoNnavi">
+  <meta property="og:title" content="Data Acquisition">
+  <meta property="og:description" content="This page outlines how to capture microscope videos that NicolNavi can process. Start with the pre-shoot checklist, then choose the workflow that matches your goal: capturing a rotating-stage video or collecting the datasets required for quartz c-axis orientation analysis.
+Preparation Before Filming Link to heading Confirm the following before you begin.
+You can record and save microscope videos on the system in use. The microscope stage has angle markings for rotation. When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor. Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor. The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction. Workflow 1: Capture a Rotation Video (Baseline Texture Analysis) Link to heading Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2025-10-15T13:10:14+09:00">
+    <meta property="article:modified_time" content="2025-10-15T13:10:14+09:00">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/acquisition/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      NicoNicoNnavi
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/install/">Install</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/acquisition/">Data Acquisition</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tutorial/">Tutorial</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="/ja/acquisition/">JA</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="http://localhost:1313/acquisition/">
+          Data Acquisition
+        </a>
+      </h1>
+    </header>
+
+    <p>This page outlines how to capture microscope videos that NicolNavi can process. Start with the pre-shoot checklist, then choose the workflow that matches your goal: capturing a rotating-stage video or collecting the datasets required for quartz c-axis orientation analysis.</p>
+<h2 id="preparation-before-filming">
+  Preparation Before Filming
+  <a class="heading-link" href="#preparation-before-filming">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Confirm the following before you begin.</p>
+<ul>
+<li>You can record and save microscope videos on the system in use.</li>
+<li>The microscope stage has angle markings for rotation.</li>
+<li>When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor.</li>
+</ul>
+<img src="/images/page/acquisition/pic1.svg" style="width: 70%;">
+Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.
+<ul>
+<li>The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.</li>
+</ul>
+<h2 id="workflow-1-capture-a-rotation-video-baseline-texture-analysis">
+  Workflow 1: Capture a Rotation Video (Baseline Texture Analysis)
+  <a class="heading-link" href="#workflow-1-capture-a-rotation-video-baseline-texture-analysis">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.</p>
+<h3 id="steps">
+  Steps
+  <a class="heading-link" href="#steps">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ol>
+<li>Set the optical system to crossed Nicols.</li>
+<li>Rotate the stage to 0° (diagram a below).</li>
+<li>Place the thin section so that its long axis is parallel to the 0°–180° line (diagram b).</li>
+<li>Start recording.</li>
+<li>Rotate the stage slowly and counterclockwise for a full 360° (diagram c). About one minute per revolution keeps the motion stable. Minor pauses or speed changes are acceptable.</li>
+<li>Stop recording and save the file as <code>.avi</code> or <code>.mp4</code>.</li>
+</ol>
+<img src="/images/page/acquisition/pic2.svg" style="width: 70%;">
+Figure: Rotate the stage smoothly from 0° to 360°.
+<video controls width="70%">
+    <source src="/images/page/acquisition/pic3.mp4" type="video/mp4">
+</video>
+Figure: Sample rotation video. Aim for roughly one minute per revolution at a steady pace.
+<h2 id="workflow-2-quartz-c-axis-orientation-analysis">
+  Workflow 2: Quartz c-Axis Orientation Analysis
+  <a class="heading-link" href="#workflow-2-quartz-c-axis-orientation-analysis">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>This workflow compares a tilted thin section with a horizontal one to quantify quartz orientations. The method works even without a universal stage and includes an example of a simple tilting jig. A tilt angle of roughly 10° is sufficient; high precision is not required.</p>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content"><p>The c-axis orientation is derived from subtle colour changes. Illumination, sensor response, and sample conditions can all introduce misclassification. In particular, camera white balance strongly affects retardation readings: retardations of 0–300 nm should appear grey to pale yellow, but some systems add red or blue tints. Use the retardation chart below and adjust white balance so that the low-retardation reference matches expectations.</p>
+<img src="/images/page/acquisition/pic12.png" style="width: 100%;">
+<p>Always cross-check your results against samples with known orientations (for example, EBSD data). Record the capture and lighting conditions so that the measurement can be reproduced.</p></div>
+</div>
+
+<h3 id="2-1-build-a-tilting-jig">
+  2-1. Build a Tilting Jig
+  <a class="heading-link" href="#2-1-build-a-tilting-jig">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Prepare a support that lets you tilt the thin section without slipping. One example is shown below.</p>
+<img src="/images/page/acquisition/pic6.svg" style="width: 70%;">
+<p><strong>Materials</strong></p>
+<ul>
+<li>Thin section measuring 50 mm × 30 mm (thickness ≤ 0.03 mm)</li>
+<li>Weights totalling a few dozen grams</li>
+<li>A smooth board about 3.5–4.5 mm thick (overall size can be a few centimetres)</li>
+<li>Double-sided tape cut into strips about 1 mm wide</li>
+</ul>
+<p><strong>Assembly</strong></p>
+<ol>
+<li>
+<p>Stick a strip of double-sided tape to the edge of the board and remove the backing.</p>
+<img src="/images/page/acquisition/pic4.svg" style="width: 70%;">
+<div class="notice example">
+  <div class="notice-title">
+    <i class="fa-solid fa-file-text" aria-hidden="true"></i>Example
+  </div>
+  <div class="notice-content"><p>The author stacks three new thin sections, tapes them together, and applies the narrow tape on top. That combination stabilises the pivot height and grip so the section stays in place.</p>
+   <img src="/images/page/acquisition/pic5.jpg" style="width: 70%;"></div>
+</div>
+
+</li>
+<li>
+<p>Place the thin section so that the area of interest sits close to the hinge (the tape) without touching the board.</p>
+<img src="/images/page/acquisition/pic7.svg" style="width: 70%;">
+</li>
+</ol>
+<div class="notice example">
+  <div class="notice-title">
+    <i class="fa-solid fa-file-text" aria-hidden="true"></i>Example
+  </div>
+  <div class="notice-content"><p>The photo shows the tilted thin section on the microscope stage. A weight keeps the angle fixed; here a hex wrench is used.</p>
+   <img src="/images/page/acquisition/pic10.jpg" style="width: 70%;">
+<p>Figure: Tilted setup</p>
+   <img src="/images/page/acquisition/pic11.jpg" style="width: 70%;">
+<p>Figure: Horizontal setup with the weight applied</p></div>
+</div>
+
+<h3 id="2-2-capture-sequence">
+  2-2. Capture Sequence
+  <a class="heading-link" href="#2-2-capture-sequence">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Record the following five videos in order. Rename each file immediately after recording.</p>
+<img src="/images/page/acquisition/pic8.svg" style="width: 100%;">
+<p>Figure: Capture flow. Record videos a through e.</p>
+<h4 id="video-1-with-compensator-tilted-section-stage-at-0">
+  Video 1: With Compensator, Tilted Section, Stage at 0°
+  <a class="heading-link" href="#video-1-with-compensator-tilted-section-stage-at-0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>Switch to crossed Nicols and insert the first-order red (λ) plate.</li>
+<li>Set the stage to 0° and align the thin section with the 0°–180° line.</li>
+<li>Tilt the section and focus on the <strong>left edge</strong> in the monitor view.</li>
+</ol>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Polarising microscopes invert the image horizontally, so focusing on the left edge in the monitor corresponds to the right edge on the stage.</div>
+</div>
+
+<ol start="4">
+<li>Start recording and move the focus away from the objective over about 10 seconds until the monitor shows the right edge in focus (diagram a). Stop the recording.</li>
+</ol>
+<video controls width="70%">
+    <source src="/images/page/acquisition/pic9-0deg-tilt.mp4" type="video/mp4">
+</video>
+<h4 id="video-2-with-compensator-tilted-section-stage-at-45">
+  Video 2: With Compensator, Tilted Section, Stage at 45°
+  <a class="heading-link" href="#video-2-with-compensator-tilted-section-stage-at-45">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>Rotate the stage to 45° and focus on the bottom-left edge in the monitor view.</li>
+</ol>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Because the image is inverted, this corresponds to the top-right edge on the stage.</div>
+</div>
+
+<ol start="2">
+<li>Start recording and move focus away from the objective for roughly 10 seconds. Stop when the monitor shows the top-right edge in focus (diagram b).</li>
+</ol>
+<video controls width="70%">
+    <source src="/images/page/acquisition/pic9-45deg-tilt.mp4" type="video/mp4">
+</video>
+<h4 id="video-3-with-compensator-horizontal-section-stage-at-45">
+  Video 3: With Compensator, Horizontal Section, Stage at 45°
+  <a class="heading-link" href="#video-3-with-compensator-horizontal-section-stage-at-45">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>Add the weight to level the section and focus on the area of interest (diagram c).</li>
+<li>Start recording and stop immediately. A one-second clip is sufficient.</li>
+</ol>
+<div class="notice note">
+  <div class="notice-title">
+    <i class="fa-solid fa-sticky-note" aria-hidden="true"></i>Note
+  </div>
+  <div class="notice-content">This clip is used as reference data for the <code>extinction color</code> map. As long as you can pair it with the tilted videos, the exact length is unimportant.</div>
+</div>
+
+<video controls width="70%">
+    <source src="/images/page/acquisition/pic9-45deg-not-tilt.mp4" type="video/mp4">
+</video>
+<h4 id="video-4-with-compensator-horizontal-section-stage-rotation">
+  Video 4: With Compensator, Horizontal Section, Stage Rotation
+  <a class="heading-link" href="#video-4-with-compensator-horizontal-section-stage-rotation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>Return the stage to 0°.</li>
+<li>Start recording and, with the weight in place, rotate the stage counterclockwise through 360° (diagram d). About one minute per cycle works well.</li>
+<li>Stop recording.</li>
+</ol>
+<video controls width="70%">
+    <source src="/images/page/acquisition/pic9-xpl-lambda.mp4" type="video/mp4">
+</video>
+<h4 id="video-5-without-compensator-horizontal-section-stage-rotation">
+  Video 5: Without Compensator, Horizontal Section, Stage Rotation
+  <a class="heading-link" href="#video-5-without-compensator-horizontal-section-stage-rotation">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ol>
+<li>Remove the λ plate.</li>
+<li>Start recording and rotate the stage counterclockwise through 360° (diagram e) using the same speed as Video 4.</li>
+<li>Stop recording.</li>
+</ol>
+<video controls width="70%">
+    <source src="/images/page/acquisition/pic9-xpl.mp4" type="video/mp4">
+</video>
+<p>Save each file with a clear name as soon as the capture ends.</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     NicoNavi 
+    ·
+    
+    Powered by 
+    Tan Furukawa
+    
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
