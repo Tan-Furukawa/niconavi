@@ -27,14 +27,14 @@ Work through this tutorial to learn the core NicolNavi operations using a peliti
 2. Choose `nicolnavi_app/Examples/pelitic-schist-xpl.avi` and open it.
 3. Confirm that the left panel shows the first frame resized to a width of 1000 px.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic1.png" | relURL }}" style="width: 30%;">
+<img src="/images/page/tutorial/tutorial1/pic1.png" style="width: 30%;">
 
 ### 4.2 Run Preprocessing
 
 1. Select `2 Start` to launch discretisation and rotation-centre estimation.
 2. When the process finishes, the app switches to the rotation-centre adjustment screen.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic2.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic2.png" style="width: 100%;">
 
 ### 4.3 Adjust the Rotation Centre
 
@@ -54,7 +54,7 @@ Work through this tutorial to learn the core NicolNavi operations using a peliti
 | `extinction angle` | Map of extinction angles for each pixel. |
 | `raw image` | Unprocessed frame. Selecting, for example, $\phi = 22.5\degree$ shows the frame at that rotation angle. |
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic3.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic3.png" style="width: 100%;">
 
 {{< notice warning >}}
 If the entire `extinction color` map remains bright, the sensor may be saturating or preprocessing was inadequate. Tutorial 2 covers remedies.
@@ -67,9 +67,9 @@ If the entire `extinction color` map remains bright, the sensor may be saturatin
 3. Adjust `4 median filter` and `5 parameters` as shown below.
 4. Click `6 Calculate grain boundaries` again to refresh the result.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic4.png" | relURL }}" style="width: 30%;">
+<img src="/images/page/tutorial/tutorial1/pic4.png" style="width: 30%;">
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic5.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic5.png" style="width: 100%;">
 Left: default settings. Right: after tuning.
 
 | Parameter | Description |
@@ -99,7 +99,7 @@ A single parameter set rarely isolates all mineral combinations. Some datasets r
 3. If misclassifications remain, extend the training data until predictions stabilise.
 4. Choose `Done` to confirm the labels. In this sample a few dozen grains are sufficient.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic6.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic6.png" style="width: 100%;">
 
 ### 4.8 Propagate Labels
 
@@ -130,8 +130,8 @@ A single parameter set rarely isolates all mineral combinations. Some datasets r
 2. Select `histogram` view and choose `retardation` as the metric.
 3. Use `13 minerals` to toggle mineral visibility and study the distribution.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic7.png" | relURL }}" style="width: 30%;">
-<img src="{{ "/images/page/tutorial/tutorial1/pic8.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic7.png" style="width: 30%;">
+<img src="/images/page/tutorial/tutorial1/pic8.png" style="width: 100%;">
 
 {{< notice info >}}
 The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals.
@@ -142,8 +142,8 @@ The histogram shows the mean, standard deviation, min/max, mode, and count for e
 1. Switch the view to `rose diagram` to examine preferred orientations.
 2. Enable `14 rose diagram` and keep `retardation` selected.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic9.png" | relURL }}" style="width: 30%;">
-<img src="{{ "/images/page/tutorial/tutorial1/pic10.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic9.png" style="width: 30%;">
+<img src="/images/page/tutorial/tutorial1/pic10.png" style="width: 100%;">
 
 ### 5.3 Orientation Stats
 
@@ -157,15 +157,15 @@ Circular variance: bulk: 0.458, mica: 0.458
 
 Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic12.png" | relURL }}" style="width: 30%;">
-<img src="{{ "/images/page/tutorial/tutorial1/pic13.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic12.png" style="width: 30%;">
+<img src="/images/page/tutorial/tutorial1/pic13.png" style="width: 100%;">
 
 ### 5.4 SPO View and Ellipse Approximation
 
 1. Switch `14 rose diagram` to `SPO`.
 2. Choose `ellipse` from `Image list` to display ellipse fits for each grain.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic14.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic14.png" style="width: 100%;">
 
 ### 5.5 Grain-Shape Scatter Plot
 
@@ -173,7 +173,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 2. Set the axes to `x: ellipse major axis length` and `y: ellipse minor axis length`.
 3. Use the regression line to estimate the aspect ratio—for example, `y = 0.224 x` implies ~1:3.2.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic15.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic15.png" style="width: 100%;">
 
 ### 5.6 Modal Composition (Area Fraction)
 
@@ -181,8 +181,8 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 2. Enable `16 other minerals`.
 3. Change the metric from `17 retardation` to `size` to plot area-based histograms.
 
-<img src="{{ "/images/page/tutorial/tutorial1/pic16.png" | relURL }}" style="width: 100%;">
-<img src="{{ "/images/page/tutorial/tutorial1/pic17.png" | relURL }}" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic16.png" style="width: 100%;">
+<img src="/images/page/tutorial/tutorial1/pic17.png" style="width: 100%;">
 
 Example output:
 

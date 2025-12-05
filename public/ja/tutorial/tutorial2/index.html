@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
+<head><script src="/niconavi/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=niconavi/livereload" data-no-instant defer></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
   Tutorial2 - 鉱物の抽出と可視化 · NicoNicoNnavi
@@ -64,12 +64,60 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 
 処理完了後、自動的に回転中心調整画面へ遷移します。
 
-&lt;img src=&quot;{{ &ldquo;/images/page/tutorial/tutorial2/pic1.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;
+
 
 このデータでは自動検出された中心が実際の同心円パターンから外れています。cx と cy をクリックし、赤い十字を実際の中心に合わせてください。
 
-&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic2.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;
-図：中心を手動調整した状態">
+
+図：中心を手動調整した状態
+
+調整後、Continue を押して回転中心を確定します。
+
+
+  3.3 解析マップと明度補正の確認
+  
+    
+    見出しへのリンク
+  
+
+
+画面遷移後に Image list を開き、代表的な解析マップを確認します。
+
+
+  
+      
+          マップ
+          説明
+      
+  
+  
+      
+          color
+          ステージ 1 回転中で最も明るい瞬間の色情報です。
+      
+      
+          extinction color
+          最も暗くなる瞬間の色情報です。完全な消光が得られない場合は前工程を見直してください。
+      
+      
+          R
+          各ピクセルのレタデーション値です。Video タブで指定したレタデーションを探索します。
+      
+      
+          extinction angle
+          各ピクセルの光消角マップです。
+      
+      
+          raw image
+          未加工の画像です。例えば phi = 22.5° を選ぶと、その回転角でのフレームを表示します。
+      
+  
+
+
+color と extinction color を切り替えると、color の方が暗く表示される場合があります。
+
+
+図：Image list が color のとき">
 <meta name="keywords" content="blog,developer,personal">
 
 
@@ -77,15 +125,13 @@ Start を押し、動画の離散化と回転中心推定を開始します。
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tutorial2 - 鉱物の抽出と可視化">
   <meta name="twitter:description" content="1. 概要 見出しへのリンク セクターゾーニングしたざくろ石（garnet）の顕微鏡動画を題材に、鉱物ごとの粒界抽出と光学的異方性の可視化手順を解説します。Tutorial 1 で学んだ基本操作を土台に、単結晶内部の消光挙動を強調するための設定変更や、鉱物ごとのラベル付与を実践します。
-2. 前提条件 見出しへのリンク NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること サンプル動画 nicolnavi_app/Examples/sector_zoning.avi を参照できること Tutorial 1 の操作（前処理・粒界抽出・ラベル付与）を一通り試していること 3. 操作フロー 見出しへのリンク 3.1 動画ファイルの読み込み 見出しへのリンク 右画面の Select を押します。 ファイル選択ダイアログで nicolnavi_app/Examples/sector_zoning.avi を選択し、開くを押します。 左画面に動画の先頭フレームが幅 1000 px の正方形画像として表示されることを確認します。 Start を押し、動画の離散化と回転中心推定を開始します。 3.2 回転中心の調整 見出しへのリンク 処理完了後、自動的に回転中心調整画面へ遷移します。 &lt;img src=&#34;{{ “/images/page/tutorial/tutorial2/pic1.png” | relURL }}&#34; style=“width: 100%;&#34;&gt;
-このデータでは自動検出された中心が実際の同心円パターンから外れています。cx と cy をクリックし、赤い十字を実際の中心に合わせてください。 &lt;img src=”{{ “/images/page/tutorial/tutorial2/pic2.png” | relURL }}&#34; style=“width: 100%;&#34;&gt; 図：中心を手動調整した状態">
+2. 前提条件 見出しへのリンク NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること サンプル動画 nicolnavi_app/Examples/sector_zoning.avi を参照できること Tutorial 1 の操作（前処理・粒界抽出・ラベル付与）を一通り試していること 3. 操作フロー 見出しへのリンク 3.1 動画ファイルの読み込み 見出しへのリンク 右画面の Select を押します。 ファイル選択ダイアログで nicolnavi_app/Examples/sector_zoning.avi を選択し、開くを押します。 左画面に動画の先頭フレームが幅 1000 px の正方形画像として表示されることを確認します。 Start を押し、動画の離散化と回転中心推定を開始します。 3.2 回転中心の調整 見出しへのリンク 処理完了後、自動的に回転中心調整画面へ遷移します。 このデータでは自動検出された中心が実際の同心円パターンから外れています。cx と cy をクリックし、赤い十字を実際の中心に合わせてください。 図：中心を手動調整した状態 調整後、Continue を押して回転中心を確定します。 3.3 解析マップと明度補正の確認 見出しへのリンク 画面遷移後に Image list を開き、代表的な解析マップを確認します。 マップ 説明 color ステージ 1 回転中で最も明るい瞬間の色情報です。 extinction color 最も暗くなる瞬間の色情報です。完全な消光が得られない場合は前工程を見直してください。 R 各ピクセルのレタデーション値です。Video タブで指定したレタデーションを探索します。 extinction angle 各ピクセルの光消角マップです。 raw image 未加工の画像です。例えば phi = 22.5° を選ぶと、その回転角でのフレームを表示します。 color と extinction color を切り替えると、color の方が暗く表示される場合があります。 図：Image list が color のとき">
 
-<meta property="og:url" content="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial2/">
+<meta property="og:url" content="http://localhost:1313/niconavi/ja/tutorial/tutorial2/">
   <meta property="og:site_name" content="NicoNicoNnavi">
   <meta property="og:title" content="Tutorial2 - 鉱物の抽出と可視化">
   <meta property="og:description" content="1. 概要 見出しへのリンク セクターゾーニングしたざくろ石（garnet）の顕微鏡動画を題材に、鉱物ごとの粒界抽出と光学的異方性の可視化手順を解説します。Tutorial 1 で学んだ基本操作を土台に、単結晶内部の消光挙動を強調するための設定変更や、鉱物ごとのラベル付与を実践します。
-2. 前提条件 見出しへのリンク NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること サンプル動画 nicolnavi_app/Examples/sector_zoning.avi を参照できること Tutorial 1 の操作（前処理・粒界抽出・ラベル付与）を一通り試していること 3. 操作フロー 見出しへのリンク 3.1 動画ファイルの読み込み 見出しへのリンク 右画面の Select を押します。 ファイル選択ダイアログで nicolnavi_app/Examples/sector_zoning.avi を選択し、開くを押します。 左画面に動画の先頭フレームが幅 1000 px の正方形画像として表示されることを確認します。 Start を押し、動画の離散化と回転中心推定を開始します。 3.2 回転中心の調整 見出しへのリンク 処理完了後、自動的に回転中心調整画面へ遷移します。 &lt;img src=&#34;{{ “/images/page/tutorial/tutorial2/pic1.png” | relURL }}&#34; style=“width: 100%;&#34;&gt;
-このデータでは自動検出された中心が実際の同心円パターンから外れています。cx と cy をクリックし、赤い十字を実際の中心に合わせてください。 &lt;img src=”{{ “/images/page/tutorial/tutorial2/pic2.png” | relURL }}&#34; style=“width: 100%;&#34;&gt; 図：中心を手動調整した状態">
+2. 前提条件 見出しへのリンク NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること サンプル動画 nicolnavi_app/Examples/sector_zoning.avi を参照できること Tutorial 1 の操作（前処理・粒界抽出・ラベル付与）を一通り試していること 3. 操作フロー 見出しへのリンク 3.1 動画ファイルの読み込み 見出しへのリンク 右画面の Select を押します。 ファイル選択ダイアログで nicolnavi_app/Examples/sector_zoning.avi を選択し、開くを押します。 左画面に動画の先頭フレームが幅 1000 px の正方形画像として表示されることを確認します。 Start を押し、動画の離散化と回転中心推定を開始します。 3.2 回転中心の調整 見出しへのリンク 処理完了後、自動的に回転中心調整画面へ遷移します。 このデータでは自動検出された中心が実際の同心円パターンから外れています。cx と cy をクリックし、赤い十字を実際の中心に合わせてください。 図：中心を手動調整した状態 調整後、Continue を押して回転中心を確定します。 3.3 解析マップと明度補正の確認 見出しへのリンク 画面遷移後に Image list を開き、代表的な解析マップを確認します。 マップ 説明 color ステージ 1 回転中で最も明るい瞬間の色情報です。 extinction color 最も暗くなる瞬間の色情報です。完全な消光が得られない場合は前工程を見直してください。 R 各ピクセルのレタデーション値です。Video タブで指定したレタデーションを探索します。 extinction angle 各ピクセルの光消角マップです。 raw image 未加工の画像です。例えば phi = 22.5° を選ぶと、その回転角でのフレームを表示します。 color と extinction color を切り替えると、color の方が暗く表示される場合があります。 図：Image list が color のとき">
   <meta property="og:locale" content="ja">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tutorial">
@@ -95,7 +141,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 
 
 
-<link rel="canonical" href="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial2/">
+<link rel="canonical" href="http://localhost:1313/niconavi/ja/tutorial/tutorial2/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -105,7 +151,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 
   
   
-  <link rel="stylesheet" href="/niconavi/css/coder.min.24022876d48fb15813406bbe8c1c4d3b9ab49378f6ff34712fff078e2c04ac12.css" integrity="sha256-JAIodtSPsVgTQGu&#43;jBxNO5q0k3j2/zRxL/8HjiwErBI=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/niconavi/css/coder.css" media="screen">
 
 
 
@@ -115,7 +161,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
   
     
     
-    <link rel="stylesheet" href="/niconavi/css/coder-dark.min.f7e815ec05a254f4b89393ec609b48ef12a7894283e81d06f3804eb939b90bc7.css" integrity="sha256-9&#43;gV7AWiVPS4k5PsYJtI7xKniUKD6B0G84BOuTm5C8c=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/niconavi/css/coder-dark.css" media="screen">
   
 
 
@@ -163,7 +209,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/ja/">
+    <a class="navigation-title" href="http://localhost:1313/niconavi/ja/">
       NicoNicoNnavi
     </a>
     
@@ -221,7 +267,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial2/">
+        <a class="title-link" href="http://localhost:1313/niconavi/ja/tutorial/tutorial2/">
           Tutorial2 - 鉱物の抽出と可視化
         </a>
       </h1>
@@ -277,12 +323,12 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 <ol>
 <li>処理完了後、自動的に回転中心調整画面へ遷移します。</li>
 </ol>
-<p>&lt;img src=&quot;{{ &ldquo;/images/page/tutorial/tutorial2/pic1.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic1.png" style="width: 100%;">
 <ol start="2">
 <li>このデータでは自動検出された中心が実際の同心円パターンから外れています。<code>cx</code> と <code>cy</code> をクリックし、赤い十字を実際の中心に合わせてください。</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic2.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;
-図：中心を手動調整した状態</p>
+<img src="/images/page/tutorial/tutorial2/pic2.png" style="width: 100%;">
+図：中心を手動調整した状態
 <ol start="3">
 <li>調整後、<code>Continue</code> を押して回転中心を確定します。</li>
 </ol>
@@ -329,9 +375,9 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 <ol start="2">
 <li><code>color</code> と <code>extinction color</code> を切り替えると、<code>color</code> の方が暗く表示される場合があります。</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic3.png&rdquo; | relURL }}&quot; style=&ldquo;width: 80%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic3.png" style="width: 80%;">
 <p>図：<code>Image list</code> が <code>color</code> のとき</p>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic4.png&rdquo; | relURL }}&quot; style=&ldquo;width: 80%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic4.png" style="width: 80%;">
 <p>図：<code>Image list</code> が <code>extinction color</code> のとき</p>
 <ol start="3">
 <li>
@@ -347,7 +393,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
    \]<p>をそのまま表示して明度を確認します。</p>
 </li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic5.png&rdquo; | relURL }}&quot; style=&ldquo;width: 80%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic5.png" style="width: 80%;">
 <p>図：<code>Image list</code> が <code>color</code> で、<code>brightness correction</code>のチェックを外したとき</p>
 <h3 id="34-粒界抽出の実行">
   3.4 粒界抽出の実行
@@ -362,7 +408,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 <li><code>Calculate grain boundaries</code> を再度押し、調整結果を反映します。</li>
 <li>粒界が意図どおりになったら、<code>Continue</code> を押してラベル付与画面へ進みます。</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic6.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic6.png" style="width: 30%;">
 <h3 id="35-鉱物ラベルの付与">
   3.5 鉱物ラベルの付与
   <a class="heading-link" href="#35-%e9%89%b1%e7%89%a9%e3%83%a9%e3%83%99%e3%83%ab%e3%81%ae%e4%bb%98%e4%b8%8e">
@@ -376,7 +422,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 <li><code>inclusion</code> と <code>matrix</code> も同様に、該当する領域を 5～10 個ずつ目安にラベル付けします。</li>
 <li>誤判定が多い場合はラベルの追加を繰り返し、結果が安定したら <code>Done</code> を押してラベル設定を確定します。今回の例では合計 48 粒子を教師データとして指定しました。</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic7.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic7.png" style="width: 100%;">
 <h3 id="36-光学的異方性の可視化">
   3.6 光学的異方性の可視化
   <a class="heading-link" href="#36-%e5%85%89%e5%ad%a6%e7%9a%84%e7%95%b0%e6%96%b9%e6%80%a7%e3%81%ae%e5%8f%af%e8%a6%96%e5%8c%96">
@@ -387,11 +433,11 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 <ol>
 <li><code>Analysis</code> タブに切り替え、<code>inclusion</code> と <code>matrix</code> のチェックを外してざくろ石のみを表示します。</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic8.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic8.png" style="width: 30%;">
 <ol start="2">
 <li><code>map</code> タブに戻り、<code>image list</code> から <code>extinction angle</code> を選択します。選択した鉱物以外は黒く表示され、ざくろ石内部のセクターゾーニングが強調されます。</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial2/pic9.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial2/pic9.png" style="width: 100%;">
 <ol start="3">
 <li>必要に応じて画面上部のメニューから <code>Save as PDF</code> を選択し、可視化結果を PDF として保存します。</li>
 </ol>
@@ -442,7 +488,7 @@ Start を押し、動画の離散化と回転中心推定を開始します。
 
   
   
-  <script src="/niconavi/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/niconavi/js/coder.js"></script>
   
 
   

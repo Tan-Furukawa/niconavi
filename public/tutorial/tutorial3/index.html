@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/niconavi/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=niconavi/livereload" data-no-instant defer></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
   Tutorial 3 - Crystal Orientation Analysis · NicoNicoNnavi
@@ -52,7 +52,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
   <meta name="twitter:description" content="1. Overview Link to heading Use this tutorial to learn the NicolNavi workflow for crystallographic preferred orientation (CPO) analysis with a polycrystalline quartz sample. Building on Tutorials 1 and 2, you will combine multiple rotation videos, estimate quartz c-axis orientations, and review the results with pole figures and COI maps.
 2. Prerequisites Link to heading NicolNavi is running with the target project open. You can access the sample videos under nicolnavi_app/Examples/cpo/. You have completed Tutorials 1 and 2 (preprocessing, boundary detection, labelling). CPO analysis requires significant memory. Use a computer with at least 16 GB RAM; lower-spec systems may halt mid-process. 3. Video Set Link to heading NicolNavi’s CPO workflow consumes five videos. Refer to the Data Acquisition page for filming details.">
 
-<meta property="og:url" content="https://tan-furukawa.github.io/niconavi/tutorial/tutorial3/">
+<meta property="og:url" content="http://localhost:1313/niconavi/tutorial/tutorial3/">
   <meta property="og:site_name" content="NicoNicoNnavi">
   <meta property="og:title" content="Tutorial 3 - Crystal Orientation Analysis">
   <meta property="og:description" content="1. Overview Link to heading Use this tutorial to learn the NicolNavi workflow for crystallographic preferred orientation (CPO) analysis with a polycrystalline quartz sample. Building on Tutorials 1 and 2, you will combine multiple rotation videos, estimate quartz c-axis orientations, and review the results with pole figures and COI maps.
@@ -66,7 +66,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 
 
 
-<link rel="canonical" href="https://tan-furukawa.github.io/niconavi/tutorial/tutorial3/">
+<link rel="canonical" href="http://localhost:1313/niconavi/tutorial/tutorial3/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -76,7 +76,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 
   
   
-  <link rel="stylesheet" href="/niconavi/css/coder.min.24022876d48fb15813406bbe8c1c4d3b9ab49378f6ff34712fff078e2c04ac12.css" integrity="sha256-JAIodtSPsVgTQGu&#43;jBxNO5q0k3j2/zRxL/8HjiwErBI=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/niconavi/css/coder.css" media="screen">
 
 
 
@@ -86,7 +86,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
   
     
     
-    <link rel="stylesheet" href="/niconavi/css/coder-dark.min.f7e815ec05a254f4b89393ec609b48ef12a7894283e81d06f3804eb939b90bc7.css" integrity="sha256-9&#43;gV7AWiVPS4k5PsYJtI7xKniUKD6B0G84BOuTm5C8c=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/niconavi/css/coder-dark.css" media="screen">
   
 
 
@@ -134,7 +134,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/">
+    <a class="navigation-title" href="http://localhost:1313/niconavi/">
       NicoNicoNnavi
     </a>
     
@@ -192,7 +192,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="https://tan-furukawa.github.io/niconavi/tutorial/tutorial3/">
+        <a class="title-link" href="http://localhost:1313/niconavi/tutorial/tutorial3/">
           Tutorial 3 - Crystal Orientation Analysis
         </a>
       </h1>
@@ -296,7 +296,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
   <div class="notice-content">Entering values above 300 nm increases the risk of failing to resolve c-axis inclinations. Keep the value at or below 300 nm when you intend to calculate orientations, and prepare thin sections so that quartz retardation stays within that range.</div>
 </div>
 
-<p>&lt;img src=&quot;{{ &ldquo;/images/page/tutorial/tutorial3/pic1.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic1.png" style="width: 30%;">
 <h3 id="42-preprocess-and-check-the-rotation-centre">
   4.2 Preprocess and Check the Rotation Centre
   <a class="heading-link" href="#42-preprocess-and-check-the-rotation-centre">
@@ -320,7 +320,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 <li>Increase the <code>median filter</code> slider by one step and adjust the other sensitivity controls as shown below.</li>
 <li>Click <code>Calculate grain boundaries</code> to update the mask. Once satisfied, choose <code>Continue</code> to enter the labelling stage.</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic2.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic2.png" style="width: 30%;">
 <h3 id="44-assign-labels">
   4.4 Assign Labels
   <a class="heading-link" href="#44-assign-labels">
@@ -333,7 +333,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 <li>Select each label in turn and click the corresponding grains on the left panel. In this example 17 grains were labelled, but the required number varies by dataset.</li>
 <li>Expand the training set if misclassifications remain. When the preview stabilises, click <code>Done</code>.</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic3.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic3.png" style="width: 100%;">
 <h3 id="45-run-cpo-analysis">
   4.5 Run CPO Analysis
   <a class="heading-link" href="#45-run-cpo-analysis">
@@ -372,7 +372,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
   <div class="notice-content">The <code>max R</code> value is used to recompute retardation and derive c-axis inclinations during CPO analysis.</div>
 </div>
 
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic4.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic4.png" style="width: 30%;">
 <div class="notice warning">
   <div class="notice-title">
     <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
@@ -397,7 +397,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
   <div class="notice-content">COI maps typically contain blank regions because tilting shifts the field of view, creating pixels without valid references.</div>
 </div>
 
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic5.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic5.png" style="width: 100%;">
 <h3 id="47-plot-pole-figures">
   4.7 Plot Pole Figures
   <a class="heading-link" href="#47-plot-pole-figures">
@@ -409,15 +409,15 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 <li>Return to <code>analysis</code>, deselect <code>single crystal quartz</code>, and leave <code>vein quartz</code> checked to focus on the vein.</li>
 <li>Switch the view to <code>polar plot</code> and keep <code>φ = 0–360°</code> selected. Each grain is plotted as a single point in the pole figure.</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic6.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic6.png" style="width: 100%;">
 <ol start="3">
 <li>Enable <code>Plot for each pixel</code> to draw orientations at pixel resolution. Use this to assess intra-grain dispersion.</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic7.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic7.png" style="width: 100%;">
 <ol start="4">
 <li>Tick <code>display points</code> to overlay the sampled orientation data. NicolNavi adds 0.5% noise by default to prevent overlapping points; adjust <code>Point noise</code> if required.</li>
 </ol>
-<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial3/pic8.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
+<img src="/images/page/tutorial/tutorial3/pic8.png" style="width: 100%;">
 <h2 id="5-wrap-up">
   5. Wrap-Up
   <a class="heading-link" href="#5-wrap-up">
@@ -458,7 +458,7 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 
   
   
-  <script src="/niconavi/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/niconavi/js/coder.js"></script>
   
 
   
