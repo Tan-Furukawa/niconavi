@@ -282,11 +282,19 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 <li>Repeat for the remaining inputs (<code>XPL-lambda.avi</code>, <code>0deg-tilt.avi</code>, <code>45deg-tilt.avi</code>, <code>45deg-not-tilt.avi</code>).</li>
 <li>After all files are loaded, set <code>max retardation</code> in the <code>XPL Rotated</code> section. Use the highest quartz retardation expected in the sample; the default 300 nm works here and is sufficient for c-axis estimation. You will refine the value later if needed.</li>
 </ol>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content">This <code>max retardation</code> guides extinction-angle and retardation estimates during preprocessing.</div>
+</div>
 
-<div class="notice notice-info">This <code>max retardation</code> guides extinction-angle and retardation estimates during preprocessing.</div>
-
-
-<div class="notice notice-warning">Entering values above 300 nm increases the risk of failing to resolve c-axis inclinations. Keep the value at or below 300 nm when you intend to calculate orientations, and prepare thin sections so that quartz retardation stays within that range.</div>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Entering values above 300 nm increases the risk of failing to resolve c-axis inclinations. Keep the value at or below 300 nm when you intend to calculate orientations, and prepare thin sections so that quartz retardation stays within that range.</div>
+</div>
 
 <img src="/images/page/tutorial/tutorial3/pic1.png" style="width: 30%;">
 <h3 id="42-preprocess-and-check-the-rotation-centre">
@@ -337,25 +345,40 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 <li>Switch to the <code>analysis</code> tab and change the view from <code>rose diagram</code> to <code>CPO</code>.</li>
 <li>Enter the maximum retardation determined earlier (260 in this example) into <code>max R</code>, then press <code>Start CPO computation</code>.</li>
 </ol>
-
-<div class="notice notice-info"><ul>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content"><ul>
 <li>If the thin-section thickness is known, switch the radio button from <code>max R</code> to <code>thickness</code> and enter the value.</li>
 <li>When the thickness is unknown, use the mineral&rsquo;s maximum retardation. You can read it from the <code>histogram</code> view (<code>retardation</code>) under <code>information</code>. Here the maximum quartz value is 260.</li>
-</ul>
+</ul></div>
 </div>
 
-
-<div class="notice notice-warning">Histogram maxima are sensitive to outliers: a single overestimated grain can inflate the value. Check multiple representative grains or use a percentile (e.g., 95th) to refine <code>max R</code>.</div>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Histogram maxima are sensitive to outliers: a single overestimated grain can inflate the value. Check multiple representative grains or use a percentile (e.g., 95th) to refine <code>max R</code>.</div>
+</div>
 
 <ol start="3">
 <li>After processing, a COI (crystal orientation index) entry appears in the <code>map</code> tab <code>image list</code>.</li>
 </ol>
-
-<div class="notice notice-info">The <code>max R</code> value is used to recompute retardation and derive c-axis inclinations during CPO analysis.</div>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content">The <code>max R</code> value is used to recompute retardation and derive c-axis inclinations during CPO analysis.</div>
+</div>
 
 <img src="/images/page/tutorial/tutorial3/pic4.png" style="width: 30%;">
-
-<div class="notice notice-warning">Switching tabs or minimising the app during computation can interrupt the process. Wait until the progress bar disappears.</div>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Switching tabs or minimising the app during computation can interrupt the process. Wait until the progress bar disappears.</div>
+</div>
 
 <h3 id="46-inspect-coi-maps">
   4.6 Inspect COI Maps
@@ -367,8 +390,12 @@ NicolNavi&rsquo;s CPO workflow consumes five videos. Refer to the Data Acquisiti
 <ol>
 <li>In <code>image list</code>, select <code>map coi</code> and choose <code>φ = 0–360°</code>. Quartz c-axis orientations now appear in pseudo-colour.</li>
 </ol>
-
-<div class="notice notice-info">COI maps typically contain blank regions because tilting shifts the field of view, creating pixels without valid references.</div>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content">COI maps typically contain blank regions because tilting shifts the field of view, creating pixels without valid references.</div>
+</div>
 
 <img src="/images/page/tutorial/tutorial3/pic5.png" style="width: 100%;">
 <h3 id="47-plot-pole-figures">

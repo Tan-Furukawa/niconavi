@@ -4,6 +4,17 @@ theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
 
+[module]
+  [[module.mounts]]
+    source = "themes/hugo-coder/layouts/_partials"
+    target = "layouts/partials"
+  [[module.mounts]]
+    source = "themes/hugo-coder/layouts/_shortcodes"
+    target = "layouts/shortcodes"
+  [[module.mounts]]
+    source = "themes/hugo-coder/layouts/_markup"
+    target = "layouts/_default/_markup"
+
 
 [pagination]
 pagerSize = 20

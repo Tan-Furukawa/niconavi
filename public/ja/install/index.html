@@ -84,7 +84,11 @@ pipenv install
 Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。
 
 
-pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。
+  
+    Info
+  
+  pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。
+
 
 
   Step 4. アプリの起動確認
@@ -121,13 +125,13 @@ pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="NicolNavi インストールガイド">
   <meta name="twitter:description" content="NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。
-事前準備と前提条件 見出しへのリンク 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション 管理者権限: 初回インストール時に要求される場合があります ブラウザ: 最新版の主要ブラウザ メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。 Python 環境を利用したインストール 見出しへのリンク Step 1. 必要ソフトの確認 見出しへのリンク ブラウザ 最新版の主要ブラウザがインストールされていることを確認してください。 Python および pipenv Python 3.10 以上、pip コマンドがインストールされていることを確認します。 pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。 Step 2. NicolNavi の取得 見出しへのリンク GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。 ターミナルを開き、展開したフォルダへ移動します。 cd /path/to/nicolnavi Step 3. 仮想環境の構築と依存関係のインストール 見出しへのリンク ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。 pipenv shell pipenv install Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。 pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。 Step 4. アプリの起動確認 見出しへのリンク 仮想環境がアクティブな状態で以下のコマンドを実行します。 python gui/src/main.py 別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。 トラブルシューティング 見出しへのリンク ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。 ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。 pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。 不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
+事前準備と前提条件 見出しへのリンク 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション 管理者権限: 初回インストール時に要求される場合があります ブラウザ: 最新版の主要ブラウザ メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。 Python 環境を利用したインストール 見出しへのリンク Step 1. 必要ソフトの確認 見出しへのリンク ブラウザ 最新版の主要ブラウザがインストールされていることを確認してください。 Python および pipenv Python 3.10 以上、pip コマンドがインストールされていることを確認します。 pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。 Step 2. NicolNavi の取得 見出しへのリンク GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。 ターミナルを開き、展開したフォルダへ移動します。 cd /path/to/nicolnavi Step 3. 仮想環境の構築と依存関係のインストール 見出しへのリンク ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。 pipenv shell pipenv install Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。 Info pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。 Step 4. アプリの起動確認 見出しへのリンク 仮想環境がアクティブな状態で以下のコマンドを実行します。 python gui/src/main.py 別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。 トラブルシューティング 見出しへのリンク ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。 ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。 pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。 不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
 
 <meta property="og:url" content="https://tan-furukawa.github.io/niconavi/ja/install/">
   <meta property="og:site_name" content="NicoNicoNnavi">
   <meta property="og:title" content="NicolNavi インストールガイド">
   <meta property="og:description" content="NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。
-事前準備と前提条件 見出しへのリンク 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション 管理者権限: 初回インストール時に要求される場合があります ブラウザ: 最新版の主要ブラウザ メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。 Python 環境を利用したインストール 見出しへのリンク Step 1. 必要ソフトの確認 見出しへのリンク ブラウザ 最新版の主要ブラウザがインストールされていることを確認してください。 Python および pipenv Python 3.10 以上、pip コマンドがインストールされていることを確認します。 pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。 Step 2. NicolNavi の取得 見出しへのリンク GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。 ターミナルを開き、展開したフォルダへ移動します。 cd /path/to/nicolnavi Step 3. 仮想環境の構築と依存関係のインストール 見出しへのリンク ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。 pipenv shell pipenv install Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。 pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。 Step 4. アプリの起動確認 見出しへのリンク 仮想環境がアクティブな状態で以下のコマンドを実行します。 python gui/src/main.py 別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。 トラブルシューティング 見出しへのリンク ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。 ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。 pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。 不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
+事前準備と前提条件 見出しへのリンク 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション 管理者権限: 初回インストール時に要求される場合があります ブラウザ: 最新版の主要ブラウザ メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。 Python 環境を利用したインストール 見出しへのリンク Step 1. 必要ソフトの確認 見出しへのリンク ブラウザ 最新版の主要ブラウザがインストールされていることを確認してください。 Python および pipenv Python 3.10 以上、pip コマンドがインストールされていることを確認します。 pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。 Step 2. NicolNavi の取得 見出しへのリンク GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。 ターミナルを開き、展開したフォルダへ移動します。 cd /path/to/nicolnavi Step 3. 仮想環境の構築と依存関係のインストール 見出しへのリンク ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。 pipenv shell pipenv install Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。 Info pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。 Step 4. アプリの起動確認 見出しへのリンク 仮想環境がアクティブな状態で以下のコマンドを実行します。 python gui/src/main.py 別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。 トラブルシューティング 見出しへのリンク ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。 ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。 pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。 不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
   <meta property="og:locale" content="ja">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-10-15T13:10:14+09:00">
@@ -337,8 +341,12 @@ pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度
 </span></span></code></pre></div><ol start="2">
 <li><code>Pipfile.lock</code> が作成され、依存パッケージのインストールが完了したら準備完了です。</li>
 </ol>
-
-<div class="notice notice-info"><code>pipenv shell</code> 実行後のプロンプトに <code>(nicolnavi)</code> などの仮想環境名が表示されることを確認してください。終了する際は <code>exit</code> と入力すると仮想環境から抜けられます。</div>
+<div class="notice info">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
+  </div>
+  <div class="notice-content"><code>pipenv shell</code> 実行後のプロンプトに <code>(nicolnavi)</code> などの仮想環境名が表示されることを確認してください。終了する際は <code>exit</code> と入力すると仮想環境から抜けられます。</div>
+</div>
 
 <h3 id="step-4-アプリの起動確認">
   Step 4. アプリの起動確認

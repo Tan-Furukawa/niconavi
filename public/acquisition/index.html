@@ -253,10 +253,13 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
   </a>
 </h2>
 <p>This workflow compares a tilted thin section with a horizontal one to quantify quartz orientations. The method works even without a universal stage and includes an example of a simple tilting jig. A tilt angle of roughly 10° is sufficient; high precision is not required.</p>
-
-<div class="notice notice-warning"><p>The c-axis orientation is derived from subtle colour changes. Illumination, sensor response, and sample conditions can all introduce misclassification. In particular, camera white balance strongly affects retardation readings: retardations of 0–300 nm should appear grey to pale yellow, but some systems add red or blue tints. Use the retardation chart below and adjust white balance so that the low-retardation reference matches expectations.</p>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content"><p>The c-axis orientation is derived from subtle colour changes. Illumination, sensor response, and sample conditions can all introduce misclassification. In particular, camera white balance strongly affects retardation readings: retardations of 0–300 nm should appear grey to pale yellow, but some systems add red or blue tints. Use the retardation chart below and adjust white balance so that the low-retardation reference matches expectations.</p>
 <img src="/images/page/acquisition/pic12.png" style="width: 100%;">
-<p>Always cross-check your results against samples with known orientations (for example, EBSD data). Record the capture and lighting conditions so that the measurement can be reproduced.</p>
+<p>Always cross-check your results against samples with known orientations (for example, EBSD data). Record the capture and lighting conditions so that the measurement can be reproduced.</p></div>
 </div>
 
 <h3 id="2-1-build-a-tilting-jig">
@@ -280,9 +283,13 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 <li>
 <p>Stick a strip of double-sided tape to the edge of the board and remove the backing.</p>
 <img src="/images/page/acquisition/pic4.svg" style="width: 70%;">
-
-<div class="notice notice-example"><p>The author stacks three new thin sections, tapes them together, and applies the narrow tape on top. That combination stabilises the pivot height and grip so the section stays in place.</p>
+<div class="notice example">
+  <div class="notice-title">
+    <i class="fa-solid fa-file-text" aria-hidden="true"></i>Example
+  </div>
+  <div class="notice-content"><p>The author stacks three new thin sections, tapes them together, and applies the narrow tape on top. That combination stabilises the pivot height and grip so the section stays in place.</p>
    <img src="/images/page/acquisition/pic5.jpg" style="width: 70%;"></div>
+</div>
 
 </li>
 <li>
@@ -290,12 +297,15 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 <img src="/images/page/acquisition/pic7.svg" style="width: 70%;">
 </li>
 </ol>
-
-<div class="notice notice-example"><p>The photo shows the tilted thin section on the microscope stage. A weight keeps the angle fixed; here a hex wrench is used.</p>
+<div class="notice example">
+  <div class="notice-title">
+    <i class="fa-solid fa-file-text" aria-hidden="true"></i>Example
+  </div>
+  <div class="notice-content"><p>The photo shows the tilted thin section on the microscope stage. A weight keeps the angle fixed; here a hex wrench is used.</p>
    <img src="/images/page/acquisition/pic10.jpg" style="width: 70%;">
 <p>Figure: Tilted setup</p>
    <img src="/images/page/acquisition/pic11.jpg" style="width: 70%;">
-<p>Figure: Horizontal setup with the weight applied</p>
+<p>Figure: Horizontal setup with the weight applied</p></div>
 </div>
 
 <h3 id="2-2-capture-sequence">
@@ -320,8 +330,12 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 <li>Set the stage to 0° and align the thin section with the 0°–180° line.</li>
 <li>Tilt the section and focus on the <strong>left edge</strong> in the monitor view.</li>
 </ol>
-
-<div class="notice notice-warning">Polarising microscopes invert the image horizontally, so focusing on the left edge in the monitor corresponds to the right edge on the stage.</div>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Polarising microscopes invert the image horizontally, so focusing on the left edge in the monitor corresponds to the right edge on the stage.</div>
+</div>
 
 <ol start="4">
 <li>Start recording and move the focus away from the objective over about 10 seconds until the monitor shows the right edge in focus (diagram a). Stop the recording.</li>
@@ -339,8 +353,12 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 <ol>
 <li>Rotate the stage to 45° and focus on the bottom-left edge in the monitor view.</li>
 </ol>
-
-<div class="notice notice-warning">Because the image is inverted, this corresponds to the top-right edge on the stage.</div>
+<div class="notice warning">
+  <div class="notice-title">
+    <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
+  </div>
+  <div class="notice-content">Because the image is inverted, this corresponds to the top-right edge on the stage.</div>
+</div>
 
 <ol start="2">
 <li>Start recording and move focus away from the objective for roughly 10 seconds. Stop when the monitor shows the top-right edge in focus (diagram b).</li>
@@ -359,8 +377,12 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 <li>Add the weight to level the section and focus on the area of interest (diagram c).</li>
 <li>Start recording and stop immediately. A one-second clip is sufficient.</li>
 </ol>
-
-<div class="notice notice-note">This clip is used as reference data for the <code>extinction color</code> map. As long as you can pair it with the tilted videos, the exact length is unimportant.</div>
+<div class="notice note">
+  <div class="notice-title">
+    <i class="fa-solid fa-sticky-note" aria-hidden="true"></i>Note
+  </div>
+  <div class="notice-content">This clip is used as reference data for the <code>extinction color</code> map. As long as you can pair it with the tilted videos, the exact length is unimportant.</div>
+</div>
 
 <video controls width="70%">
     <source src="/images/page/acquisition/pic9-45deg-not-tilt.mp4" type="video/mp4">
