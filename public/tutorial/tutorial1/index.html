@@ -64,260 +64,7 @@ Click 1 Select on the right panel.
 Choose nicolnavi_app/Examples/pelitic-schist-xpl.avi and open it.
 Confirm that the left panel shows the first frame resized to a width of 1000 px.
 
-
-
-  4.2 Run Preprocessing
-  
-    
-    Link to heading
-  
-
-
-Select 2 Start to launch discretisation and rotation-centre estimation.
-When the process finishes, the app switches to the rotation-centre adjustment screen.
-
-
-
-  4.3 Adjust the Rotation Centre
-  
-    
-    Link to heading
-  
-
-
-Check that the red cross is centred on the concentric pattern.
-If it is misaligned, fine-tune the coordinates with the &#43; and − buttons. In this dataset the default position is almost correct, so you can skip adjustments.
-Click 3 Continue to fix the centre.
-
-
-  4.4 Review the Derived Maps
-  
-    
-    Link to heading
-  
-
-
-After the automatic transition, open Image list and review these representative maps.
-
-
-  
-      
-          Map
-          Description
-      
-  
-  
-      
-          color
-          Brightest colours observed during a full rotation.
-      
-      
-          extinction color
-          Colours at the darkest instant. If the image never darkens, re-check the previous steps.
-      
-      
-          R
-          Pixel-level retardation values. The Video tab controls the retardation search range. With max retardation = 300, non-quartz values are indicative only.
-      
-      
-          extinction angle
-          Map of extinction angles for each pixel.
-      
-      
-          raw image
-          Unprocessed frame. Selecting, for example, $\phi = 22.5\degree$ shows the frame at that rotation angle.
-      
-  
-
-
-
-  
-    Warning
-  
-  If the entire extinction color map remains bright, the sensor may be saturating or preprocessing was inadequate. Tutorial 2 covers remedies.
-
-
-
-  4.5 Tune Grain-Boundary Parameters
-  
-    
-    Link to heading
-  
-
-
-Set the initial parameters in the right panel for your target textures.
-Press 6 Detect Grain Boundary to overlay the detected boundaries.
-Adjust 4 median filter and 5 parameters as shown below.
-Click 6 Calculate grain boundaries again to refresh the result.
-
-
-
-Left: default settings. Right: after tuning.
-
-  
-      
-          Parameter
-          Description
-      
-  
-  
-      
-          median filter
-          Smoothing window for noise suppression. Large values remove fine structure.
-      
-      
-          boundary detection sensitivity
-          Higher values capture finer details but increase false positives.
-      
-      
-          boundary connectivity
-          Maximum gap (px) treated as connected. Excessive values over-connect regions.
-      
-      
-          smallest grain size
-          Minimum area in px^2. Regions below the threshold are discarded as noise.
-      
-  
-
-
-  
-    Info
-  
-  Expect to iterate when extracting boundaries. Toggle Show grain boundary to inspect the overlay frequently.
-
-
-
-  
-    Warning
-  
-  A single parameter set rarely isolates all mineral combinations. Some datasets require mineral-specific processing.
-
-
-
-  4.6 Finalise the Grain Boundaries
-  
-    
-    Link to heading
-  
-
-
-Continue adjusting until the result matches your intent.
-Click 7 Continue to proceed to the labelling stage.
-
-
-  4.7 Configure Labels
-  
-    
-    Link to heading
-  
-
-
-Enter mica in Label Name and press &#43;. Add bulk in the same way.
-Select mica, then click 5–10 representative mica grains in the left panel. Repeat for bulk.
-If misclassifications remain, extend the training data until predictions stabilise.
-Choose Done to confirm the labels. In this sample a few dozen grains are sufficient.
-
-
-
-  4.8 Propagate Labels
-  
-    
-    Link to heading
-  
-
-
-Press 9 Propagate labels to apply labels to all grains based on the training set.
-Inspect the result. If the classification drifts, add training grains and re-run the propagation.
-
-
-  4.9 Manual Edits
-  
-    
-    Link to heading
-  
-
-
-Use 10 edit labels to switch to manual editing.
-Choose the desired label and click regions that require corrections.
-Toggle Show grain boundary to verify the outline while editing.
-
-
-  4.10 Save the Labelling Result
-  
-    
-    Link to heading
-  
-
-
-When satisfied, select 11 Save to store the label configuration.
-Leaving the screen without saving discards the edits, so save before moving on.
-
-
-  4.11 Export Images (Optional)
-  
-    
-    Link to heading
-  
-
-
-Use 12 Save image to export the current view.
-PNG is recommended for documentation or publications.
-
-
-  5. Analyse Modal Composition
-  
-    
-    Link to heading
-  
-
-
-  5.1 Histogram-Based Ratios
-  
-    
-    Link to heading
-  
-
-
-Open the analysis tab.
-Select histogram view and choose retardation as the metric.
-Use 13 minerals to toggle mineral visibility and study the distribution.
-
-
-
-
-  
-    Info
-  
-  The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals.
-
-
-
-  5.2 Rose Diagram
-  
-    
-    Link to heading
-  
-
-
-Switch the view to rose diagram to examine preferred orientations.
-Enable 14 rose diagram and keep retardation selected.
-
-
-
-
-  5.3 Orientation Stats
-  
-    
-    Link to heading
-  
-
-
-Focus on the mica alignment by selecting only the mica label.
-Read the statistics in 16 information. Example output:
-
-Mean orientation: bulk: 171.952°, mica: 171.952°
-Circular variance: bulk: 0.458, mica: 0.458
-Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.">
+&lt;img src=&quot;{{ &ldquo;/images/page/tutorial/tutorial1/pic1.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;">
 <meta name="keywords" content="blog,developer,personal">
 
 
@@ -325,13 +72,13 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Tutorial 1 - NicolNavi Basics">
   <meta name="twitter:description" content="1. Overview Link to heading Work through this tutorial to learn the core NicolNavi operations using a pelitic schist microscope video. By following the steps you will complete preprocessing, grain-boundary detection, mineral labelling, and basic modal/SPO checks for a rotation video.
-2. Prerequisites Link to heading NicolNavi is running and the target project is open. You can access the sample video nicolnavi_app/Examples/pelitic-schist-xpl.avi. 3. Layout Link to heading Left panel: Image viewer showing the analysed frame, boundaries, and labels. Right panel: Buttons, parameter inputs, and checkboxes for each stage. Center: Image list selector that swaps the map displayed on the left. 4. Workflow Link to heading 4.1 Load the Video Link to heading Click 1 Select on the right panel. Choose nicolnavi_app/Examples/pelitic-schist-xpl.avi and open it. Confirm that the left panel shows the first frame resized to a width of 1000 px. 4.2 Run Preprocessing Link to heading Select 2 Start to launch discretisation and rotation-centre estimation. When the process finishes, the app switches to the rotation-centre adjustment screen. 4.3 Adjust the Rotation Centre Link to heading Check that the red cross is centred on the concentric pattern. If it is misaligned, fine-tune the coordinates with the &#43; and − buttons. In this dataset the default position is almost correct, so you can skip adjustments. Click 3 Continue to fix the centre. 4.4 Review the Derived Maps Link to heading After the automatic transition, open Image list and review these representative maps. Map Description color Brightest colours observed during a full rotation. extinction color Colours at the darkest instant. If the image never darkens, re-check the previous steps. R Pixel-level retardation values. The Video tab controls the retardation search range. With max retardation = 300, non-quartz values are indicative only. extinction angle Map of extinction angles for each pixel. raw image Unprocessed frame. Selecting, for example, $\phi = 22.5\degree$ shows the frame at that rotation angle. Warning If the entire extinction color map remains bright, the sensor may be saturating or preprocessing was inadequate. Tutorial 2 covers remedies. 4.5 Tune Grain-Boundary Parameters Link to heading Set the initial parameters in the right panel for your target textures. Press 6 Detect Grain Boundary to overlay the detected boundaries. Adjust 4 median filter and 5 parameters as shown below. Click 6 Calculate grain boundaries again to refresh the result. Left: default settings. Right: after tuning. Parameter Description median filter Smoothing window for noise suppression. Large values remove fine structure. boundary detection sensitivity Higher values capture finer details but increase false positives. boundary connectivity Maximum gap (px) treated as connected. Excessive values over-connect regions. smallest grain size Minimum area in px^2. Regions below the threshold are discarded as noise. Info Expect to iterate when extracting boundaries. Toggle Show grain boundary to inspect the overlay frequently. Warning A single parameter set rarely isolates all mineral combinations. Some datasets require mineral-specific processing. 4.6 Finalise the Grain Boundaries Link to heading Continue adjusting until the result matches your intent. Click 7 Continue to proceed to the labelling stage. 4.7 Configure Labels Link to heading Enter mica in Label Name and press &#43;. Add bulk in the same way. Select mica, then click 5–10 representative mica grains in the left panel. Repeat for bulk. If misclassifications remain, extend the training data until predictions stabilise. Choose Done to confirm the labels. In this sample a few dozen grains are sufficient. 4.8 Propagate Labels Link to heading Press 9 Propagate labels to apply labels to all grains based on the training set. Inspect the result. If the classification drifts, add training grains and re-run the propagation. 4.9 Manual Edits Link to heading Use 10 edit labels to switch to manual editing. Choose the desired label and click regions that require corrections. Toggle Show grain boundary to verify the outline while editing. 4.10 Save the Labelling Result Link to heading When satisfied, select 11 Save to store the label configuration. Leaving the screen without saving discards the edits, so save before moving on. 4.11 Export Images (Optional) Link to heading Use 12 Save image to export the current view. PNG is recommended for documentation or publications. 5. Analyse Modal Composition Link to heading 5.1 Histogram-Based Ratios Link to heading Open the analysis tab. Select histogram view and choose retardation as the metric. Use 13 minerals to toggle mineral visibility and study the distribution. Info The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals. 5.2 Rose Diagram Link to heading Switch the view to rose diagram to examine preferred orientations. Enable 14 rose diagram and keep retardation selected. 5.3 Orientation Stats Link to heading Focus on the mica alignment by selecting only the mica label. Read the statistics in 16 information. Example output: Mean orientation: bulk: 171.952°, mica: 171.952° Circular variance: bulk: 0.458, mica: 0.458 Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.">
+2. Prerequisites Link to heading NicolNavi is running and the target project is open. You can access the sample video nicolnavi_app/Examples/pelitic-schist-xpl.avi. 3. Layout Link to heading Left panel: Image viewer showing the analysed frame, boundaries, and labels. Right panel: Buttons, parameter inputs, and checkboxes for each stage. Center: Image list selector that swaps the map displayed on the left. 4. Workflow Link to heading 4.1 Load the Video Link to heading Click 1 Select on the right panel. Choose nicolnavi_app/Examples/pelitic-schist-xpl.avi and open it. Confirm that the left panel shows the first frame resized to a width of 1000 px. &lt;img src=&#34;{{ “/images/page/tutorial/tutorial1/pic1.png” | relURL }}&#34; style=“width: 30%;&#34;&gt;">
 
 <meta property="og:url" content="https://tan-furukawa.github.io/niconavi/tutorial/tutorial1/">
   <meta property="og:site_name" content="NicoNicoNnavi">
   <meta property="og:title" content="Tutorial 1 - NicolNavi Basics">
   <meta property="og:description" content="1. Overview Link to heading Work through this tutorial to learn the core NicolNavi operations using a pelitic schist microscope video. By following the steps you will complete preprocessing, grain-boundary detection, mineral labelling, and basic modal/SPO checks for a rotation video.
-2. Prerequisites Link to heading NicolNavi is running and the target project is open. You can access the sample video nicolnavi_app/Examples/pelitic-schist-xpl.avi. 3. Layout Link to heading Left panel: Image viewer showing the analysed frame, boundaries, and labels. Right panel: Buttons, parameter inputs, and checkboxes for each stage. Center: Image list selector that swaps the map displayed on the left. 4. Workflow Link to heading 4.1 Load the Video Link to heading Click 1 Select on the right panel. Choose nicolnavi_app/Examples/pelitic-schist-xpl.avi and open it. Confirm that the left panel shows the first frame resized to a width of 1000 px. 4.2 Run Preprocessing Link to heading Select 2 Start to launch discretisation and rotation-centre estimation. When the process finishes, the app switches to the rotation-centre adjustment screen. 4.3 Adjust the Rotation Centre Link to heading Check that the red cross is centred on the concentric pattern. If it is misaligned, fine-tune the coordinates with the &#43; and − buttons. In this dataset the default position is almost correct, so you can skip adjustments. Click 3 Continue to fix the centre. 4.4 Review the Derived Maps Link to heading After the automatic transition, open Image list and review these representative maps. Map Description color Brightest colours observed during a full rotation. extinction color Colours at the darkest instant. If the image never darkens, re-check the previous steps. R Pixel-level retardation values. The Video tab controls the retardation search range. With max retardation = 300, non-quartz values are indicative only. extinction angle Map of extinction angles for each pixel. raw image Unprocessed frame. Selecting, for example, $\phi = 22.5\degree$ shows the frame at that rotation angle. Warning If the entire extinction color map remains bright, the sensor may be saturating or preprocessing was inadequate. Tutorial 2 covers remedies. 4.5 Tune Grain-Boundary Parameters Link to heading Set the initial parameters in the right panel for your target textures. Press 6 Detect Grain Boundary to overlay the detected boundaries. Adjust 4 median filter and 5 parameters as shown below. Click 6 Calculate grain boundaries again to refresh the result. Left: default settings. Right: after tuning. Parameter Description median filter Smoothing window for noise suppression. Large values remove fine structure. boundary detection sensitivity Higher values capture finer details but increase false positives. boundary connectivity Maximum gap (px) treated as connected. Excessive values over-connect regions. smallest grain size Minimum area in px^2. Regions below the threshold are discarded as noise. Info Expect to iterate when extracting boundaries. Toggle Show grain boundary to inspect the overlay frequently. Warning A single parameter set rarely isolates all mineral combinations. Some datasets require mineral-specific processing. 4.6 Finalise the Grain Boundaries Link to heading Continue adjusting until the result matches your intent. Click 7 Continue to proceed to the labelling stage. 4.7 Configure Labels Link to heading Enter mica in Label Name and press &#43;. Add bulk in the same way. Select mica, then click 5–10 representative mica grains in the left panel. Repeat for bulk. If misclassifications remain, extend the training data until predictions stabilise. Choose Done to confirm the labels. In this sample a few dozen grains are sufficient. 4.8 Propagate Labels Link to heading Press 9 Propagate labels to apply labels to all grains based on the training set. Inspect the result. If the classification drifts, add training grains and re-run the propagation. 4.9 Manual Edits Link to heading Use 10 edit labels to switch to manual editing. Choose the desired label and click regions that require corrections. Toggle Show grain boundary to verify the outline while editing. 4.10 Save the Labelling Result Link to heading When satisfied, select 11 Save to store the label configuration. Leaving the screen without saving discards the edits, so save before moving on. 4.11 Export Images (Optional) Link to heading Use 12 Save image to export the current view. PNG is recommended for documentation or publications. 5. Analyse Modal Composition Link to heading 5.1 Histogram-Based Ratios Link to heading Open the analysis tab. Select histogram view and choose retardation as the metric. Use 13 minerals to toggle mineral visibility and study the distribution. Info The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals. 5.2 Rose Diagram Link to heading Switch the view to rose diagram to examine preferred orientations. Enable 14 rose diagram and keep retardation selected. 5.3 Orientation Stats Link to heading Focus on the mica alignment by selecting only the mica label. Read the statistics in 16 information. Example output: Mean orientation: bulk: 171.952°, mica: 171.952° Circular variance: bulk: 0.458, mica: 0.458 Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.">
+2. Prerequisites Link to heading NicolNavi is running and the target project is open. You can access the sample video nicolnavi_app/Examples/pelitic-schist-xpl.avi. 3. Layout Link to heading Left panel: Image viewer showing the analysed frame, boundaries, and labels. Right panel: Buttons, parameter inputs, and checkboxes for each stage. Center: Image list selector that swaps the map displayed on the left. 4. Workflow Link to heading 4.1 Load the Video Link to heading Click 1 Select on the right panel. Choose nicolnavi_app/Examples/pelitic-schist-xpl.avi and open it. Confirm that the left panel shows the first frame resized to a width of 1000 px. &lt;img src=&#34;{{ “/images/page/tutorial/tutorial1/pic1.png” | relURL }}&#34; style=“width: 30%;&#34;&gt;">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="tutorial">
@@ -523,7 +270,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 <li>Choose <code>nicolnavi_app/Examples/pelitic-schist-xpl.avi</code> and open it.</li>
 <li>Confirm that the left panel shows the first frame resized to a width of 1000 px.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic1.png" style="width: 30%;">
+<p>&lt;img src=&quot;{{ &ldquo;/images/page/tutorial/tutorial1/pic1.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
 <h3 id="42-run-preprocessing">
   4.2 Run Preprocessing
   <a class="heading-link" href="#42-run-preprocessing">
@@ -535,7 +282,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 <li>Select <code>2 Start</code> to launch discretisation and rotation-centre estimation.</li>
 <li>When the process finishes, the app switches to the rotation-centre adjustment screen.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic2.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic2.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <h3 id="43-adjust-the-rotation-centre">
   4.3 Adjust the Rotation Centre
   <a class="heading-link" href="#43-adjust-the-rotation-centre">
@@ -588,7 +335,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
       </tr>
   </tbody>
 </table>
-<img src="/images/page/tutorial/tutorial1/pic3.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic3.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <div class="notice warning">
   <div class="notice-title">
     <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
@@ -609,9 +356,9 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 <li>Adjust <code>4 median filter</code> and <code>5 parameters</code> as shown below.</li>
 <li>Click <code>6 Calculate grain boundaries</code> again to refresh the result.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic4.png" style="width: 30%;">
-<img src="/images/page/tutorial/tutorial1/pic5.png" style="width: 100%;">
-Left: default settings. Right: after tuning.
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic4.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;</p>
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic5.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;
+Left: default settings. Right: after tuning.</p>
 <table>
   <thead>
       <tr>
@@ -676,7 +423,7 @@ Left: default settings. Right: after tuning.
 <li>If misclassifications remain, extend the training data until predictions stabilise.</li>
 <li>Choose <code>Done</code> to confirm the labels. In this sample a few dozen grains are sufficient.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic6.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic6.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <h3 id="48-propagate-labels">
   4.8 Propagate Labels
   <a class="heading-link" href="#48-propagate-labels">
@@ -741,8 +488,8 @@ Left: default settings. Right: after tuning.
 <li>Select <code>histogram</code> view and choose <code>retardation</code> as the metric.</li>
 <li>Use <code>13 minerals</code> to toggle mineral visibility and study the distribution.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic7.png" style="width: 30%;">
-<img src="/images/page/tutorial/tutorial1/pic8.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic7.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;
+&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic8.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <div class="notice info">
   <div class="notice-title">
     <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
@@ -761,8 +508,8 @@ Left: default settings. Right: after tuning.
 <li>Switch the view to <code>rose diagram</code> to examine preferred orientations.</li>
 <li>Enable <code>14 rose diagram</code> and keep <code>retardation</code> selected.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic9.png" style="width: 30%;">
-<img src="/images/page/tutorial/tutorial1/pic10.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic9.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;
+&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic10.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <h3 id="53-orientation-stats">
   5.3 Orientation Stats
   <a class="heading-link" href="#53-orientation-stats">
@@ -777,8 +524,8 @@ Left: default settings. Right: after tuning.
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Mean orientation: bulk: 171.952°, mica: 171.952°
 </span></span><span style="display:flex;"><span>Circular variance: bulk: 0.458, mica: 0.458
 </span></span></code></pre></div><p>Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.</p>
-<img src="/images/page/tutorial/tutorial1/pic12.png" style="width: 30%;">
-<img src="/images/page/tutorial/tutorial1/pic13.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic12.png&rdquo; | relURL }}&quot; style=&ldquo;width: 30%;&quot;&gt;
+&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic13.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <h3 id="54-spo-view-and-ellipse-approximation">
   5.4 SPO View and Ellipse Approximation
   <a class="heading-link" href="#54-spo-view-and-ellipse-approximation">
@@ -790,7 +537,7 @@ Left: default settings. Right: after tuning.
 <li>Switch <code>14 rose diagram</code> to <code>SPO</code>.</li>
 <li>Choose <code>ellipse</code> from <code>Image list</code> to display ellipse fits for each grain.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic14.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic14.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <h3 id="55-grain-shape-scatter-plot">
   5.5 Grain-Shape Scatter Plot
   <a class="heading-link" href="#55-grain-shape-scatter-plot">
@@ -803,7 +550,7 @@ Left: default settings. Right: after tuning.
 <li>Set the axes to <code>x: ellipse major axis length</code> and <code>y: ellipse minor axis length</code>.</li>
 <li>Use the regression line to estimate the aspect ratio—for example, <code>y = 0.224 x</code> implies ~1:3.2.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic15.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic15.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <h3 id="56-modal-composition-area-fraction">
   5.6 Modal Composition (Area Fraction)
   <a class="heading-link" href="#56-modal-composition-area-fraction">
@@ -816,8 +563,8 @@ Left: default settings. Right: after tuning.
 <li>Enable <code>16 other minerals</code>.</li>
 <li>Change the metric from <code>17 retardation</code> to <code>size</code> to plot area-based histograms.</li>
 </ol>
-<img src="/images/page/tutorial/tutorial1/pic16.png" style="width: 100%;">
-<img src="/images/page/tutorial/tutorial1/pic17.png" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic16.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;
+&lt;img src=&rdquo;{{ &ldquo;/images/page/tutorial/tutorial1/pic17.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <p>Example output:</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Mean: bulk: 394.808, mica: 558.211, other minerals: 383.620
 </span></span><span style="display:flex;"><span>Std Dev: bulk: 1807.601, mica: 493.803, other minerals: 1863.461

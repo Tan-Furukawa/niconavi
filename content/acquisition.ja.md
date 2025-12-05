@@ -14,7 +14,7 @@ NicolNavi で扱う顕微鏡動画を撮影する際のポイントとワーク�
 - 顕微鏡ステージに回転角度の目盛りが付いていること
 - ステージを 0° に合わせた際、0°–180° を結ぶ線分がカメラの撮像素子と平行になるよう調整できていること
 
-<img src="/images/page/acquisition/pic1.svg" style="width: 70%;">
+<img src="{{ "/images/page/acquisition/pic1.svg" | relURL }}" style="width: 70%;">
 図：ステージと撮像素子の整合確認。ステージ上に紙を置き、モニターで水平になるようカメラ角度を合わせます。
 
 - 下方ニコルの振動方向が東西、上方ニコルの振動方向が南北であること
@@ -32,7 +32,7 @@ NicolNavi で扱う顕微鏡動画を撮影する際のポイントとワーク�
 5. ステージを手でゆっくりと半時計回りに 360° 回転させます（下図 c）。1 回転に 1 分程度かけると安定します。途中で速度が変わったり一時停止しても構いません。
 6. 動画撮影を停止し、`.avi` または `.mp4` 形式で保存します。
 
-<img src="/images/page/acquisition/pic2.svg" style="width: 70%;">
+<img src="{{ "/images/page/acquisition/pic2.svg" | relURL }}" style="width: 70%;">
 図：回転動画の撮影イメージ。0° から 360° までゆっくり回転させます。
 
 <video controls width="70%">
@@ -48,7 +48,7 @@ NicolNavi で扱う顕微鏡動画を撮影する際のポイントとワーク�
 
 薄片の微妙な色調の変化を定量化してc軸方位を決定します。これらの結果は、顕微鏡の光源・撮影素子の特性・薄片の状態等の複合的な要因で誤判定を引き起こす場合があります。とくに、カメラのホワイトバランスの設定はレタデーションの判断に大きな影響を与える可能性があります。0-300のレタデーションの色は、本来灰色から薄い黄色を示しますが、顕微鏡によっては赤みや青みがでる場合があります。下記のレタデーションチャートを参考に、低いレタデーションを基準にホワイトバランス設定を行うことを勧めます。
 
-<img src="/images/page/acquisition/pic12.png" style="width: 100%;">
+<img src="{{ "/images/page/acquisition/pic12.png" | relURL }}" style="width: 100%;">
 
 また、必ず、EBSD等を使用した方位が既知のいくつかのサンプルと結果の比較をおこない、推定結果に差がないことを確認してください。また、そのときの撮影条件や光源の条件を記録し、再現性を担保してください。
 
@@ -60,7 +60,7 @@ NicolNavi で扱う顕微鏡動画を撮影する際のポイントとワーク�
 
 薄片をずれにくく傾けられる台を用意します。以下は一例です。
 
-<img src="/images/page/acquisition/pic6.svg" style="width: 70%;">
+<img src="{{ "/images/page/acquisition/pic6.svg" | relURL }}" style="width: 70%;">
 
 **用意するもの**
 - 50 mm × 30 mm の薄片（厚さ 0.03 mm 以下）
@@ -72,28 +72,28 @@ NicolNavi で扱う顕微鏡動画を撮影する際のポイントとワーク�
 
 1. 板の端に細く切った両面テープを貼り、剥離紙をはがします。
 
-   <img src="/images/page/acquisition/pic4.svg" style="width: 70%;">
+   <img src="{{ "/images/page/acquisition/pic4.svg" | relURL }}" style="width: 70%;">
 
 
 
    {{< notice example >}}
    筆者は新品の薄片を三枚重ねてテープで固定し、その上に細い両面テープを貼ることで支点の高さと粘着力を安定させています。同じ工夫を取り入れると薄片がずれにくくなります。
-   <img src="/images/page/acquisition/pic5.jpg" style="width: 70%;">
+   <img src="{{ "/images/page/acquisition/pic5.jpg" | relURL }}" style="width: 70%;">
    {{< /notice >}}
 
 3. 観察したい視野が、傾斜軸（両面テープ）に近く、かつ板と干渉しない位置に来るよう薄片を配置します。
 
-   <img src="/images/page/acquisition/pic7.svg" style="width: 70%;">
+   <img src="{{ "/images/page/acquisition/pic7.svg" | relURL }}" style="width: 70%;">
 
 {{< notice example >}}
 
 顕微鏡ステージ上で薄片を傾けた様子。おもりで角度を固定します。筆者は六角レンチを重しとして利用しました。
 
-   <img src="/images/page/acquisition/pic10.jpg" style="width: 70%;">
+   <img src="{{ "/images/page/acquisition/pic10.jpg" | relURL }}" style="width: 70%;">
 
    図：傾けた状態
 
-   <img src="/images/page/acquisition/pic11.jpg" style="width: 70%;">
+   <img src="{{ "/images/page/acquisition/pic11.jpg" | relURL }}" style="width: 70%;">
 
    図：おもり（六角レンチ）を載せて水平にした状態
 
@@ -103,7 +103,7 @@ NicolNavi で扱う顕微鏡動画を撮影する際のポイントとワーク�
 
 以下の 5 本の動画を順に撮影します。毎回、撮影後はファイル名を分かりやすく保存してください。
 
-<img src="/images/page/acquisition/pic8.svg" style="width: 100%;">
+<img src="{{ "/images/page/acquisition/pic8.svg" | relURL }}" style="width: 100%;">
 
 図：撮影手順。aからeまでの5つの動画を撮影します。
 

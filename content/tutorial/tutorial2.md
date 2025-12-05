@@ -27,11 +27,11 @@ This tutorial uses a sector-zoned garnet video to demonstrate mineral-specific b
 
 1. After processing, the rotation-centre screen appears.
 
-<img src="/images/page/tutorial/tutorial2/pic1.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic1.png" | relURL }}" style="width: 100%;">
 
 2. In this dataset the detected centre is offset from the true concentric pattern. Click `cx` and `cy` to move the red cross to the actual centre.
 
-<img src="/images/page/tutorial/tutorial2/pic2.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic2.png" | relURL }}" style="width: 100%;">
 Figure: Centre after manual adjustment.
 
 3. Click `Continue` to confirm.
@@ -50,10 +50,10 @@ Figure: Centre after manual adjustment.
 
 2. Switching between `color` and `extinction color` may reveal that `color` looks darker.
 
-<img src="/images/page/tutorial/tutorial2/pic3.png" style="width: 80%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic3.png" | relURL }}" style="width: 80%;">
 `Image list = color`
 
-<img src="/images/page/tutorial/tutorial2/pic4.png" style="width: 80%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic4.png" | relURL }}" style="width: 80%;">
 `Image list = extinction color`
 
 3. By default, `color` applies **brightness correction**. If \(B_{\max}(x, y)\) and \(B_{\min}(x, y)\) are the maximum and minimum brightness within a rotation, the display intensity is
@@ -66,7 +66,7 @@ Figure: Centre after manual adjustment.
 
 4. If saturation is suspected, clear the **brightness correction** checkbox. NicolNavi then shows \(I_{\text{corr}}(x, y) = B_{\max}(x, y)\) directly so you can inspect the true brightness.
 
-<img src="/images/page/tutorial/tutorial2/pic5.png" style="width: 80%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic5.png" | relURL }}" style="width: 80%;">
 `Image list = color` with brightness correction disabled.
 
 ### 3.4 Detect Grain Boundaries
@@ -76,7 +76,7 @@ Figure: Centre after manual adjustment.
 3. Press `Calculate grain boundaries` to apply the adjustments.
 4. When the boundaries look correct, choose `Continue` to move to the labelling screen.
 
-<img src="/images/page/tutorial/tutorial2/pic6.png" style="width: 30%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic6.png" | relURL }}" style="width: 30%;">
 
 ### 3.5 Assign Mineral Labels
 
@@ -86,17 +86,17 @@ Figure: Centre after manual adjustment.
 4. If misclassification persists, expand each training set until the preview stabilises. In this dataset 48 grains were labelled.
 5. Click `Done` to confirm.
 
-<img src="/images/page/tutorial/tutorial2/pic7.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic7.png" | relURL }}" style="width: 100%;">
 
 ### 3.6 Visualise Optical Anisotropy
 
 1. Switch to the `Analysis` tab and uncheck `inclusion` and `matrix` so only garnet remains.
 
-<img src="/images/page/tutorial/tutorial2/pic8.png" style="width: 30%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic8.png" | relURL }}" style="width: 30%;">
 
 2. Return to the `map` tab and set `image list` to `extinction angle`. All other minerals render in black, highlighting the sector zoning within the garnet.
 
-<img src="/images/page/tutorial/tutorial2/pic9.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial2/pic9.png" | relURL }}" style="width: 100%;">
 
 3. Use the top menu `Save as PDF` to export the view if required.
 

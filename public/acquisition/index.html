@@ -28,19 +28,8 @@ You can record and save microscope videos on the system in use.
 The microscope stage has angle markings for rotation.
 When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor.
 
-
-Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.
-
-The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.
-
-
-  Workflow 1: Capture a Rotation Video (Baseline Texture Analysis)
-  
-    
-    Link to heading
-  
-
-Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.">
+&lt;img src=&quot;{{ &ldquo;/images/page/acquisition/pic1.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;
+Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.">
 <meta name="keywords" content="blog,developer,personal">
 
 
@@ -49,14 +38,14 @@ Use this workflow to shoot a standard stage-rotation video. It supports boundary
   <meta name="twitter:title" content="Data Acquisition">
   <meta name="twitter:description" content="This page outlines how to capture microscope videos that NicolNavi can process. Start with the pre-shoot checklist, then choose the workflow that matches your goal: capturing a rotating-stage video or collecting the datasets required for quartz c-axis orientation analysis.
 Preparation Before Filming Link to heading Confirm the following before you begin.
-You can record and save microscope videos on the system in use. The microscope stage has angle markings for rotation. When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor. Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor. The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction. Workflow 1: Capture a Rotation Video (Baseline Texture Analysis) Link to heading Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.">
+You can record and save microscope videos on the system in use. The microscope stage has angle markings for rotation. When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor. &lt;img src=&#34;{{ “/images/page/acquisition/pic1.svg” | relURL }}&#34; style=“width: 70%;&#34;&gt; Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.">
 
 <meta property="og:url" content="https://tan-furukawa.github.io/niconavi/acquisition/">
   <meta property="og:site_name" content="NicoNicoNnavi">
   <meta property="og:title" content="Data Acquisition">
   <meta property="og:description" content="This page outlines how to capture microscope videos that NicolNavi can process. Start with the pre-shoot checklist, then choose the workflow that matches your goal: capturing a rotating-stage video or collecting the datasets required for quartz c-axis orientation analysis.
 Preparation Before Filming Link to heading Confirm the following before you begin.
-You can record and save microscope videos on the system in use. The microscope stage has angle markings for rotation. When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor. Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor. The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction. Workflow 1: Capture a Rotation Video (Baseline Texture Analysis) Link to heading Use this workflow to shoot a standard stage-rotation video. It supports boundary detection and general texture work.">
+You can record and save microscope videos on the system in use. The microscope stage has angle markings for rotation. When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor. &lt;img src=&#34;{{ “/images/page/acquisition/pic1.svg” | relURL }}&#34; style=“width: 70%;&#34;&gt; Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-10-15T13:10:14+09:00">
@@ -211,8 +200,8 @@ You can record and save microscope videos on the system in use. The microscope s
 <li>The microscope stage has angle markings for rotation.</li>
 <li>When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor.</li>
 </ul>
-<img src="/images/page/acquisition/pic1.svg" style="width: 70%;">
-Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.
+<p>&lt;img src=&quot;{{ &ldquo;/images/page/acquisition/pic1.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;
+Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.</p>
 <ul>
 <li>The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.</li>
 </ul>
@@ -239,8 +228,8 @@ Figure: Align the stage with the sensor. Place paper on the stage and adjust the
 <li>Rotate the stage slowly and counterclockwise for a full 360° (diagram c). About one minute per revolution keeps the motion stable. Minor pauses or speed changes are acceptable.</li>
 <li>Stop recording and save the file as <code>.avi</code> or <code>.mp4</code>.</li>
 </ol>
-<img src="/images/page/acquisition/pic2.svg" style="width: 70%;">
-Figure: Rotate the stage smoothly from 0° to 360°.
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/acquisition/pic2.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;
+Figure: Rotate the stage smoothly from 0° to 360°.</p>
 <video controls width="70%">
     <source src="/images/page/acquisition/pic3.mp4" type="video/mp4">
 </video>
@@ -258,7 +247,7 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
     <i class="fa-solid fa-exclamation-triangle" aria-hidden="true"></i>Warning
   </div>
   <div class="notice-content"><p>The c-axis orientation is derived from subtle colour changes. Illumination, sensor response, and sample conditions can all introduce misclassification. In particular, camera white balance strongly affects retardation readings: retardations of 0–300 nm should appear grey to pale yellow, but some systems add red or blue tints. Use the retardation chart below and adjust white balance so that the low-retardation reference matches expectations.</p>
-<img src="/images/page/acquisition/pic12.png" style="width: 100%;">
+<p>&lt;img src=&quot;{{ &ldquo;/images/page/acquisition/pic12.png&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <p>Always cross-check your results against samples with known orientations (for example, EBSD data). Record the capture and lighting conditions so that the measurement can be reproduced.</p></div>
 </div>
 
@@ -270,7 +259,7 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
   </a>
 </h3>
 <p>Prepare a support that lets you tilt the thin section without slipping. One example is shown below.</p>
-<img src="/images/page/acquisition/pic6.svg" style="width: 70%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/acquisition/pic6.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;</p>
 <p><strong>Materials</strong></p>
 <ul>
 <li>Thin section measuring 50 mm × 30 mm (thickness ≤ 0.03 mm)</li>
@@ -282,19 +271,19 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 <ol>
 <li>
 <p>Stick a strip of double-sided tape to the edge of the board and remove the backing.</p>
-<img src="/images/page/acquisition/pic4.svg" style="width: 70%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/acquisition/pic4.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;</p>
 <div class="notice example">
   <div class="notice-title">
     <i class="fa-solid fa-file-text" aria-hidden="true"></i>Example
   </div>
   <div class="notice-content"><p>The author stacks three new thin sections, tapes them together, and applies the narrow tape on top. That combination stabilises the pivot height and grip so the section stays in place.</p>
-   <img src="/images/page/acquisition/pic5.jpg" style="width: 70%;"></div>
+<p>&lt;img src=&quot;{{ &ldquo;/images/page/acquisition/pic5.jpg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;</p></div>
 </div>
 
 </li>
 <li>
 <p>Place the thin section so that the area of interest sits close to the hinge (the tape) without touching the board.</p>
-<img src="/images/page/acquisition/pic7.svg" style="width: 70%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/acquisition/pic7.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;</p>
 </li>
 </ol>
 <div class="notice example">
@@ -302,9 +291,9 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
     <i class="fa-solid fa-file-text" aria-hidden="true"></i>Example
   </div>
   <div class="notice-content"><p>The photo shows the tilted thin section on the microscope stage. A weight keeps the angle fixed; here a hex wrench is used.</p>
-   <img src="/images/page/acquisition/pic10.jpg" style="width: 70%;">
+<p>&lt;img src=&quot;{{ &ldquo;/images/page/acquisition/pic10.jpg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;</p>
 <p>Figure: Tilted setup</p>
-   <img src="/images/page/acquisition/pic11.jpg" style="width: 70%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/acquisition/pic11.jpg&rdquo; | relURL }}&quot; style=&ldquo;width: 70%;&quot;&gt;</p>
 <p>Figure: Horizontal setup with the weight applied</p></div>
 </div>
 
@@ -316,7 +305,7 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
   </a>
 </h3>
 <p>Record the following five videos in order. Rename each file immediately after recording.</p>
-<img src="/images/page/acquisition/pic8.svg" style="width: 100%;">
+<p>&lt;img src=&rdquo;{{ &ldquo;/images/page/acquisition/pic8.svg&rdquo; | relURL }}&quot; style=&ldquo;width: 100%;&quot;&gt;</p>
 <p>Figure: Capture flow. Record videos a through e.</p>
 <h4 id="video-1-with-compensator-tilted-section-stage-at-0">
   Video 1: With Compensator, Tilted Section, Stage at 0°

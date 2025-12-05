@@ -23,13 +23,13 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 2. ファイル選択ダイアログで `nicolnavi_app/Examples/pelitic-schist-xpl.avi` を選択し、開くを押します。
 3. 左画面に動画の先頭フレームが幅 1000 px の画像として表示されることを確認します。
 
-<img src="/images/page/tutorial/tutorial1/pic1.png" style="width: 30%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic1.png" | relURL }}" style="width: 30%;">
 
 ### 4.2 前処理の実行
 1. `2 Start` を押し、動画の離散化と回転中心推定を開始します。
 2. 処理が完了すると、自動的に回転中心調整画面へ遷移します。
 
-<img src="/images/page/tutorial/tutorial1/pic2.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic2.png" | relURL }}" style="width: 100%;">
 
 ### 4.3 回転中心の調整
 1. 左画面の同心円状パターンの中心に赤い十字が一致しているか確認します。
@@ -48,7 +48,7 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 | `extinction angle` | 各ピクセルの光消角マップです。 |
 | `raw image` | 加工していない画像です。たとえば、$\phi = 22.5\degree$を選択すると、顕微鏡ステージが、22.5$\degree$回転したときの動画のフレームを示します。|
 
-<img src="/images/page/tutorial/tutorial1/pic3.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic3.png" | relURL }}" style="width: 100%;">
 
 {{< notice warning >}}
 `extinction color` 全体が暗くならない場合は、カメラ画素の飽和や不適切な前処理が疑われます。このような例に対する処理は、Tutorial2で行います。
@@ -60,9 +60,9 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 3. `4 median filter` と `5 parameters` を下図のように調整します。
 4. `6 Calculate grain boundaries` を再度押して結果を更新します。
 
-<img src="/images/page/tutorial/tutorial1/pic4.png" style="width: 30%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic4.png" | relURL }}" style="width: 30%;">
 
-<img src="/images/page/tutorial/tutorial1/pic5.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic5.png" | relURL }}" style="width: 100%;">
 図：左は初期設定での粒界推定結果、右はパラメータ調整後の結果
 
 | パラメータ | 説明 |
@@ -84,7 +84,7 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 1. 抽出結果が意図どおりになったことを確認します。
 2. `7 Continue` を押し、次のラベル付与画面へ進みます。
 
-<img src="/images/page/tutorial/tutorial1/pic6.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic6.png" | relURL }}" style="width: 100%;">
 
 ## 5. 鉱物ラベルの付与と確認
 
@@ -93,12 +93,12 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 2. `9 Add Label` を押し、ラベル付与モードへ切り替えます。
 3. 同じ手順で `other minerals` のラベルも追加します。
 
-<img src="/images/page/tutorial/tutorial1/pic7.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic7.png" | relURL }}" style="width: 100%;">
 
 4. ラベル一覧の `10 mica` を選択し、左画面で該当鉱物の粒子をクリックして教師データを 5～10 個程度追加します。
 
-<img src="/images/page/tutorial/tutorial1/pic8.png" style="width: 30%;">
-<img src="/images/page/tutorial/tutorial1/pic9.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic8.png" | relURL }}" style="width: 30%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic9.png" | relURL }}" style="width: 100%;">
 
 ### 5.2 ラベル精度の向上
 
@@ -108,7 +108,7 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 3. 画面表示の透過度や粒界表示はチェックボックスで切り替え、ラベルが正確に割り当てられているか確認してください。
 4. 必要に応じてラベル名横のカラーボックスをクリックし、表示色を変更します。
 
-<img src="/images/page/tutorial/tutorial1/pic10.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic10.png" | relURL }}" style="width: 100%;">
 図：`other minerals` を選択した後の表示例（個々の環境で色分布は異なります）
 
 {{< notice info >}}
@@ -119,7 +119,7 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 1. すべての粒界領域に適切なラベルが付いていることを確認します。
 2. `12 Done` を押し、ラベル設定を確定します。
 
-<img src="/images/page/tutorial/tutorial1/pic11.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic11.png" | relURL }}" style="width: 100%;">
 
 ## 6. 岩石組織の定量化（雲母の例）
 
@@ -128,8 +128,8 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 2. ビュー選択で `14 rose diagram` および `15 shape preferred orientation` を選びます。
 3. 右画面の `16 information` に表示される統計値を読み取ります。
 
-<img src="/images/page/tutorial/tutorial1/pic12.png" style="width: 30%;">
-<img src="/images/page/tutorial/tutorial1/pic13.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic12.png" | relURL }}" style="width: 30%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic13.png" | relURL }}" style="width: 100%;">
 
 表示例：
 
@@ -144,22 +144,22 @@ Circular variance: bulk: 0.458, mica: 0.458
 1. `14 rose diagram` の代わりに `SPO` を選択します。
 2. `Image list` から `ellipse` を選び、粒子を楕円近似した図を表示します。
 
-<img src="/images/page/tutorial/tutorial1/pic14.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic14.png" | relURL }}" style="width: 100%;">
 
 ### 6.3 粒子形状の散布図を確認する
 1. ビューを `scatter` に切り替えます。
 2. 軸設定を `x: ellipse major axis length`、`y: ellipse minor axis length` に変更します。
 3. 散布図と回帰直線から、粒子形状のおおよその軸比を読み取ります（例：回帰直線 `y = 0.224 x` なら軸比約 0.224:1 = 1:3.2）。
 
-<img src="/images/page/tutorial/tutorial1/pic15.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic15.png" | relURL }}" style="width: 100%;">
 
 ### 6.4 モード組成（面積比）の確認
 1. ビューを `histogram` に変更します。
 2. `16 other minerals` チェックボックスをオンにします。
 3. 解析量を `17 retardation` から `size` に変更し、面積に基づくヒストグラムを表示します。
 
-<img src="/images/page/tutorial/tutorial1/pic16.png" style="width: 100%;">
-<img src="/images/page/tutorial/tutorial1/pic17.png" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic16.png" | relURL }}" style="width: 100%;">
+<img src="{{ "/images/page/tutorial/tutorial1/pic17.png" | relURL }}" style="width: 100%;">
 
 表示例：
 
