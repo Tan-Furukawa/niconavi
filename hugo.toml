@@ -1,4 +1,4 @@
-baseurl = "http://www.example.com"
+baseurl = "https://tan-furukawa.github.io/niconavi/"
 title = "NicoNicoNnavi"
 theme = "hugo-coder"
 languagecode = "en"
