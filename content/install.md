@@ -12,10 +12,8 @@ This guide walks you through getting NicolNavi up and running in a Python enviro
 
 - Supported systems: Windows 10 (64-bit) or later, macOS Monterey (12) or later, and popular Linux distributions
 - Permissions: Administrator rights may be required during the initial setup
-- Browser: Latest Google Chrome (recommended)
+- Browser: A modern, up-to-date web browser
 - Memory: 16 GB RAM or more is strongly recommended; lower-spec systems may not run reliably
-
-{{< notice info >}}Other browsers might work, but only Google Chrome is officially verified.{{< /notice >}}
 
 ---
 
@@ -23,8 +21,8 @@ This guide walks you through getting NicolNavi up and running in a Python enviro
 
 ### Step 1. Confirm Prerequisites
 
-1. **Google Chrome**  
-   Install it from the link above if you have not already.
+1. **Web browser**  
+   Ensure you have a modern browser installed.
 2. **Python and pipenv**  
    Ensure Python 3.10 or newer is installed and that the `pip` command works. Update pip with `pip install --upgrade pip`, then install pipenv using `pip install pipenv`.
 
@@ -58,7 +56,7 @@ pipenv install
 python gui/src/main.py
 ```
 
-2. Open Google Chrome and go to `http://localhost:8551/` to confirm that NicolNavi loads.
+2. Open your browser and go to `http://localhost:8551/` to confirm that NicolNavi loads.
 
 ---
 
