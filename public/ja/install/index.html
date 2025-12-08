@@ -4,7 +4,7 @@
 <head>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
-  NicolNavi インストールガイド · NicoNicoNnavi
+  NicolNavi インストールガイド · NicoNavi
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,124 +14,88 @@
 
 
 <meta name="author" content="NicoNavi">
-<meta name="description" content="NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。
-
-  事前準備と前提条件
+<meta name="description" content="
+  NicolNavi インストールガイド
   
     
     見出しへのリンク
   
 
 
-対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション
-管理者権限: 初回インストール時に要求される場合があります
-ブラウザ: 最新版の主要ブラウザ
-メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。
-
-
-
-  Python 環境を利用したインストール
+  必要なもの
   
     
     見出しへのリンク
   
 
 
-  Step 1. 必要ソフトの確認
+uv（Python のパッケージ管理ツール）
+Google Chrome（推奨）
+
+
+  uv のインストール
   
     
     見出しへのリンク
   
 
 
-ブラウザ
-
-最新版の主要ブラウザがインストールされていることを確認してください。
-
-
-Python および pipenv
-
-Python 3.10 以上、pip コマンドがインストールされていることを確認します。
-pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。
-
-
-
-
-  Step 2. NicolNavi の取得
+  macOS / Linux
   
     
     見出しへのリンク
   
 
 
-GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。
-ターミナルを開き、展開したフォルダへ移動します。
+Terminal を開く。
+curl -LsSf https://astral.sh/uv/install.sh | sh を実行する。
+Terminal を閉じる。
 
-cd /path/to/nicolnavi
 
-  Step 3. 仮想環境の構築と依存関係のインストール
+  Windows（PowerShell）
   
     
     見出しへのリンク
   
 
 
-ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。
-
-pipenv shell
-pipenv install
-
-Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。
+PowerShell を開く。
+powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot; を実行する。
+PowerShell を閉じる。
 
 
-  
-    Info
-  
-  pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。
-
-
-
-  Step 4. アプリの起動確認
+  NicolNavi のセットアップ
   
     
     見出しへのリンク
   
 
 
-仮想環境がアクティブな状態で以下のコマンドを実行します。
-
-python gui/src/main.py
-
-別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。
+https://github.com/Tan-Furukawa/niconavi_app を開く。
+Code → Download ZIP をクリックし、ダウンロードした ZIP を任意の場所に展開する。
 
 
-
-  トラブルシューティング
+  macOS の場合
   
     
     見出しへのリンク
   
 
 
-ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。
-ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。
-pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。
 
-不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
+展開した niconavi_app フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。">
 <meta name="keywords" content="blog,developer,personal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="NicolNavi インストールガイド">
-  <meta name="twitter:description" content="NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。
-事前準備と前提条件 見出しへのリンク 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション 管理者権限: 初回インストール時に要求される場合があります ブラウザ: 最新版の主要ブラウザ メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。 Python 環境を利用したインストール 見出しへのリンク Step 1. 必要ソフトの確認 見出しへのリンク ブラウザ 最新版の主要ブラウザがインストールされていることを確認してください。 Python および pipenv Python 3.10 以上、pip コマンドがインストールされていることを確認します。 pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。 Step 2. NicolNavi の取得 見出しへのリンク GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。 ターミナルを開き、展開したフォルダへ移動します。 cd /path/to/nicolnavi Step 3. 仮想環境の構築と依存関係のインストール 見出しへのリンク ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。 pipenv shell pipenv install Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。 Info pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。 Step 4. アプリの起動確認 見出しへのリンク 仮想環境がアクティブな状態で以下のコマンドを実行します。 python gui/src/main.py 別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。 トラブルシューティング 見出しへのリンク ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。 ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。 pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。 不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
+  <meta name="twitter:description" content="NicolNavi インストールガイド 見出しへのリンク 必要なもの 見出しへのリンク uv（Python のパッケージ管理ツール） Google Chrome（推奨） uv のインストール 見出しへのリンク macOS / Linux 見出しへのリンク Terminal を開く。 curl -LsSf https://astral.sh/uv/install.sh | sh を実行する。 Terminal を閉じる。 Windows（PowerShell） 見出しへのリンク PowerShell を開く。 powershell -ExecutionPolicy ByPass -c &#34;irm https://astral.sh/uv/install.ps1 | iex&#34; を実行する。 PowerShell を閉じる。 NicolNavi のセットアップ 見出しへのリンク https://github.com/Tan-Furukawa/niconavi_app を開く。 Code → Download ZIP をクリックし、ダウンロードした ZIP を任意の場所に展開する。 macOS の場合 見出しへのリンク 展開した niconavi_app フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。">
 
 <meta property="og:url" content="https://tan-furukawa.github.io/niconavi/ja/install/">
-  <meta property="og:site_name" content="NicoNicoNnavi">
+  <meta property="og:site_name" content="NicoNavi">
   <meta property="og:title" content="NicolNavi インストールガイド">
-  <meta property="og:description" content="NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。
-事前準備と前提条件 見出しへのリンク 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション 管理者権限: 初回インストール時に要求される場合があります ブラウザ: 最新版の主要ブラウザ メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。 Python 環境を利用したインストール 見出しへのリンク Step 1. 必要ソフトの確認 見出しへのリンク ブラウザ 最新版の主要ブラウザがインストールされていることを確認してください。 Python および pipenv Python 3.10 以上、pip コマンドがインストールされていることを確認します。 pip install --upgrade pip で pip を最新化し、pip install pipenv を実行して pipenv を導入します。 Step 2. NicolNavi の取得 見出しへのリンク GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。 ターミナルを開き、展開したフォルダへ移動します。 cd /path/to/nicolnavi Step 3. 仮想環境の構築と依存関係のインストール 見出しへのリンク ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。 pipenv shell pipenv install Pipfile.lock が作成され、依存パッケージのインストールが完了したら準備完了です。 Info pipenv shell 実行後のプロンプトに (nicolnavi) などの仮想環境名が表示されることを確認してください。終了する際は exit と入力すると仮想環境から抜けられます。 Step 4. アプリの起動確認 見出しへのリンク 仮想環境がアクティブな状態で以下のコマンドを実行します。 python gui/src/main.py 別途ブラウザを起動し、http://localhost:8551/ にアクセスしてNicolNaviの画面が表示されるか確認します。 トラブルシューティング 見出しへのリンク ブラウザで画面が表示されない: python gui/src/main.py が動作中か確認し、停止している場合は再実行してください。 ポート 8551 が使用中と表示される: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。 pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。 不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。">
+  <meta property="og:description" content="NicolNavi インストールガイド 見出しへのリンク 必要なもの 見出しへのリンク uv（Python のパッケージ管理ツール） Google Chrome（推奨） uv のインストール 見出しへのリンク macOS / Linux 見出しへのリンク Terminal を開く。 curl -LsSf https://astral.sh/uv/install.sh | sh を実行する。 Terminal を閉じる。 Windows（PowerShell） 見出しへのリンク PowerShell を開く。 powershell -ExecutionPolicy ByPass -c &#34;irm https://astral.sh/uv/install.ps1 | iex&#34; を実行する。 PowerShell を閉じる。 NicolNavi のセットアップ 見出しへのリンク https://github.com/Tan-Furukawa/niconavi_app を開く。 Code → Download ZIP をクリックし、ダウンロードした ZIP を任意の場所に展開する。 macOS の場合 見出しへのリンク 展開した niconavi_app フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。">
   <meta property="og:locale" content="ja">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-10-15T13:10:14+09:00">
@@ -209,7 +173,7 @@ pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度
   <section class="container">
     
     <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/ja/">
-      NicoNicoNnavi
+      NicoNavi
     </a>
     
     
@@ -272,110 +236,107 @@ pipenv install で失敗する: pipenv --rm で仮想環境を削除し、再度
       </h1>
     </header>
 
-    <p>NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。</p>
-<h2 id="事前準備と前提条件">
-  事前準備と前提条件
-  <a class="heading-link" href="#%e4%ba%8b%e5%89%8d%e6%ba%96%e5%82%99%e3%81%a8%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6">
+    <h1 id="nicolnavi-インストールガイド">
+  NicolNavi インストールガイド
+  <a class="heading-link" href="#nicolnavi-%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%82%ac%e3%82%a4%e3%83%89">
+    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
+    <span class="sr-only">見出しへのリンク</span>
+  </a>
+</h1>
+<h2 id="必要なもの">
+  必要なもの
+  <a class="heading-link" href="#%e5%bf%85%e8%a6%81%e3%81%aa%e3%82%82%e3%81%ae">
     <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
     <span class="sr-only">見出しへのリンク</span>
   </a>
 </h2>
 <ul>
-<li>対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション</li>
-<li>管理者権限: 初回インストール時に要求される場合があります</li>
-<li>ブラウザ: 最新版の主要ブラウザ</li>
-<li>メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。</li>
+<li>uv（Python のパッケージ管理ツール）</li>
+<li>Google Chrome（推奨）</li>
 </ul>
-<hr>
-<h2 id="python-環境を利用したインストール">
-  Python 環境を利用したインストール
-  <a class="heading-link" href="#python-%e7%92%b0%e5%a2%83%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%9f%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab">
+<h2 id="uv-のインストール">
+  uv のインストール
+  <a class="heading-link" href="#uv-%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab">
     <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
     <span class="sr-only">見出しへのリンク</span>
   </a>
 </h2>
-<h3 id="step-1-必要ソフトの確認">
-  Step 1. 必要ソフトの確認
-  <a class="heading-link" href="#step-1-%e5%bf%85%e8%a6%81%e3%82%bd%e3%83%95%e3%83%88%e3%81%ae%e7%a2%ba%e8%aa%8d">
+<h3 id="macos--linux">
+  macOS / Linux
+  <a class="heading-link" href="#macos--linux">
     <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
     <span class="sr-only">見出しへのリンク</span>
   </a>
 </h3>
 <ol>
-<li><strong>ブラウザ</strong>
-<ul>
-<li>最新版の主要ブラウザがインストールされていることを確認してください。</li>
-</ul>
+<li>Terminal を開く。</li>
+<li><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code> を実行する。</li>
+<li>Terminal を閉じる。</li>
+</ol>
+<h3 id="windowspowershell">
+  Windows（PowerShell）
+  <a class="heading-link" href="#windowspowershell">
+    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
+    <span class="sr-only">見出しへのリンク</span>
+  </a>
+</h3>
+<ol>
+<li>PowerShell を開く。</li>
+<li><code>powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</code> を実行する。</li>
+<li>PowerShell を閉じる。</li>
+</ol>
+<h2 id="nicolnavi-のセットアップ">
+  NicolNavi のセットアップ
+  <a class="heading-link" href="#nicolnavi-%e3%81%ae%e3%82%bb%e3%83%83%e3%83%88%e3%82%a2%e3%83%83%e3%83%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
+    <span class="sr-only">見出しへのリンク</span>
+  </a>
+</h2>
+<ol>
+<li><a href="https://github.com/Tan-Furukawa/niconavi_app"  class="external-link" target="_blank" rel="noopener">https://github.com/Tan-Furukawa/niconavi_app</a> を開く。</li>
+<li><code>Code</code> → <code>Download ZIP</code> をクリックし、ダウンロードした ZIP を任意の場所に展開する。</li>
+</ol>
+<h3 id="macos-の場合">
+  macOS の場合
+  <a class="heading-link" href="#macos-%e3%81%ae%e5%a0%b4%e5%90%88">
+    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
+    <span class="sr-only">見出しへのリンク</span>
+  </a>
+</h3>
+<ol>
+<li>
+<p>展開した <code>niconavi_app</code> フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。</p>
 </li>
-<li><strong>Python および pipenv</strong>
+<li>
+<p>Terminal で以下を実行する。</p>
+<pre tabindex="0"><code>chmod 777 ./run_niconavi_mac.sh
+./run_niconavi_mac.sh
+</code></pre></li>
+</ol>
+<h3 id="windows-の場合">
+  Windows の場合
+  <a class="heading-link" href="#windows-%e3%81%ae%e5%a0%b4%e5%90%88">
+    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
+    <span class="sr-only">見出しへのリンク</span>
+  </a>
+</h3>
+<p><code>run_niconavi_Windows.bat</code> をダブルクリックする。</p>
 <ul>
-<li>Python 3.10 以上、<code>pip</code> コマンドがインストールされていることを確認します。</li>
-<li><code>pip install --upgrade pip</code> で pip を最新化し、<code>pip install pipenv</code> を実行して pipenv を導入します。</li>
+<li>必要な Python 環境が自動でインストールされます。インストール完了後、Google Chrome が自動で起動し NicolNavi が開始します。<strong>初回は立ち上がりに最大 5 分ほどかかることがあります。Chrome 上で <code>This site can’t be reached</code>または<code>サイトが見つかりません</code> と表示されても、そのままお待ちください。</strong></li>
+<li>次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、<code>chmod 777 ./run_niconavi_mac.sh</code> のコマンドは初回のみで構いません。</li>
 </ul>
-</li>
-</ol>
-<h3 id="step-2-nicolnavi-の取得">
-  Step 2. NicolNavi の取得
-  <a class="heading-link" href="#step-2-nicolnavi-%e3%81%ae%e5%8f%96%e5%be%97">
-    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
-    <span class="sr-only">見出しへのリンク</span>
-  </a>
-</h3>
-<ol>
-<li>GitHub リポジトリ (<a href="https://github.com/Tan-Furukawa/nicolnavi"  class="external-link" target="_blank" rel="noopener">https://github.com/Tan-Furukawa/nicolnavi</a>) から ZIP をダウンロードし、任意のディレクトリに展開します。</li>
-<li>ターミナルを開き、展開したフォルダへ移動します。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /path/to/nicolnavi
-</span></span></code></pre></div><h3 id="step-3-仮想環境の構築と依存関係のインストール">
-  Step 3. 仮想環境の構築と依存関係のインストール
-  <a class="heading-link" href="#step-3-%e4%bb%ae%e6%83%b3%e7%92%b0%e5%a2%83%e3%81%ae%e6%a7%8b%e7%af%89%e3%81%a8%e4%be%9d%e5%ad%98%e9%96%a2%e4%bf%82%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab">
-    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
-    <span class="sr-only">見出しへのリンク</span>
-  </a>
-</h3>
-<ol>
-<li>ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipenv shell
-</span></span><span style="display:flex;"><span>pipenv install
-</span></span></code></pre></div><ol start="2">
-<li><code>Pipfile.lock</code> が作成され、依存パッケージのインストールが完了したら準備完了です。</li>
-</ol>
-<div class="notice info">
-  <div class="notice-title">
-    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
-  </div>
-  <div class="notice-content"><code>pipenv shell</code> 実行後のプロンプトに <code>(nicolnavi)</code> などの仮想環境名が表示されることを確認してください。終了する際は <code>exit</code> と入力すると仮想環境から抜けられます。</div>
-</div>
-
-<h3 id="step-4-アプリの起動確認">
-  Step 4. アプリの起動確認
-  <a class="heading-link" href="#step-4-%e3%82%a2%e3%83%97%e3%83%aa%e3%81%ae%e8%b5%b7%e5%8b%95%e7%a2%ba%e8%aa%8d">
-    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
-    <span class="sr-only">見出しへのリンク</span>
-  </a>
-</h3>
-<ol>
-<li>仮想環境がアクティブな状態で以下のコマンドを実行します。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python gui/src/main.py
-</span></span></code></pre></div><ol start="2">
-<li>別途ブラウザを起動し、<code>http://localhost:8551/</code> にアクセスしてNicolNaviの画面が表示されるか確認します。</li>
-</ol>
-<hr>
-<h2 id="トラブルシューティング">
-  トラブルシューティング
-  <a class="heading-link" href="#%e3%83%88%e3%83%a9%e3%83%96%e3%83%ab%e3%82%b7%e3%83%a5%e3%83%bc%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0">
+<h2 id="手動での実行">
+  手動での実行
+  <a class="heading-link" href="#%e6%89%8b%e5%8b%95%e3%81%a7%e3%81%ae%e5%ae%9f%e8%a1%8c">
     <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
     <span class="sr-only">見出しへのリンク</span>
   </a>
 </h2>
 <ul>
-<li><strong>ブラウザで画面が表示されない</strong>: <code>python gui/src/main.py</code> が動作中か確認し、停止している場合は再実行してください。</li>
-<li><strong>ポート 8551 が使用中と表示される</strong>: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。</li>
-<li><strong>pipenv install で失敗する</strong>: <code>pipenv --rm</code> で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。</li>
+<li>依存関係のインストール: <code>uv sync</code></li>
+<li>アプリの起動: <code>uv run python niconavi.py</code></li>
+<li>アプリの URL: <code>http://localhost:8551/app</code></li>
 </ul>
-<p>不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。</p>
 
   </article>
 </section>

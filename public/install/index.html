@@ -4,7 +4,7 @@
 <head>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
-  Installation Guide · NicoNicoNnavi
+  Installation Guide · NicoNavi
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,121 +21,81 @@
     Link to heading
   
 
-This guide walks you through getting NicolNavi up and running in a Python environment. Review the checklist below before you start.
 
-  Before You Begin
+  Requirements
   
     
     Link to heading
   
 
 
-Supported systems: Windows 10 (64-bit) or later, macOS Monterey (12) or later, and popular Linux distributions
-Permissions: Administrator rights may be required during the initial setup
-Browser: A modern, up-to-date web browser
-Memory: 16 GB RAM or more is strongly recommended; lower-spec systems may not run reliably
+uv (Python package manager)
+Google Chrome (recommended)
 
 
-
-  Installing with a Python Environment
+  Install uv
   
     
     Link to heading
   
 
 
-  Step 1. Confirm Prerequisites
+  macOS / Linux
   
     
     Link to heading
   
 
 
-Web browser
-Ensure you have a modern browser installed.
-Python and pipenv
-Ensure Python 3.10 or newer is installed and that the pip command works. Update pip with pip install --upgrade pip, then install pipenv using pip install pipenv.
+Open Terminal.
+Run curl -LsSf https://astral.sh/uv/install.sh | sh.
+Close Terminal.
 
 
-  Step 2. Download NicolNavi
+  Windows (PowerShell)
   
     
     Link to heading
   
 
 
-Grab the ZIP archive from https://github.com/Tan-Furukawa/nicolnavi and extract it.
-Open a terminal and move into the project directory.
+Open PowerShell.
+Run powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;.
+Close PowerShell.
 
-cd /path/to/nicolnavi
 
-  Step 3. Set Up the Virtual Environment
+  Set up NicolNavi
   
     
     Link to heading
   
 
 
-Run the following commands to create and populate a pipenv environment:
-
-pipenv shell
-pipenv install
-
-Wait for Pipfile.lock to be generated and dependency installation to finish.
+Open https://github.com/Tan-Furukawa/niconavi_app.
+Click Code → Download ZIP, then extract the ZIP to any location.
 
 
-  
-    Info
-  
-  The prompt should show the virtual environment name—typically something like (nicolnavi). Type exit to leave the environment when you are done.
-
-
-
-  Step 4. Launch the Application
+  macOS
   
     
     Link to heading
   
 
 
-With the pipenv shell still active, start the UI:
 
-python gui/src/main.py
-
-Open your browser and go to http://localhost:8551/ to confirm that NicolNavi loads.
-
-
-
-  Troubleshooting
-  
-    
-    Link to heading
-  
-
-
-Nothing loads in the browser: Make sure python gui/src/main.py is still running. Restart it if necessary.
-Port 8551 already in use: Another application is occupying the port. Stop that application or adjust NicolNavi’s port setting.
-pipenv install fails: Run pipenv --rm to remove the environment and repeat Step 3.
-
-If you encounter issues you cannot resolve, note any error messages and contact the development team for assistance.">
+Right-click the extracted niconavi_app folder → Service → New Terminal tab at Finder (or otherwise open Terminal in that folder).">
 <meta name="keywords" content="blog,developer,personal">
 
 
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Installation Guide">
-  <meta name="twitter:description" content="NicolNavi Installation Guide Link to heading This guide walks you through getting NicolNavi up and running in a Python environment. Review the checklist below before you start.
-Before You Begin Link to heading Supported systems: Windows 10 (64-bit) or later, macOS Monterey (12) or later, and popular Linux distributions Permissions: Administrator rights may be required during the initial setup Browser: A modern, up-to-date web browser Memory: 16 GB RAM or more is strongly recommended; lower-spec systems may not run reliably Installing with a Python Environment Link to heading Step 1. Confirm Prerequisites Link to heading Web browser
-Ensure you have a modern browser installed. Python and pipenv
-Ensure Python 3.10 or newer is installed and that the pip command works. Update pip with pip install --upgrade pip, then install pipenv using pip install pipenv. Step 2. Download NicolNavi Link to heading Grab the ZIP archive from https://github.com/Tan-Furukawa/nicolnavi and extract it. Open a terminal and move into the project directory. cd /path/to/nicolnavi Step 3. Set Up the Virtual Environment Link to heading Run the following commands to create and populate a pipenv environment: pipenv shell pipenv install Wait for Pipfile.lock to be generated and dependency installation to finish. Info The prompt should show the virtual environment name—typically something like (nicolnavi). Type exit to leave the environment when you are done. Step 4. Launch the Application Link to heading With the pipenv shell still active, start the UI: python gui/src/main.py Open your browser and go to http://localhost:8551/ to confirm that NicolNavi loads. Troubleshooting Link to heading Nothing loads in the browser: Make sure python gui/src/main.py is still running. Restart it if necessary. Port 8551 already in use: Another application is occupying the port. Stop that application or adjust NicolNavi’s port setting. pipenv install fails: Run pipenv --rm to remove the environment and repeat Step 3. If you encounter issues you cannot resolve, note any error messages and contact the development team for assistance.">
+  <meta name="twitter:description" content="NicolNavi Installation Guide Link to heading Requirements Link to heading uv (Python package manager) Google Chrome (recommended) Install uv Link to heading macOS / Linux Link to heading Open Terminal. Run curl -LsSf https://astral.sh/uv/install.sh | sh. Close Terminal. Windows (PowerShell) Link to heading Open PowerShell. Run powershell -ExecutionPolicy ByPass -c &#34;irm https://astral.sh/uv/install.ps1 | iex&#34;. Close PowerShell. Set up NicolNavi Link to heading Open https://github.com/Tan-Furukawa/niconavi_app. Click Code → Download ZIP, then extract the ZIP to any location. macOS Link to heading Right-click the extracted niconavi_app folder → Service → New Terminal tab at Finder (or otherwise open Terminal in that folder).">
 
 <meta property="og:url" content="https://tan-furukawa.github.io/niconavi/install/">
-  <meta property="og:site_name" content="NicoNicoNnavi">
+  <meta property="og:site_name" content="NicoNavi">
   <meta property="og:title" content="Installation Guide">
-  <meta property="og:description" content="NicolNavi Installation Guide Link to heading This guide walks you through getting NicolNavi up and running in a Python environment. Review the checklist below before you start.
-Before You Begin Link to heading Supported systems: Windows 10 (64-bit) or later, macOS Monterey (12) or later, and popular Linux distributions Permissions: Administrator rights may be required during the initial setup Browser: A modern, up-to-date web browser Memory: 16 GB RAM or more is strongly recommended; lower-spec systems may not run reliably Installing with a Python Environment Link to heading Step 1. Confirm Prerequisites Link to heading Web browser
-Ensure you have a modern browser installed. Python and pipenv
-Ensure Python 3.10 or newer is installed and that the pip command works. Update pip with pip install --upgrade pip, then install pipenv using pip install pipenv. Step 2. Download NicolNavi Link to heading Grab the ZIP archive from https://github.com/Tan-Furukawa/nicolnavi and extract it. Open a terminal and move into the project directory. cd /path/to/nicolnavi Step 3. Set Up the Virtual Environment Link to heading Run the following commands to create and populate a pipenv environment: pipenv shell pipenv install Wait for Pipfile.lock to be generated and dependency installation to finish. Info The prompt should show the virtual environment name—typically something like (nicolnavi). Type exit to leave the environment when you are done. Step 4. Launch the Application Link to heading With the pipenv shell still active, start the UI: python gui/src/main.py Open your browser and go to http://localhost:8551/ to confirm that NicolNavi loads. Troubleshooting Link to heading Nothing loads in the browser: Make sure python gui/src/main.py is still running. Restart it if necessary. Port 8551 already in use: Another application is occupying the port. Stop that application or adjust NicolNavi’s port setting. pipenv install fails: Run pipenv --rm to remove the environment and repeat Step 3. If you encounter issues you cannot resolve, note any error messages and contact the development team for assistance.">
+  <meta property="og:description" content="NicolNavi Installation Guide Link to heading Requirements Link to heading uv (Python package manager) Google Chrome (recommended) Install uv Link to heading macOS / Linux Link to heading Open Terminal. Run curl -LsSf https://astral.sh/uv/install.sh | sh. Close Terminal. Windows (PowerShell) Link to heading Open PowerShell. Run powershell -ExecutionPolicy ByPass -c &#34;irm https://astral.sh/uv/install.ps1 | iex&#34;. Close PowerShell. Set up NicolNavi Link to heading Open https://github.com/Tan-Furukawa/niconavi_app. Click Code → Download ZIP, then extract the ZIP to any location. macOS Link to heading Right-click the extracted niconavi_app folder → Service → New Terminal tab at Finder (or otherwise open Terminal in that folder).">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:published_time" content="2025-10-15T13:10:14+09:00">
@@ -213,7 +173,7 @@ Ensure Python 3.10 or newer is installed and that the pip command works. Update 
   <section class="container">
     
     <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/">
-      NicoNicoNnavi
+      NicoNavi
     </a>
     
     
@@ -283,103 +243,100 @@ Ensure Python 3.10 or newer is installed and that the pip command works. Update 
     <span class="sr-only">Link to heading</span>
   </a>
 </h1>
-<p>This guide walks you through getting NicolNavi up and running in a Python environment. Review the checklist below before you start.</p>
-<h2 id="before-you-begin">
-  Before You Begin
-  <a class="heading-link" href="#before-you-begin">
+<h2 id="requirements">
+  Requirements
+  <a class="heading-link" href="#requirements">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
-<li>Supported systems: Windows 10 (64-bit) or later, macOS Monterey (12) or later, and popular Linux distributions</li>
-<li>Permissions: Administrator rights may be required during the initial setup</li>
-<li>Browser: A modern, up-to-date web browser</li>
-<li>Memory: 16 GB RAM or more is strongly recommended; lower-spec systems may not run reliably</li>
+<li>uv (Python package manager)</li>
+<li>Google Chrome (recommended)</li>
 </ul>
-<hr>
-<h2 id="installing-with-a-python-environment">
-  Installing with a Python Environment
-  <a class="heading-link" href="#installing-with-a-python-environment">
+<h2 id="install-uv">
+  Install uv
+  <a class="heading-link" href="#install-uv">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
-<h3 id="step-1-confirm-prerequisites">
-  Step 1. Confirm Prerequisites
-  <a class="heading-link" href="#step-1-confirm-prerequisites">
+<h3 id="macos--linux">
+  macOS / Linux
+  <a class="heading-link" href="#macos--linux">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
 <ol>
-<li><strong>Web browser</strong><br>
-Ensure you have a modern browser installed.</li>
-<li><strong>Python and pipenv</strong><br>
-Ensure Python 3.10 or newer is installed and that the <code>pip</code> command works. Update pip with <code>pip install --upgrade pip</code>, then install pipenv using <code>pip install pipenv</code>.</li>
+<li>Open Terminal.</li>
+<li>Run <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code>.</li>
+<li>Close Terminal.</li>
 </ol>
-<h3 id="step-2-download-nicolnavi">
-  Step 2. Download NicolNavi
-  <a class="heading-link" href="#step-2-download-nicolnavi">
+<h3 id="windows-powershell">
+  Windows (PowerShell)
+  <a class="heading-link" href="#windows-powershell">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
 <ol>
-<li>Grab the ZIP archive from <a href="https://github.com/Tan-Furukawa/nicolnavi"  class="external-link" target="_blank" rel="noopener">https://github.com/Tan-Furukawa/nicolnavi</a> and extract it.</li>
-<li>Open a terminal and move into the project directory.</li>
+<li>Open PowerShell.</li>
+<li>Run <code>powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;</code>.</li>
+<li>Close PowerShell.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /path/to/nicolnavi
-</span></span></code></pre></div><h3 id="step-3-set-up-the-virtual-environment">
-  Step 3. Set Up the Virtual Environment
-  <a class="heading-link" href="#step-3-set-up-the-virtual-environment">
+<h2 id="set-up-nicolnavi">
+  Set up NicolNavi
+  <a class="heading-link" href="#set-up-nicolnavi">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ol>
+<li>Open <a href="https://github.com/Tan-Furukawa/niconavi_app"  class="external-link" target="_blank" rel="noopener">https://github.com/Tan-Furukawa/niconavi_app</a>.</li>
+<li>Click <code>Code</code> → <code>Download ZIP</code>, then extract the ZIP to any location.</li>
+</ol>
+<h3 id="macos">
+  macOS
+  <a class="heading-link" href="#macos">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
 <ol>
-<li>Run the following commands to create and populate a pipenv environment:</li>
+<li>
+<p>Right-click the extracted <code>niconavi_app</code> folder → Service → New Terminal tab at Finder (or otherwise open Terminal in that folder).</p>
+</li>
+<li>
+<p>In Terminal, run:</p>
+<pre tabindex="0"><code>chmod 777 ./run_niconavi_mac.sh
+./run_niconavi_mac.sh
+</code></pre></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pipenv shell
-</span></span><span style="display:flex;"><span>pipenv install
-</span></span></code></pre></div><ol start="2">
-<li>Wait for <code>Pipfile.lock</code> to be generated and dependency installation to finish.</li>
-</ol>
-<div class="notice info">
-  <div class="notice-title">
-    <i class="fa-solid fa-exclamation-circle" aria-hidden="true"></i>Info
-  </div>
-  <div class="notice-content">The prompt should show the virtual environment name—typically something like <code>(nicolnavi)</code>. Type <code>exit</code> to leave the environment when you are done.</div>
-</div>
-
-<h3 id="step-4-launch-the-application">
-  Step 4. Launch the Application
-  <a class="heading-link" href="#step-4-launch-the-application">
+<h3 id="windows">
+  Windows
+  <a class="heading-link" href="#windows">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<ol>
-<li>With the pipenv shell still active, start the UI:</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python gui/src/main.py
-</span></span></code></pre></div><ol start="2">
-<li>Open your browser and go to <code>http://localhost:8551/</code> to confirm that NicolNavi loads.</li>
-</ol>
-<hr>
-<h2 id="troubleshooting">
-  Troubleshooting
-  <a class="heading-link" href="#troubleshooting">
+<p>Double-click <code>run_niconavi_Windows.bat</code>.</p>
+<ul>
+<li>The required Python environment installs automatically. When installation finishes, Google Chrome will launch and NicolNavi will start. <strong>On the first install, startup can take up to about 5 minutes. Even if Chrome shows <code>This site can’t be reached</code>, please wait.</strong></li>
+<li>Use the same steps to start the app next time; subsequent launches are faster. The <code>chmod 777</code> command is only needed the first time.</li>
+</ul>
+<h2 id="manual-workflow">
+  Manual workflow
+  <a class="heading-link" href="#manual-workflow">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
 </h2>
 <ul>
-<li><strong>Nothing loads in the browser</strong>: Make sure <code>python gui/src/main.py</code> is still running. Restart it if necessary.</li>
-<li><strong>Port 8551 already in use</strong>: Another application is occupying the port. Stop that application or adjust NicolNavi’s port setting.</li>
-<li><strong><code>pipenv install</code> fails</strong>: Run <code>pipenv --rm</code> to remove the environment and repeat Step 3.</li>
+<li>Install deps: <code>uv sync</code></li>
+<li>Run app: <code>uv run python niconavi.py</code></li>
+<li>App URL: <code>http://localhost:8551/app</code></li>
 </ul>
-<p>If you encounter issues you cannot resolve, note any error messages and contact the development team for assistance.</p>
 
   </article>
 </section>
