@@ -23,11 +23,11 @@ title = 'Tutorial2 - 鉱物の抽出と可視化'
 ### 3.2 回転中心の調整
 1. 処理完了後、自動的に回転中心調整画面へ遷移します。
 
-<img src="/images/page/tutorial/tutorial2/pic1.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic1.png" style="width: 100%;">
 
 2. このデータでは自動検出された中心が実際の同心円パターンから外れています。`cx` と `cy` をクリックし、赤い十字を実際の中心に合わせてください。
 
-<img src="/images/page/tutorial/tutorial2/pic2.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic2.png" style="width: 100%;">
 図：中心を手動調整した状態
 
 3. 調整後、`Continue` を押して回転中心を確定します。
@@ -45,11 +45,11 @@ title = 'Tutorial2 - 鉱物の抽出と可視化'
 
 2. `color` と `extinction color` を切り替えると、`color` の方が暗く表示される場合があります。
 
-<img src="/images/page/tutorial/tutorial2/pic3.png" style="width: 80%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic3.png" style="width: 80%;">
 
 図：`Image list` が `color` のとき
 
-<img src="/images/page/tutorial/tutorial2/pic4.png" style="width: 80%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic4.png" style="width: 80%;">
 
 図：`Image list` が `extinction color` のとき
 
@@ -69,7 +69,7 @@ title = 'Tutorial2 - 鉱物の抽出と可視化'
 
    をそのまま表示して明度を確認します。
 
-<img src="/images/page/tutorial/tutorial2/pic5.png" style="width: 80%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic5.png" style="width: 80%;">
 
 図：`Image list` が `color` で、`brightness correction`のチェックを外したとき
 
@@ -79,7 +79,7 @@ title = 'Tutorial2 - 鉱物の抽出と可視化'
 3. `Calculate grain boundaries` を再度押し、調整結果を反映します。
 4. 粒界が意図どおりになったら、`Continue` を押してラベル付与画面へ進みます。
 
-<img src="/images/page/tutorial/tutorial2/pic6.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic6.png" style="width: 30%;">
 
 ### 3.5 鉱物ラベルの付与
 1. パラメータ欄の `Label Name` に `garnet` を入力し、`+` を押します。同様に `inclusion`、`matrix` も追加します。
@@ -87,16 +87,16 @@ title = 'Tutorial2 - 鉱物の抽出と可視化'
 3. `inclusion` と `matrix` も同様に、該当する領域を 5～10 個ずつ目安にラベル付けします。
 4. 誤判定が多い場合はラベルの追加を繰り返し、結果が安定したら `Done` を押してラベル設定を確定します。今回の例では合計 48 粒子を教師データとして指定しました。
 
-<img src="/images/page/tutorial/tutorial2/pic7.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic7.png" style="width: 100%;">
 
 ### 3.6 光学的異方性の可視化
 1. `Analysis` タブに切り替え、`inclusion` と `matrix` のチェックを外してざくろ石のみを表示します。
 
-<img src="/images/page/tutorial/tutorial2/pic8.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic8.png" style="width: 30%;">
 
 2. `map` タブに戻り、`image list` から `extinction angle` を選択します。選択した鉱物以外は黒く表示され、ざくろ石内部のセクターゾーニングが強調されます。
 
-<img src="/images/page/tutorial/tutorial2/pic9.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial2/pic9.png" style="width: 100%;">
 
 3. 必要に応じて画面上部のメニューから `Save as PDF` を選択し、可視化結果を PDF として保存します。
 

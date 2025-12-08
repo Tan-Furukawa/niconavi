@@ -43,7 +43,7 @@ NicolNavi の CPO 解析は 5 本の動画を入力して処理します。「Da
 {{< /notice >}}
 
 
-<img src="/images/page/tutorial/tutorial3/pic1.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic1.png" style="width: 30%;">
 
 ### 4.2 前処理と回転中心の確認
 1. `Start` を押して動画の離散化と基準画像生成を始めます。Tutorial 1・2 と比べて処理時間が長い点に注意してください。
@@ -55,14 +55,14 @@ NicolNavi の CPO 解析は 5 本の動画を入力して処理します。「Da
 2. `median filter` のスライダーを 1 段階右に動かし、その他の感度パラメータは下図を参照します。
 3. `Calculate grain boundaries` を再度押して結果を更新します。粒界が適切になったら `Continue` を押し、ラベル付け画面へ進みます。
 
-<img src="/images/page/tutorial/tutorial3/pic2.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic2.png" style="width: 30%;">
 
 ### 4.4 鉱物ラベルの付与
 1. 今回は上下の単結晶石英に挟まれた石英脈の方位を調べる設定です。`Label name` に `single crystal quartz` と `vein quartz` を追加します。
 2. それぞれのラベルを選択し、左画面で該当する粒子をクリックして教師データを追加します。今回は17 粒子のラベルを与えたました。(環境により指定しなければならないラベルの個数は異なります。)
 3. 誤ラベルが残る場合は、追加で教師データを増やしてください。分類が安定したら `Done` を押してラベルを確定します。
 
-<img src="/images/page/tutorial/tutorial3/pic3.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic3.png" style="width: 100%;">
 
 ### 4.5 CPO 解析の実行
 1. `analysis` タブに切り替え、ビューを `rose diagram` から `CPO` に変更します。
@@ -85,7 +85,7 @@ NicolNavi の CPO 解析は 5 本の動画を入力して処理します。「Da
 ここで入力されるmax Rの数値をもとに、鉱物のレタデーションの再計算・結晶軸の傾きの計算が行われます。
 {{< /notice >}}
 
-<img src="/images/page/tutorial/tutorial3/pic4.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic4.png" style="width: 30%;">
 
 {{< notice warning >}}
 計算中に別タブへ切り替えたり、アプリを最小化すると処理が中断される場合があります。プログレスバーが消えるまで待ってから次の操作に移ってください。
@@ -98,21 +98,21 @@ NicolNavi の CPO 解析は 5 本の動画を入力して処理します。「Da
 COIマップは基本的に一部分が欠損します。この理由は、薄片を傾けたときに顕微鏡の視野がずれますが、傾ける前後の画像の比較において、このズレに起因する参照できないピクセルが発生するためです。
 {{< /notice >}}
 
-<img src="/images/page/tutorial/tutorial3/pic5.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic5.png" style="width: 100%;">
 
 ### 4.7 極図での可視化
 1. `analysis` タブに戻り、`single crystal quartz` のチェックを外して石英脈にフォーカスします。
 2. ビューを `polar plot` に切り替え、`φ = 0–360°` を選択すると、各粒子を 1 点としてプロットした極図が表示されます。
 
-<img src="/images/page/tutorial/tutorial3/pic6.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic6.png" style="width: 100%;">
 
 3. `Plot for each pixel` をオンにすると、粒子ではなくピクセル単位で c 軸方位を描画できます。局所的な方位ばらつきを確認したいときに有効です。
 
-<img src="/images/page/tutorial/tutorial3/pic7.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic7.png" style="width: 100%;">
 
 4. `display points` にチェックを入れると、極図の推定に使われた方位データ点が表示されます。離散化時に点が重なるのを避けるため、既定で 0.5% のノイズが加えられており、必要に応じて `Point noise` で調整できます。
 
-<img src="/images/page/tutorial/tutorial3/pic8.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic8.png" style="width: 100%;">
 
 ## 5. まとめ
 - CPO 解析では、複数条件で撮影した動画を組み合わせて位相差の変化を再構成し、石英の c 軸方位を推定します。

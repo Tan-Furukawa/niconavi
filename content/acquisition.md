@@ -14,7 +14,7 @@ Confirm the following before you begin.
 - The microscope stage has angle markings for rotation.
 - When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor.
 
-<img src="/images/page/acquisition/pic1.svg" style="width: 70%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic1.svg" style="width: 70%;">
 Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.
 
 - The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.
@@ -32,11 +32,11 @@ Use this workflow to shoot a standard stage-rotation video. It supports boundary
 5. Rotate the stage slowly and counterclockwise for a full 360° (diagram c). About one minute per revolution keeps the motion stable. Minor pauses or speed changes are acceptable.
 6. Stop recording and save the file as `.avi` or `.mp4`.
 
-<img src="/images/page/acquisition/pic2.svg" style="width: 70%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic2.svg" style="width: 70%;">
 Figure: Rotate the stage smoothly from 0° to 360°.
 
 <video controls width="70%">
-    <source src="/images/page/acquisition/pic3.mp4" type="video/mp4">
+    <source src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic3.mp4" type="video/mp4">
 </video>
 Figure: Sample rotation video. Aim for roughly one minute per revolution at a steady pace.
 
@@ -47,7 +47,7 @@ This workflow compares a tilted thin section with a horizontal one to quantify q
 {{< notice warning >}}
 The c-axis orientation is derived from subtle colour changes. Illumination, sensor response, and sample conditions can all introduce misclassification. In particular, camera white balance strongly affects retardation readings: retardations of 0–300 nm should appear grey to pale yellow, but some systems add red or blue tints. Use the retardation chart below and adjust white balance so that the low-retardation reference matches expectations.
 
-<img src="/images/page/acquisition/pic12.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic12.png" style="width: 100%;">
 
 Always cross-check your results against samples with known orientations (for example, EBSD data). Record the capture and lighting conditions so that the measurement can be reproduced.
 {{< /notice >}}
@@ -56,7 +56,7 @@ Always cross-check your results against samples with known orientations (for exa
 
 Prepare a support that lets you tilt the thin section without slipping. One example is shown below.
 
-<img src="/images/page/acquisition/pic6.svg" style="width: 70%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic6.svg" style="width: 70%;">
 
 **Materials**
 - Thin section measuring 50 mm × 30 mm (thickness ≤ 0.03 mm)
@@ -68,27 +68,27 @@ Prepare a support that lets you tilt the thin section without slipping. One exam
 
 1. Stick a strip of double-sided tape to the edge of the board and remove the backing.
 
-   <img src="/images/page/acquisition/pic4.svg" style="width: 70%;">
+   <img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic4.svg" style="width: 70%;">
 
 
    {{< notice example >}}
    The author stacks three new thin sections, tapes them together, and applies the narrow tape on top. That combination stabilises the pivot height and grip so the section stays in place.
 
-   <img src="/images/page/acquisition/pic5.jpg" style="width: 70%;">
+   <img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic5.jpg" style="width: 70%;">
    {{< /notice >}}
 
 3. Place the thin section so that the area of interest sits close to the hinge (the tape) without touching the board.
 
-   <img src="/images/page/acquisition/pic7.svg" style="width: 70%;">
+   <img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic7.svg" style="width: 70%;">
 
 {{< notice example >}}
 The photo shows the tilted thin section on the microscope stage. A weight keeps the angle fixed; here a hex wrench is used.
 
-   <img src="/images/page/acquisition/pic10.jpg" style="width: 70%;">
+   <img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic10.jpg" style="width: 70%;">
 
    Figure: Tilted setup
 
-   <img src="/images/page/acquisition/pic11.jpg" style="width: 70%;">
+   <img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic11.jpg" style="width: 70%;">
 
    Figure: Horizontal setup with the weight applied
 {{< /notice >}}
@@ -97,7 +97,7 @@ The photo shows the tilted thin section on the microscope stage. A weight keeps 
 
 Record the following five videos in order. Rename each file immediately after recording.
 
-<img src="/images/page/acquisition/pic8.svg" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic8.svg" style="width: 100%;">
 
 Figure: Capture flow. Record videos a through e.
 
@@ -114,7 +114,7 @@ Polarising microscopes invert the image horizontally, so focusing on the left ed
 4. Start recording and move the focus away from the objective over about 10 seconds until the monitor shows the right edge in focus (diagram a). Stop the recording.
 
 <video controls width="70%">
-    <source src="/images/page/acquisition/pic9-0deg-tilt.mp4" type="video/mp4">
+    <source src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic9-0deg-tilt.mp4" type="video/mp4">
 </video>
 
 #### Video 2: With Compensator, Tilted Section, Stage at 45°
@@ -128,7 +128,7 @@ Because the image is inverted, this corresponds to the top-right edge on the sta
 2. Start recording and move focus away from the objective for roughly 10 seconds. Stop when the monitor shows the top-right edge in focus (diagram b).
 
 <video controls width="70%">
-    <source src="/images/page/acquisition/pic9-45deg-tilt.mp4" type="video/mp4">
+    <source src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic9-45deg-tilt.mp4" type="video/mp4">
 </video>
 
 #### Video 3: With Compensator, Horizontal Section, Stage at 45°
@@ -141,7 +141,7 @@ This clip is used as reference data for the `extinction color` map. As long as y
 {{< /notice >}}
 
 <video controls width="70%">
-    <source src="/images/page/acquisition/pic9-45deg-not-tilt.mp4" type="video/mp4">
+    <source src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic9-45deg-not-tilt.mp4" type="video/mp4">
 </video>
 
 #### Video 4: With Compensator, Horizontal Section, Stage Rotation
@@ -151,7 +151,7 @@ This clip is used as reference data for the `extinction color` map. As long as y
 3. Stop recording.
 
 <video controls width="70%">
-    <source src="/images/page/acquisition/pic9-xpl-lambda.mp4" type="video/mp4">
+    <source src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic9-xpl-lambda.mp4" type="video/mp4">
 </video>
 
 #### Video 5: Without Compensator, Horizontal Section, Stage Rotation
@@ -161,7 +161,7 @@ This clip is used as reference data for the `extinction color` map. As long as y
 3. Stop recording.
 
 <video controls width="70%">
-    <source src="/images/page/acquisition/pic9-xpl.mp4" type="video/mp4">
+    <source src="https://tan-furukawa.github.io/niconavi/images/page/acquisition/pic9-xpl.mp4" type="video/mp4">
 </video>
 
 Save each file with a clear name as soon as the capture ends.

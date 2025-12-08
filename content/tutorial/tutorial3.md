@@ -43,7 +43,7 @@ This `max retardation` guides extinction-angle and retardation estimates during 
 Entering values above 300 nm increases the risk of failing to resolve c-axis inclinations. Keep the value at or below 300 nm when you intend to calculate orientations, and prepare thin sections so that quartz retardation stays within that range.
 {{< /notice >}}
 
-<img src="/images/page/tutorial/tutorial3/pic1.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic1.png" style="width: 30%;">
 
 ### 4.2 Preprocess and Check the Rotation Centre
 
@@ -56,7 +56,7 @@ Entering values above 300 nm increases the risk of failing to resolve c-axis inc
 2. Increase the `median filter` slider by one step and adjust the other sensitivity controls as shown below.
 3. Click `Calculate grain boundaries` to update the mask. Once satisfied, choose `Continue` to enter the labelling stage.
 
-<img src="/images/page/tutorial/tutorial3/pic2.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic2.png" style="width: 30%;">
 
 ### 4.4 Assign Labels
 
@@ -64,7 +64,7 @@ Entering values above 300 nm increases the risk of failing to resolve c-axis inc
 2. Select each label in turn and click the corresponding grains on the left panel. In this example 17 grains were labelled, but the required number varies by dataset.
 3. Expand the training set if misclassifications remain. When the preview stabilises, click `Done`.
 
-<img src="/images/page/tutorial/tutorial3/pic3.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic3.png" style="width: 100%;">
 
 ### 4.5 Run CPO Analysis
 
@@ -86,7 +86,7 @@ Histogram maxima are sensitive to outliers: a single overestimated grain can inf
 The `max R` value is used to recompute retardation and derive c-axis inclinations during CPO analysis.
 {{< /notice >}}
 
-<img src="/images/page/tutorial/tutorial3/pic4.png" style="width: 30%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic4.png" style="width: 30%;">
 
 {{< notice warning >}}
 Switching tabs or minimising the app during computation can interrupt the process. Wait until the progress bar disappears.
@@ -100,22 +100,22 @@ Switching tabs or minimising the app during computation can interrupt the proces
 COI maps typically contain blank regions because tilting shifts the field of view, creating pixels without valid references.
 {{< /notice >}}
 
-<img src="/images/page/tutorial/tutorial3/pic5.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic5.png" style="width: 100%;">
 
 ### 4.7 Plot Pole Figures
 
 1. Return to `analysis`, deselect `single crystal quartz`, and leave `vein quartz` checked to focus on the vein.
 2. Switch the view to `polar plot` and keep `φ = 0–360°` selected. Each grain is plotted as a single point in the pole figure.
 
-<img src="/images/page/tutorial/tutorial3/pic6.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic6.png" style="width: 100%;">
 
 3. Enable `Plot for each pixel` to draw orientations at pixel resolution. Use this to assess intra-grain dispersion.
 
-<img src="/images/page/tutorial/tutorial3/pic7.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic7.png" style="width: 100%;">
 
 4. Tick `display points` to overlay the sampled orientation data. NicolNavi adds 0.5% noise by default to prevent overlapping points; adjust `Point noise` if required.
 
-<img src="/images/page/tutorial/tutorial3/pic8.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial3/pic8.png" style="width: 100%;">
 
 ## 5. Wrap-Up
 
