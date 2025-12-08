@@ -63,6 +63,7 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 <img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic4.png" style="width: 30%;">
 
 <img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic5.png" style="width: 100%;">
+
 図：左は初期設定での粒界推定結果、右はパラメータ調整後の結果
 
 | パラメータ | 説明 |
@@ -97,8 +98,8 @@ title = 'Tutorial1 - NicolNaviの基本操作'
 
 4. ラベル一覧の `10 mica` を選択し、左画面で該当鉱物の粒子をクリックして教師データを 5～10 個程度追加します。
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic8.png" style="width: 30%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic9.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic8.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic9.png" style="width: 30%;">
 
 ### 5.2 ラベル精度の向上
 

@@ -130,8 +130,8 @@ A single parameter set rarely isolates all mineral combinations. Some datasets r
 2. Select `histogram` view and choose `retardation` as the metric.
 3. Use `13 minerals` to toggle mineral visibility and study the distribution.
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic7.png" style="width: 30%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic8.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic7.png" style="width: 100%;">
+<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic8.png" style="width: 30%;">
 
 {{< notice info >}}
 The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals.
