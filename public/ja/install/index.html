@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head><script src="/niconavi/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=niconavi/livereload" data-no-instant defer></script>
+<head>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
   NicolNavi インストールガイド · NicoNavi
@@ -92,7 +92,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
   <meta name="twitter:title" content="NicolNavi インストールガイド">
   <meta name="twitter:description" content="NicolNavi インストールガイド 見出しへのリンク 必要なもの 見出しへのリンク uv（Python のパッケージ管理ツール） Google Chrome（推奨） uv のインストール 見出しへのリンク macOS / Linux 見出しへのリンク Terminal を開く。 curl -LsSf https://astral.sh/uv/install.sh | sh を実行する。 Terminal を閉じる。 Windows（PowerShell） 見出しへのリンク PowerShell を開く。 powershell -ExecutionPolicy ByPass -c &#34;irm https://astral.sh/uv/install.ps1 | iex&#34; を実行する。 PowerShell を閉じる。 NicolNavi のセットアップ 見出しへのリンク https://github.com/Tan-Furukawa/niconavi_app を開く。 Code → Download ZIP をクリックし、ダウンロードした ZIP を任意の場所に展開する。 macOS の場合 見出しへのリンク 展開した niconavi_app フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。">
 
-<meta property="og:url" content="http://localhost:1313/niconavi/ja/install/">
+<meta property="og:url" content="https://tan-furukawa.github.io/niconavi/ja/install/">
   <meta property="og:site_name" content="NicoNavi">
   <meta property="og:title" content="NicolNavi インストールガイド">
   <meta property="og:description" content="NicolNavi インストールガイド 見出しへのリンク 必要なもの 見出しへのリンク uv（Python のパッケージ管理ツール） Google Chrome（推奨） uv のインストール 見出しへのリンク macOS / Linux 見出しへのリンク Terminal を開く。 curl -LsSf https://astral.sh/uv/install.sh | sh を実行する。 Terminal を閉じる。 Windows（PowerShell） 見出しへのリンク PowerShell を開く。 powershell -ExecutionPolicy ByPass -c &#34;irm https://astral.sh/uv/install.ps1 | iex&#34; を実行する。 PowerShell を閉じる。 NicolNavi のセットアップ 見出しへのリンク https://github.com/Tan-Furukawa/niconavi_app を開く。 Code → Download ZIP をクリックし、ダウンロードした ZIP を任意の場所に展開する。 macOS の場合 見出しへのリンク 展開した niconavi_app フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。">
@@ -104,7 +104,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
 
 
 
-<link rel="canonical" href="http://localhost:1313/niconavi/ja/install/">
+<link rel="canonical" href="https://tan-furukawa.github.io/niconavi/ja/install/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -114,7 +114,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
 
   
   
-  <link rel="stylesheet" href="/niconavi/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/niconavi/css/coder.min.24022876d48fb15813406bbe8c1c4d3b9ab49378f6ff34712fff078e2c04ac12.css" integrity="sha256-JAIodtSPsVgTQGu&#43;jBxNO5q0k3j2/zRxL/8HjiwErBI=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -124,7 +124,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
   
     
     
-    <link rel="stylesheet" href="/niconavi/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/niconavi/css/coder-dark.min.f7e815ec05a254f4b89393ec609b48ef12a7894283e81d06f3804eb939b90bc7.css" integrity="sha256-9&#43;gV7AWiVPS4k5PsYJtI7xKniUKD6B0G84BOuTm5C8c=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -172,7 +172,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/niconavi/ja/">
+    <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/ja/">
       NicoNavi
     </a>
     
@@ -226,7 +226,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="http://localhost:1313/niconavi/ja/install/">
+        <a class="title-link" href="https://tan-furukawa.github.io/niconavi/ja/install/">
           NicolNavi インストールガイド
         </a>
       </h1>
@@ -317,9 +317,20 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
   </a>
 </h3>
 <p><code>run_niconavi_Windows.bat</code> をダブルクリックする。</p>
+<h3 id="note">
+  Note
+  <a class="heading-link" href="#note">
+    <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
+    <span class="sr-only">見出しへのリンク</span>
+  </a>
+</h3>
 <ul>
-<li>必要な Python 環境が自動でインストールされます。インストール完了後、Google Chrome が自動で起動し NicolNavi が開始します。<strong>初回は立ち上がりに最大 5 分ほどかかることがあります。Chrome 上で <code>This site can’t be reached</code>または<code>サイトが見つかりません</code> と表示されても、そのままお待ちください。</strong></li>
-<li>次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、<code>chmod 777 ./run_niconavi_mac.sh</code> のコマンドは初回のみで構いません。</li>
+<li>
+<p>必要な Python 環境が自動でインストールされます。インストール完了後、Google Chrome が自動で起動し NicolNavi が開始します。<strong>初回は立ち上がりに最大 5 分ほどかかることがあります。Chrome 上で <code>This site can’t be reached</code>または<code>サイトが見つかりません</code> と表示されても、そのままお待ちください。</strong></p>
+</li>
+<li>
+<p>次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、<code>chmod 777 ./run_niconavi_mac.sh</code> のコマンドは初回のみで構いません。</p>
+</li>
 </ul>
 <h2 id="手動での実行">
   手動での実行
@@ -362,7 +373,7 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
 
   
   
-  <script src="/niconavi/js/coder.js"></script>
+  <script src="/niconavi/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head><script src="/niconavi/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=niconavi/livereload" data-no-instant defer></script>
+<head>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
   Tutorial1 - NicolNaviの基本操作 · NicoNavi
@@ -162,7 +162,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
   <meta name="twitter:description" content="1. 概要 見出しへのリンク 泥質片岩の顕微鏡動画を用いて NicolNavi の基本操作を習得するためのチュートリアルです。記載された手順に従うと、ステージ回転動画の前処理から粒界抽出、鉱物ラベルの設定、モード組成および形状定向配列の確認までを一通り実施できます。
 2. 前提条件 見出しへのリンク NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること サンプル動画 nicolnavi_app/Examples/pelitic-schist-xpl.avi を参照できること 3. 画面構成 見出しへのリンク 左画面：解析対象画像のビューア。粒界やラベルの表示を確認できます。 右画面：番号付きボタン、パラメータ入力欄、チェックボックスが並ぶ操作パネルです。 画面中央部：Image list で左画面に表示する画像を選択します。 4. 操作フロー 見出しへのリンク 4.1 動画ファイルの読み込み 見出しへのリンク 右画面の 1 Select を押します。 ファイル選択ダイアログで nicolnavi_app/Examples/pelitic-schist-xpl.avi を選択し、開くを押します。 左画面に動画の先頭フレームが幅 1000 px の画像として表示されることを確認します。 4.2 前処理の実行 見出しへのリンク 2 Start を押し、動画の離散化と回転中心推定を開始します。 処理が完了すると、自動的に回転中心調整画面へ遷移します。 4.3 回転中心の調整 見出しへのリンク 左画面の同心円状パターンの中心に赤い十字が一致しているか確認します。 中心がずれている場合は ＋ − ボタンで座標を微調整します（今回の例ではほとんどずれていないためスキップ可能です）。 調整後、3 Continue を押して回転中心を確定します。 4.4 解析結果の確認 見出しへのリンク 自動遷移後の画面で Image list を開き、以下の代表的な解析マップを確認します。 マップ 説明 color ステージ 1 回転中で最も明るい瞬間の色情報です。 extinction color 最も暗くなる瞬間の色情報です。完全な消光が得られない場合は前工程を見直してください。 R 各ピクセルのレタデーション値です。Video タブで指定したレタデーションを探索します。今回は最大レタデーションを max retardation = 300 のまま使用しているため、石英以外の鉱物では値の信頼性が低い点に注意してください。 extinction angle 各ピクセルの光消角マップです。 raw image 加工していない画像です。たとえば、$\phi = 22.5\degree$を選択すると、顕微鏡ステージが、22.5$\degree$回転したときの動画のフレームを示します。 Warning extinction color 全体が暗くならない場合は、カメラ画素の飽和や不適切な前処理が疑われます。このような例に対する処理は、Tutorial2で行います。 4.5 粒界抽出パラメータの調整 見出しへのリンク 右画面のパラメータ欄で目的に合わせて初期値を設定します。 6 Detect Grain Boundary を押し、左画面に粒界線が重ね表示されることを確認します。 4 median filter と 5 parameters を下図のように調整します。 6 Calculate grain boundaries を再度押して結果を更新します。 図：左は初期設定での粒界推定結果、右はパラメータ調整後の結果">
 
-<meta property="og:url" content="http://localhost:1313/niconavi/ja/tutorial/tutorial1/">
+<meta property="og:url" content="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial1/">
   <meta property="og:site_name" content="NicoNavi">
   <meta property="og:title" content="Tutorial1 - NicolNaviの基本操作">
   <meta property="og:description" content="1. 概要 見出しへのリンク 泥質片岩の顕微鏡動画を用いて NicolNavi の基本操作を習得するためのチュートリアルです。記載された手順に従うと、ステージ回転動画の前処理から粒界抽出、鉱物ラベルの設定、モード組成および形状定向配列の確認までを一通り実施できます。
@@ -176,7 +176,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
 
 
 
-<link rel="canonical" href="http://localhost:1313/niconavi/ja/tutorial/tutorial1/">
+<link rel="canonical" href="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial1/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -186,7 +186,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
 
   
   
-  <link rel="stylesheet" href="/niconavi/css/coder.css" media="screen">
+  <link rel="stylesheet" href="/niconavi/css/coder.min.24022876d48fb15813406bbe8c1c4d3b9ab49378f6ff34712fff078e2c04ac12.css" integrity="sha256-JAIodtSPsVgTQGu&#43;jBxNO5q0k3j2/zRxL/8HjiwErBI=" crossorigin="anonymous" media="screen" />
 
 
 
@@ -196,7 +196,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
   
     
     
-    <link rel="stylesheet" href="/niconavi/css/coder-dark.css" media="screen">
+    <link rel="stylesheet" href="/niconavi/css/coder-dark.min.f7e815ec05a254f4b89393ec609b48ef12a7894283e81d06f3804eb939b90bc7.css" integrity="sha256-9&#43;gV7AWiVPS4k5PsYJtI7xKniUKD6B0G84BOuTm5C8c=" crossorigin="anonymous" media="screen" />
   
 
 
@@ -244,7 +244,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="http://localhost:1313/niconavi/ja/">
+    <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/ja/">
       NicoNavi
     </a>
     
@@ -298,7 +298,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="http://localhost:1313/niconavi/ja/tutorial/tutorial1/">
+        <a class="title-link" href="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial1/">
           Tutorial1 - NicolNaviの基本操作
         </a>
       </h1>
@@ -669,7 +669,7 @@ NicolNavi アプリケーションが起動済みで、対象プロジェクト�
 
   
   
-  <script src="/niconavi/js/coder.js"></script>
+  <script src="/niconavi/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
   
 
   

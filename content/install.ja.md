@@ -39,10 +39,14 @@ title = 'NicolNavi インストールガイド'
 ### Windows の場合
 `run_niconavi_Windows.bat` をダブルクリックする。
 
+### Note
+
 - 必要な Python 環境が自動でインストールされます。インストール完了後、Google Chrome が自動で起動し NicolNavi が開始します。**初回は立ち上がりに最大 5 分ほどかかることがあります。Chrome 上で `This site can’t be reached`または`サイトが見つかりません` と表示されても、そのままお待ちください。**
+
 - 次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、`chmod 777 ./run_niconavi_mac.sh` のコマンドは初回のみで構いません。
 
 ## 手動での実行
+
 - 依存関係のインストール: `uv sync`
 - アプリの起動: `uv run python niconavi.py`
 - アプリの URL: `http://localhost:8551/app`

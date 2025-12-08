@@ -40,6 +40,7 @@ title = 'Installation Guide'
 Double-click `run_niconavi_Windows.bat`.
 
 ### Note
+
 - The required Python environment installs automatically. When installation finishes, Google Chrome will launch and NicolNavi will start. **On the first install, startup can take up to about 5 minutes. Even if Chrome shows `This site can’t be reached`, please wait.**
 - Use the same steps to start the app next time; subsequent launches are faster. The `chmod 777` command is only needed the first time.
 
