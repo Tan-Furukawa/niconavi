@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><script src="/niconavi/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=niconavi/livereload" data-no-instant defer></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
   Tutorial 1 - NicolNavi Basics · NicoNavi
@@ -327,7 +327,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
   <meta name="twitter:description" content="1. Overview Link to heading Work through this tutorial to learn the core NicolNavi operations using a pelitic schist microscope video. By following the steps you will complete preprocessing, grain-boundary detection, mineral labelling, and basic modal/SPO checks for a rotation video.
 2. Prerequisites Link to heading NicolNavi is running and the target project is open. You can access the sample video nicolnavi_app/Examples/pelitic-schist-xpl.avi. 3. Layout Link to heading Left panel: Image viewer showing the analysed frame, boundaries, and labels. Right panel: Buttons, parameter inputs, and checkboxes for each stage. Center: Image list selector that swaps the map displayed on the left. 4. Workflow Link to heading 4.1 Load the Video Link to heading Click 1 Select on the right panel. Choose nicolnavi_app/Examples/pelitic-schist-xpl.avi and open it. Confirm that the left panel shows the first frame resized to a width of 1000 px. 4.2 Run Preprocessing Link to heading Select 2 Start to launch discretisation and rotation-centre estimation. When the process finishes, the app switches to the rotation-centre adjustment screen. 4.3 Adjust the Rotation Centre Link to heading Check that the red cross is centred on the concentric pattern. If it is misaligned, fine-tune the coordinates with the &#43; and − buttons. In this dataset the default position is almost correct, so you can skip adjustments. Click 3 Continue to fix the centre. 4.4 Review the Derived Maps Link to heading After the automatic transition, open Image list and review these representative maps. Map Description color Brightest colours observed during a full rotation. extinction color Colours at the darkest instant. If the image never darkens, re-check the previous steps. R Pixel-level retardation values. The Video tab controls the retardation search range. With max retardation = 300, non-quartz values are indicative only. extinction angle Map of extinction angles for each pixel. raw image Unprocessed frame. Selecting, for example, $\phi = 22.5\degree$ shows the frame at that rotation angle. Warning If the entire extinction color map remains bright, the sensor may be saturating or preprocessing was inadequate. Tutorial 2 covers remedies. 4.5 Tune Grain-Boundary Parameters Link to heading Set the initial parameters in the right panel for your target textures. Press 6 Detect Grain Boundary to overlay the detected boundaries. Adjust 4 median filter and 5 parameters as shown below. Click 6 Calculate grain boundaries again to refresh the result. Left: default settings. Right: after tuning. Parameter Description median filter Smoothing window for noise suppression. Large values remove fine structure. boundary detection sensitivity Higher values capture finer details but increase false positives. boundary connectivity Maximum gap (px) treated as connected. Excessive values over-connect regions. smallest grain size Minimum area in px^2. Regions below the threshold are discarded as noise. Info Expect to iterate when extracting boundaries. Toggle Show grain boundary to inspect the overlay frequently. Warning A single parameter set rarely isolates all mineral combinations. Some datasets require mineral-specific processing. 4.6 Finalise the Grain Boundaries Link to heading Continue adjusting until the result matches your intent. Click 7 Continue to proceed to the labelling stage. 4.7 Configure Labels Link to heading Enter mica in Label Name and press &#43;. Add bulk in the same way. Select mica, then click 5–10 representative mica grains in the left panel. Repeat for bulk. If misclassifications remain, extend the training data until predictions stabilise. Choose Done to confirm the labels. In this sample a few dozen grains are sufficient. 4.8 Propagate Labels Link to heading Press 9 Propagate labels to apply labels to all grains based on the training set. Inspect the result. If the classification drifts, add training grains and re-run the propagation. 4.9 Manual Edits Link to heading Use 10 edit labels to switch to manual editing. Choose the desired label and click regions that require corrections. Toggle Show grain boundary to verify the outline while editing. 4.10 Save the Labelling Result Link to heading When satisfied, select 11 Save to store the label configuration. Leaving the screen without saving discards the edits, so save before moving on. 4.11 Export Images (Optional) Link to heading Use 12 Save image to export the current view. PNG is recommended for documentation or publications. 5. Analyse Modal Composition Link to heading 5.1 Histogram-Based Ratios Link to heading Open the analysis tab. Select histogram view and choose retardation as the metric. Use 13 minerals to toggle mineral visibility and study the distribution. Info The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals. 5.2 Rose Diagram Link to heading Switch the view to rose diagram to examine preferred orientations. Enable 14 rose diagram and keep retardation selected. 5.3 Orientation Stats Link to heading Focus on the mica alignment by selecting only the mica label. Read the statistics in 16 information. Example output: Mean orientation: bulk: 171.952°, mica: 171.952° Circular variance: bulk: 0.458, mica: 0.458 Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.">
 
-<meta property="og:url" content="https://tan-furukawa.github.io/niconavi/tutorial/tutorial1/">
+<meta property="og:url" content="http://localhost:1313/niconavi/tutorial/tutorial1/">
   <meta property="og:site_name" content="NicoNavi">
   <meta property="og:title" content="Tutorial 1 - NicolNavi Basics">
   <meta property="og:description" content="1. Overview Link to heading Work through this tutorial to learn the core NicolNavi operations using a pelitic schist microscope video. By following the steps you will complete preprocessing, grain-boundary detection, mineral labelling, and basic modal/SPO checks for a rotation video.
@@ -341,7 +341,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 
 
 
-<link rel="canonical" href="https://tan-furukawa.github.io/niconavi/tutorial/tutorial1/">
+<link rel="canonical" href="http://localhost:1313/niconavi/tutorial/tutorial1/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -351,7 +351,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
 
   
   
-  <link rel="stylesheet" href="/niconavi/css/coder.min.24022876d48fb15813406bbe8c1c4d3b9ab49378f6ff34712fff078e2c04ac12.css" integrity="sha256-JAIodtSPsVgTQGu&#43;jBxNO5q0k3j2/zRxL/8HjiwErBI=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/niconavi/css/coder.css" media="screen">
 
 
 
@@ -361,7 +361,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
   
     
     
-    <link rel="stylesheet" href="/niconavi/css/coder-dark.min.f7e815ec05a254f4b89393ec609b48ef12a7894283e81d06f3804eb939b90bc7.css" integrity="sha256-9&#43;gV7AWiVPS4k5PsYJtI7xKniUKD6B0G84BOuTm5C8c=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/niconavi/css/coder-dark.css" media="screen">
   
 
 
@@ -409,7 +409,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/">
+    <a class="navigation-title" href="http://localhost:1313/niconavi/">
       NicoNavi
     </a>
     
@@ -420,10 +420,6 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
       </label>
       <ul class="navigation-list">
         
-          
-            <li class="navigation-item">
-              <a class="navigation-link " href="/niconavi/about/">About</a>
-            </li>
           
             <li class="navigation-item">
               <a class="navigation-link " href="/niconavi/install/">Install</a>
@@ -467,7 +463,7 @@ Mean orientation indicates the SPO trend for mica. Circular variance approaches 
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="https://tan-furukawa.github.io/niconavi/tutorial/tutorial1/">
+        <a class="title-link" href="http://localhost:1313/niconavi/tutorial/tutorial1/">
           Tutorial 1 - NicolNavi Basics
         </a>
       </h1>
@@ -869,7 +865,7 @@ Left: default settings. Right: after tuning.
 
   
   
-  <script src="/niconavi/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/niconavi/js/coder.js"></script>
   
 
   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
+<head><script src="/niconavi/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=niconavi/livereload" data-no-instant defer></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>
   Tutorial2 - 鉱物の抽出と可視化 · NicoNavi
@@ -127,7 +127,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
   <meta name="twitter:description" content="1. 概要 見出しへのリンク セクターゾーニングしたざくろ石（garnet）の顕微鏡動画を題材に、鉱物ごとの粒界抽出と光学的異方性の可視化手順を解説します。Tutorial 1 で学んだ基本操作を土台に、単結晶内部の消光挙動を強調するための設定変更や、鉱物ごとのラベル付与を実践します。
 2. 前提条件 見出しへのリンク NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること サンプル動画 nicolnavi_app/Examples/sector_zoning.avi を参照できること Tutorial 1 の操作（前処理・粒界抽出・ラベル付与）を一通り試していること 3. 操作フロー 見出しへのリンク 3.1 動画ファイルの読み込み 見出しへのリンク 右画面の Select を押します。 ファイル選択ダイアログで nicolnavi_app/Examples/sector_zoning.avi を選択し、開くを押します。 左画面に動画の先頭フレームが幅 1000 px の正方形画像として表示されることを確認します。 Start を押し、動画の離散化と回転中心推定を開始します。 3.2 回転中心の調整 見出しへのリンク 処理完了後、自動的に回転中心調整画面へ遷移します。 このデータでは自動検出された中心が実際の同心円パターンから外れています。cx と cy をクリックし、赤い十字を実際の中心に合わせてください。 図：中心を手動調整した状態 調整後、Continue を押して回転中心を確定します。 3.3 解析マップと明度補正の確認 見出しへのリンク 画面遷移後に Image list を開き、代表的な解析マップを確認します。 マップ 説明 color ステージ 1 回転中で最も明るい瞬間の色情報です。 extinction color 最も暗くなる瞬間の色情報です。完全な消光が得られない場合は前工程を見直してください。 R 各ピクセルのレタデーション値です。Video タブで指定したレタデーションを探索します。 extinction angle 各ピクセルの光消角マップです。 raw image 未加工の画像です。例えば phi = 22.5° を選ぶと、その回転角でのフレームを表示します。 color と extinction color を切り替えると、color の方が暗く表示される場合があります。 図：Image list が color のとき">
 
-<meta property="og:url" content="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial2/">
+<meta property="og:url" content="http://localhost:1313/niconavi/ja/tutorial/tutorial2/">
   <meta property="og:site_name" content="NicoNavi">
   <meta property="og:title" content="Tutorial2 - 鉱物の抽出と可視化">
   <meta property="og:description" content="1. 概要 見出しへのリンク セクターゾーニングしたざくろ石（garnet）の顕微鏡動画を題材に、鉱物ごとの粒界抽出と光学的異方性の可視化手順を解説します。Tutorial 1 で学んだ基本操作を土台に、単結晶内部の消光挙動を強調するための設定変更や、鉱物ごとのラベル付与を実践します。
@@ -141,7 +141,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
 
 
 
-<link rel="canonical" href="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial2/">
+<link rel="canonical" href="http://localhost:1313/niconavi/ja/tutorial/tutorial2/">
 
 
 <link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -151,7 +151,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
 
   
   
-  <link rel="stylesheet" href="/niconavi/css/coder.min.24022876d48fb15813406bbe8c1c4d3b9ab49378f6ff34712fff078e2c04ac12.css" integrity="sha256-JAIodtSPsVgTQGu&#43;jBxNO5q0k3j2/zRxL/8HjiwErBI=" crossorigin="anonymous" media="screen" />
+  <link rel="stylesheet" href="/niconavi/css/coder.css" media="screen">
 
 
 
@@ -161,7 +161,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
   
     
     
-    <link rel="stylesheet" href="/niconavi/css/coder-dark.min.f7e815ec05a254f4b89393ec609b48ef12a7894283e81d06f3804eb939b90bc7.css" integrity="sha256-9&#43;gV7AWiVPS4k5PsYJtI7xKniUKD6B0G84BOuTm5C8c=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/niconavi/css/coder-dark.css" media="screen">
   
 
 
@@ -209,7 +209,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
     <nav class="navigation">
   <section class="container">
     
-    <a class="navigation-title" href="https://tan-furukawa.github.io/niconavi/ja/">
+    <a class="navigation-title" href="http://localhost:1313/niconavi/ja/">
       NicoNavi
     </a>
     
@@ -220,10 +220,6 @@ color と extinction color を切り替えると、color の方が暗く表示�
       </label>
       <ul class="navigation-list">
         
-          
-            <li class="navigation-item">
-              <a class="navigation-link " href="/niconavi/ja/about/">About</a>
-            </li>
           
             <li class="navigation-item">
               <a class="navigation-link " href="/niconavi/ja/install/">Install</a>
@@ -267,7 +263,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
   <article>
     <header>
       <h1 class="title">
-        <a class="title-link" href="https://tan-furukawa.github.io/niconavi/ja/tutorial/tutorial2/">
+        <a class="title-link" href="http://localhost:1313/niconavi/ja/tutorial/tutorial2/">
           Tutorial2 - 鉱物の抽出と可視化
         </a>
       </h1>
@@ -488,7 +484,7 @@ color と extinction color を切り替えると、color の方が暗く表示�
 
   
   
-  <script src="/niconavi/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  <script src="/niconavi/js/coder.js"></script>
   
 
   

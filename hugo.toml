@@ -74,10 +74,6 @@ style = "github-dark"
 
 # Menu links
 [[menu.main]]
-  name = "About"
-  weight = 1
-  url = "about/"
-[[menu.main]]
   name = "Install"
   weight = 2
   url  = "install/"
