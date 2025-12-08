@@ -1,3 +1,2 @@
-# nicolnavi_page
 # niconavi
-# niconavi
+https://tan-furukawa.github.io/niconavi/

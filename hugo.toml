@@ -1,5 +1,5 @@
 baseurl = "https://tan-furukawa.github.io/niconavi/"
-title = "NicoNicoNnavi"
+title = "NicoNavi"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"

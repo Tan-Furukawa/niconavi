@@ -4,66 +4,45 @@ draft = false
 title = 'NicolNavi インストールガイド'
 +++
 
+# NicolNavi インストールガイド
 
-NicolNaviを安全かつ確実に導入するための手順をまとめました。ここではPython環境を利用する方法のみを順を追って解説します。作業前に、以下の事項を必ずご確認ください。
+## 必要なもの
+- uv（Python のパッケージ管理ツール）
+- Google Chrome（推奨）
 
-## 事前準備と前提条件
+## uv のインストール
 
-- 対応OS: Windows 10 以降 (64bit)、macOS 12 Monterey 以降、主な Linux ディストリビューション
-- 管理者権限: 初回インストール時に要求される場合があります
-- ブラウザ: 最新版の主要ブラウザ
-- メモリ16GB以上のPCを強く推奨します。それ以下のPCでは、正常に機能しない可能性があります。
+### macOS / Linux
+1. Terminal を開く。
+2. `curl -LsSf https://astral.sh/uv/install.sh | sh` を実行する。
+3. Terminal を閉じる。
 
----
+### Windows（PowerShell）
+1. PowerShell を開く。
+2. `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"` を実行する。
+3. PowerShell を閉じる。
 
-## Python 環境を利用したインストール
+## NicolNavi のセットアップ
 
-### Step 1. 必要ソフトの確認
+1. https://github.com/Tan-Furukawa/niconavi_app を開く。
+2. `Code` → `Download ZIP` をクリックし、ダウンロードした ZIP を任意の場所に展開する。
 
-1. **ブラウザ**
-   - 最新版の主要ブラウザがインストールされていることを確認してください。
-2. **Python および pipenv**
-   - Python 3.10 以上、`pip` コマンドがインストールされていることを確認します。
-   - `pip install --upgrade pip` で pip を最新化し、`pip install pipenv` を実行して pipenv を導入します。
+### macOS の場合
+1. 展開した `niconavi_app` フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。
+2. Terminal で以下を実行する。
 
-### Step 2. NicolNavi の取得
+   ```
+   chmod 777 ./run_niconavi_mac.sh
+   ./run_niconavi_mac.sh
+   ```
 
-1. GitHub リポジトリ (https://github.com/Tan-Furukawa/nicolnavi) から ZIP をダウンロードし、任意のディレクトリに展開します。
-2. ターミナルを開き、展開したフォルダへ移動します。
+### Windows の場合
+`run_niconavi_Windows.bat` をダブルクリックする。
 
-```bash
-cd /path/to/nicolnavi
-```
+- 必要な Python 環境が自動でインストールされます。インストール完了後、Google Chrome が自動で起動し NicolNavi が開始します。**初回は立ち上がりに最大 5 分ほどかかることがあります。Chrome 上で `This site can’t be reached`または`サイトが見つかりません` と表示されても、そのままお待ちください。**
+- 次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、`chmod 777 ./run_niconavi_mac.sh` のコマンドは初回のみで構いません。
 
-### Step 3. 仮想環境の構築と依存関係のインストール
-
-1. ターミナルで以下のコマンドを順に実行し、仮想環境を構築します。
-
-```bash
-pipenv shell
-pipenv install
-```
-
-2. `Pipfile.lock` が作成され、依存パッケージのインストールが完了したら準備完了です。
-
-{{< notice info >}}`pipenv shell` 実行後のプロンプトに `(nicolnavi)` などの仮想環境名が表示されることを確認してください。終了する際は `exit` と入力すると仮想環境から抜けられます。{{< /notice >}}
-
-### Step 4. アプリの起動確認
-
-1. 仮想環境がアクティブな状態で以下のコマンドを実行します。
-
-```bash
-python gui/src/main.py
-```
-
-2. 別途ブラウザを起動し、`http://localhost:8551/` にアクセスしてNicolNaviの画面が表示されるか確認します。
-
----
-
-## トラブルシューティング
-
-- **ブラウザで画面が表示されない**: `python gui/src/main.py` が動作中か確認し、停止している場合は再実行してください。
-- **ポート 8551 が使用中と表示される**: 既に別アプリが同ポートを使用中です。該当アプリを停止するか、設定ファイルでポート番号を変更してください。
-- **pipenv install で失敗する**: `pipenv --rm` で仮想環境を削除し、再度 Step 3 のコマンドを実行してください。
-
-不明点やエラーが解決しない場合は、エラーメッセージとともに開発者へお問い合わせください。
+## 手動での実行
+- 依存関係のインストール: `uv sync`
+- アプリの起動: `uv run python niconavi.py`
+- アプリの URL: `http://localhost:8551/app`
