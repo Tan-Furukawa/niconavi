@@ -45,8 +45,14 @@ title = 'NicolNavi インストールガイド'
 
 - 次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、`chmod 777 ./run_niconavi_mac.sh` のコマンドは初回のみで構いません。
 
-## 手動での実行
 
-- 依存関係のインストール: `uv sync`
-- アプリの起動: `uv run python niconavi.py`
-- アプリの URL: `http://localhost:8551/app`
+### インストールに失敗した場合
+Chrome を利用できない環境や、アンチウイルスソフトで実行がブロックされる場合は、以下の手順を試してください。PowerShell（Windows）または Terminal（macOS）で次を実行します。
+
+```
+cd path/to/nicolnavi_app
+uv sync
+uv run python niconavi.py
+```
+
+実行後、お使いのブラウザで `http://localhost:8551/app` にアクセスしてください。2回目以降の実行には、`uv sync`は不要です。`uv: command not found` などのエラーが出る場合は、uv のインストール先を PATH に通すか、シェルを再起動してください。
