@@ -328,18 +328,22 @@ Right-click the extracted niconavi_app folder → Service → New Terminal tab a
 <li>The required Python environment installs automatically. When installation finishes, Google Chrome will launch and NicolNavi will start. <strong>On the first install, startup can take up to about 5 minutes. Even if Chrome shows <code>This site can’t be reached</code>, please wait.</strong></li>
 <li>Use the same steps to start the app next time; subsequent launches are faster. The <code>chmod 777</code> command is only needed the first time.</li>
 </ul>
-<h2 id="manual-workflow">
-  Manual workflow
-  <a class="heading-link" href="#manual-workflow">
+<h3 id="if-installation-fails">
+  If installation fails
+  <a class="heading-link" href="#if-installation-fails">
     <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
     <span class="sr-only">Link to heading</span>
   </a>
-</h2>
-<ul>
-<li>Install deps: <code>uv sync</code></li>
-<li>Run app: <code>uv run python niconavi.py</code></li>
-<li>App URL: <code>http://localhost:8551/app</code></li>
-</ul>
+</h3>
+<p>If you do not have Chrome available or an antivirus blocks the startup scripts, try launching manually:</p>
+<ol>
+<li>Open PowerShell (Windows) or Terminal (macOS).</li>
+<li>Run <code>cd path/to/nicolnavi_app</code>.</li>
+<li>Run <code>uv sync</code>.</li>
+<li>Run <code>uv run python niconavi.py</code>.</li>
+<li>In your browser, open <code>http://localhost:8551/app</code>.</li>
+</ol>
+<p>Skip <code>uv sync</code> after the first run. If you see <code>uv: command not found</code>, add uv to your PATH or restart your shell.</p>
 
   </article>
 </section>

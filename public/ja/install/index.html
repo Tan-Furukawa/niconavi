@@ -332,18 +332,18 @@ Code → Download ZIP をクリックし、ダウンロードした ZIP を任�
 <p>次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、<code>chmod 777 ./run_niconavi_mac.sh</code> のコマンドは初回のみで構いません。</p>
 </li>
 </ul>
-<h2 id="手動での実行">
-  手動での実行
-  <a class="heading-link" href="#%e6%89%8b%e5%8b%95%e3%81%a7%e3%81%ae%e5%ae%9f%e8%a1%8c">
+<h3 id="インストールに失敗した場合">
+  インストールに失敗した場合
+  <a class="heading-link" href="#%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e3%81%ab%e5%a4%b1%e6%95%97%e3%81%97%e3%81%9f%e5%a0%b4%e5%90%88">
     <i class="fa-solid fa-link" aria-hidden="true" title="見出しへのリンク"></i>
     <span class="sr-only">見出しへのリンク</span>
   </a>
-</h2>
-<ul>
-<li>依存関係のインストール: <code>uv sync</code></li>
-<li>アプリの起動: <code>uv run python niconavi.py</code></li>
-<li>アプリの URL: <code>http://localhost:8551/app</code></li>
-</ul>
+</h3>
+<p>Chrome を利用できない環境や、アンチウイルスソフトで実行がブロックされる場合は、以下の手順を試してください。PowerShell（Windows）または Terminal（macOS）で次を実行します。</p>
+<pre tabindex="0"><code>cd path/to/nicolnavi_app
+uv sync
+uv run python niconavi.py
+</code></pre><p>実行後、お使いのブラウザで <code>http://localhost:8551/app</code> にアクセスしてください。2回目以降の実行には、<code>uv sync</code>は不要です。<code>uv: command not found</code> などのエラーが出る場合は、uv のインストール先を PATH に通すか、シェルを再起動してください。</p>
 
   </article>
 </section>
