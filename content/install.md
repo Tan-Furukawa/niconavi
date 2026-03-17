@@ -4,6 +4,9 @@ draft = false
 title = 'Installation Guide'
 +++
 
+
+**<<<<<<<<<< This software is based on research that is currently under review. >>>>>>>>>>>>**
+
 # NicolNavi Installation Guide
 
 ## Requirements

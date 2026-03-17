@@ -28,7 +28,7 @@ style = "github-dark"
 
 [params]
   author = "NicoNavi"
-  info = "For Quantitative Analysis of Micorostructure Using a Polarizing Microscope"
+  info = "<<<<Notice!! this software is based on research that is currently under review.>>>>"
   description = "John Doe's personal website"
   keywords = "blog,developer,personal"
   avatarurl = "images/avatar.png"
