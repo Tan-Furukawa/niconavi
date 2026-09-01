@@ -1,183 +1,174 @@
 +++
-date = '2025-10-15T13:10:14+09:00'
+date = '2026-08-31T00:00:00+09:00'
 draft = false
-title = 'Tutorial1 - NicolNaviの基本操作'
+title = 'Tutorial1 - GGG3データセットのCPO解析'
 +++
 
 ## 1. 概要
-泥質片岩の顕微鏡動画を用いて NicolNavi の基本操作を習得するためのチュートリアルです。記載された手順に従うと、ステージ回転動画の前処理から粒界抽出、鉱物ラベルの設定、モード組成および形状定向配列の確認までを一通り実施できます。
 
-## 2. 前提条件
-- NicolNavi アプリケーションが起動済みで、対象プロジェクトが開かれていること
-- サンプル動画 `nicolnavi_app/Examples/pelitic-schist-xpl.avi` を参照できること
+このチュートリアルでは、GGG3 の石英岩データセットを使って、CPO（Crystallographic Preferred Orientation）解析を実行します。5 本の光学動画を読み込み、`video` / `center` / `map` / `filter` / `analysis` タブの順に処理して、石英 c 軸方位を極図で確認します。
 
-## 3. 画面構成
-- 左画面：解析対象画像のビューア。粒界やラベルの表示を確認できます。
-- 右画面：番号付きボタン、パラメータ入力欄、チェックボックスが並ぶ操作パネルです。
-- 画面中央部：`Image list` で左画面に表示する画像を選択します。
+以下の各図では、操作する箇所に**黄色の番号**を付けています。番号は、そのタブで操作する順番に対応しています。
 
-## 4. 操作フロー
+## 2. 使用する動画セット
 
-### 4.1 動画ファイルの読み込み
-1. 右画面の `1 Select` を押します。
-2. ファイル選択ダイアログで `nicolnavi_app/Examples/pelitic-schist-xpl.avi` を選択し、開くを押します。
-3. 左画面に動画の先頭フレームが幅 1000 px の画像として表示されることを確認します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic1.png" style="width: 30%;">
-
-### 4.2 前処理の実行
-1. `2 Start` を押し、動画の離散化と回転中心推定を開始します。
-2. 処理が完了すると、自動的に回転中心調整画面へ遷移します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic2.png" style="width: 100%;">
-
-### 4.3 回転中心の調整
-1. 左画面の同心円状パターンの中心に赤い十字が一致しているか確認します。
-2. 中心がずれている場合は `＋` `−` ボタンで座標を微調整します（今回の例ではほとんどずれていないためスキップ可能です）。
-3. 調整後、`3 Continue` を押して回転中心を確定します。
-
-### 4.4 解析結果の確認
-
-1. 自動遷移後の画面で `Image list` を開き、以下の代表的な解析マップを確認します。
-
-| マップ | 説明 |
+| NicoNavi の入力欄 | ファイル |
 | --- | --- |
-| `color` | ステージ 1 回転中で最も明るい瞬間の色情報です。 |
-| `extinction color` | 最も暗くなる瞬間の色情報です。完全な消光が得られない場合は前工程を見直してください。 |
-| `R` | 各ピクセルのレタデーション値です。`Video` タブで指定したレタデーションを探索します。今回は最大レタデーションを `max retardation = 300` のまま使用しているため、石英以外の鉱物では値の信頼性が低い点に注意してください。 |
-| `extinction angle` | 各ピクセルの光消角マップです。 |
-| `raw image` | 加工していない画像です。たとえば、$\phi = 22.5\degree$を選択すると、顕微鏡ステージが、22.5$\degree$回転したときの動画のフレームを示します。|
+| `XPL Rotated` | `ggg3_xpl.avi` |
+| `XPL + λ-Plate Rotated` | `ggg3_lambda.avi` |
+| `0° tilt` | `ggg3_tilt_0.avi` |
+| `45° tilt` | `ggg3_tilt_45.avi` |
+| `45° not tilt` | `ggg3_horiz.avi` |
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic3.png" style="width: 100%;">
+## 3. 操作フロー
 
-{{< notice warning >}}
-`extinction color` 全体が暗くならない場合は、カメラ画素の飽和や不適切な前処理が疑われます。このような例に対する処理は、Tutorial2で行います。
-{{< /notice >}}
+### 3.1 `video` タブ: 動画の読み込み
 
-### 4.5 粒界抽出パラメータの調整
-1. 右画面のパラメータ欄で目的に合わせて初期値を設定します。
-2. `6 Detect Grain Boundary` を押し、左画面に粒界線が重ね表示されることを確認します。
-3. `4 median filter` と `5 parameters` を下図のように調整します。
-4. `6 Calculate grain boundaries` を再度押して結果を更新します。
+{{< img src="images/page/tutorial/tutorial1/pic1.png" alt="video タブの操作" >}}
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic4.png" style="width: 30%;">
+図中の黄色の番号は、次の操作に対応します。
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic5.png" style="width: 100%;">
+| 番号 | 場所 | 操作 |
+| --- | --- | --- |
+| **1** | `XPL Rotated` | `Select` を押して `ggg3_xpl.avi` を選びます。 |
+| **2** | `XPL + λ-Plate Rotated` | `ggg3_lambda.avi` を選びます。 |
+| **3** | `XPL + λ-Plate 0°/45°` の `0°` 行 | `ggg3_tilt_0.avi` を選びます。 |
+| **4** | 同 `45°` 行（tilt） | `ggg3_tilt_45.avi` を選びます。 |
+| **5** | 同 `45°` 行（horiz） | `ggg3_horiz.avi` を選びます。 |
+| **6** | `thin section thickness` | 薄片の厚さです。`0.022` mm と入力します。 |
+| **7** | `λ` | 鋭敏色検板の値です。別の検板で撮影していない限り `530.0` nm のままにします。 |
+| **8** | `gray-world white balance` | 撮影時に照明の色かぶりを補正していないデータでは、チェックを入れます。今回はチェックを入れます。 |
+| **9** | `▶ start` | 押すと前処理が始まります。読み込みが終わると自動的に `center` タブへ移動します。 |
 
-図：左は初期設定での粒界推定結果、右はパラメータ調整後の結果
+### 3.2 `center` タブ: 回転中心の確認
 
-| パラメータ | 説明 |
+{{< img src="images/page/tutorial/tutorial1/pic2.png" alt="center タブ。回転中心の確認" >}}
+
+1. 左の画像は、動画全フレームの変化量を重ねたもので、ステージ回転による同心円状のパターンが見えます。
+2. 赤い十字が、その同心円の中心に合っているかを確認します。この例では `cx = 490`、`cy = 266` で中心に乗っているため、そのまま進めます。
+3. ずれている場合は、`cx` と `cy` の `−` / `+` ボタンで位置を調整します。
+4. `▶ continue` を押すと、角度マップと色マップの作成が始まります。
+
+### 3.3 `map` タブ: マップの確認と粒子の分割
+
+{{< img src="images/page/tutorial/tutorial1/pic3.png" alt="map タブの操作" >}}
+
+`map` タブでは、左側の画像リストで結果を確認（番号 1〜3）してから、右側のパネルで粒子分割を行います（番号 4〜9）。
+
+| 番号 | 場所 | 操作 |
+| --- | --- | --- |
+| **1** | `extinction` グループの `extinction color`（赤いボタン） | 消光位での色画像です。赤色は「再計算後、まだ開いていない重要な画像」を意味します。クリックして内容を確認してください。 |
+| **2** | `xpl + λ` グループの `original color change (0°)`（赤いボタン） | 0° 傾斜画像で、元画像からどれだけ色が変化したかを示します。変化が見えていれば、傾斜画像が正しく対応付けられています。 |
+| **3** | 同 `original color change (45°)`（赤いボタン） | 45° 傾斜画像についての同じ確認です。ここが真っ黒に近い場合、傾斜動画の視野が合っていない可能性があります。 |
+
+番号 1〜3 で画像を確認したら、右側のパネルで角度マップを粒子に分割します。角度マップの色は光学方位を表しているので、色の近い画素をまとめることで粒子の領域を作ります。ノイズを落とす（`Clean`）→ 分割する（`Segmentation`）→ 分割で残った隙間を埋める（`Fill boundary`）→ 登録する（`OK`）の順に、番号 4〜9 を操作します。
+
+| 番号 | 場所 | 操作 |
+| --- | --- | --- |
+| **4** | `Clean` | 角度マップの孤立ノイズを減らします。1 回押すごとにカウンタが増えるので、**10 回**押します。 |
+| **5** | `angle:` | 同じ粒子とみなす角度差のしきい値です。既定の `5` のままにします。 |
+| **6** | `Segmentation` | 角度の近い領域をまとめて粒子に分割します。番号 4・5 を設定してから押します。 |
+| **7** | `Fill boundary` | 分割後に残る細い暗線を埋めます。最初のクリックで `2.0 px`、以降は 1 回ごとに `0.5 px` 増えるので、`5.0 px` にするには**合計 7 回**押します。 |
+| **8** | `OK` | ここまでの結果を粒界マップとして登録します。 |
+| **9** | `▶ Continue` | `filter` タブへ進みます。 |
+
+画面右上の扇形のカラーチャートは、消光角 θ とレタデーション φ の組み合わせに対する色の対応表です。左の大きな画像は `Angle map` で、同じ色の領域が光学方位のそろった 1 つの粒子に対応します。
+
+処理内容の確認には、左の画像リストの各ボタンを使います。
+
+| マップ | 確認点 |
 | --- | --- |
-| **median filter** | ノイズ低減用の平滑化サイズ。大き過ぎる値は微細構造を消します。 |
-| **boundary detection sensitivity** | 粒界抽出の感度。高くすると細部まで抽出しますが誤検出も増えます。 |
-| **boundary connectivity** | 途切れた境界を連結とみなす最大距離（px）。大き過ぎる値は不要な連結を生みます。 |
-| **smallest grain size** | `px^2` 単位の最小粒径。値未満の領域はノイズとして除去されます。 |
+| `Angle map` | 近い色の領域が、光学方位のそろった領域としてまとまっているか。 |
+| `color` | 石英の干渉色が連続的で、大きな飽和領域がないか。 |
+| `extinction angle (φex)` | 消光角の境界が、観察される石英粒界と概ね対応しているか。 |
+| `azimuth` | λ 板動画が有効な領域で、0–180° の方位が推定されているか。 |
+| `raw image`（φ=0°/22.5°/45°/67.5°） | 各回転角の元フレーム。撮影のブレやピントを確認します。 |
+| `xpl + λ` の傾斜画像 | 傾斜前後の視野が大きくずれすぎていないか。 |
+
+画面下部の `output` 欄には処理ログが流れます。`Image processing completed.` が出ていれば前処理は完了です。
+
+**番号 4〜8 の操作を終えた直後の状態**が次の図です。`Clean` が `10`、`angle` が `5`、`Fill boundary` が `5.0 px` になっていることを確認してから、`▶ Continue` を押します。
+
+{{< img src="images/page/tutorial/tutorial1/pic4.png" alt="map タブ。Continue を押す前の状態" width="45%" >}}
+
+### 3.4 `filter` タブ: 石英領域をラベル付けする
+
+{{< img src="images/page/tutorial/tutorial1/pic5.png" alt="filter タブの操作" >}}
+
+`filter` タブでは、粒子に鉱物名のラベルを与えます。白い線が、`map` タブで登録した粒界です。
+
+| 番号 | 場所 | 操作 |
+| --- | --- | --- |
+| **1** | `Labels` の `+` ボタン | 入力したラベル名を登録します（番号 2 を入力してから押します）。 |
+| **2** | `Label name` 入力欄 | ラベル名を入力します。ここでは `Quartz` と入力します。 |
+| **3** | 画像上の粒子 | 登録したラベルを選んだ状態で、適当な石英粒子をクリックします。クリックした粒子が教師データになります。 |
+| **4** | `Done` | 分類結果を確定して `analysis` タブへ進みます。 |
+
+`Display` 欄の `Boundaries`（粒界の表示）、`Training boxes`（教師データの表示）、`Opacity` スライダ（分類結果の重ね合わせの濃さ）で、予測結果と教師データの位置を確認できます。`Result` 欄の `Labeled samples`（教師データ数）と `Predicted class distribution`（予測された粒子数）が、操作に応じて更新されます。
+
+**番号 3 でクリックした後の状態**が次の図です。
+
+{{< img src="images/page/tutorial/tutorial1/pic6.png" alt="filter タブ。ラベル付け後の状態" >}}
+
+### 3.5 `analysis` タブ: CPO 解析を実行する
+
+{{< img src="images/page/tutorial/tutorial1/pic7.png" alt="analysis タブ。CPO を選択" width="45%" >}}
+
+| 番号 | 場所 | 操作 |
+| --- | --- | --- |
+| **1** | プロット種別のドロップダウン | `rose diagram`（既定）から **`CPO`** に変更します。 |
+
+上部の `Quartz` のチェックが入っていることも確認します。石英以外のラベルを作った場合は、CPO 計算の前にそのチェックを外してください。
+
+`CPO` を選ぶと、パラメータ欄が次のように変わります。今回はすべて既定値のまま `calculate` を押します。
+
+{{< img src="images/page/tutorial/tutorial1/pic8.png" alt="CPO のパラメータ設定" width="45%" >}}
+
+| 項目 | 値 | 意味 |
+| --- | --- | --- |
+| `ω` / `ε` | `1.544` / `1.553` | 石英の常光線・異常光線の屈折率です。石英を解析する場合は既定値のまま使います。 |
+| `90° normalize` | オン | レタデーションの分布から傾斜角のスケールを補正します。最初の計算ではオンのままにします。 |
+| `percentile` | `95.0` % | 上記の補正に使う分位点です。既定値のままにします。 |
+| `calculate` | — | 押すと CPO 計算が始まります。プログレスバーが消えるまで待ちます。 |
+
+### 3.6 CPO 結果を確認する
+
+{{< img src="images/page/tutorial/tutorial1/pic9.png" alt="CPO 解析の結果" >}}
+
+計算が終わると、左側に石英 c 軸の極図（下半球投影）が表示されます。表示されている内容は次のとおりです。
+
+- **極図**: 色は c 軸方位の密度（右のカラーバー、`density`）を表します。この試料では北西〜北側にやや強い集中が見られます。周囲の `N` / `S` / `E` / `W` は薄片上の方位です。
+- **`Information` 欄**: 計算条件と結果の要約です。
+  - `Orientation: addition image + E-down tilt` — 傾斜方向の判定に使った画像の組み合わせ。
+  - `Grain samples: 304` — 極図に使われた粒子数。
+  - `90 deg normalize: on` / `Theta(P95) -> 90 deg: 56.00 deg` — 補正の内容。
+  - `Predicted thickness: 0.01508 mm` — レタデーションから逆算した実効厚さ。
+  - `Color fit y = alpha * M @ predicted + b` — 理論色と実測色のフィッティング結果です。
+
+左側の画像リストで、次を切り替えて確認します。
+
+| グループ | ボタン | 内容 |
+| --- | --- | --- |
+| `map` | `extinction angle (Φ)`、`azimuth (0°-180°)`、`inclination`、`inclination (0°-180°)` | 消光角・方位・傾斜角の各マップ。 |
+| `map coi` | `φ=0°-90°`、`φ=0°-180°`、`φ=0°-360°` | c 軸方位を疑似カラーで表示した COI マップ。まず `φ=0°-360°` を見ます。 |
+| `polar plot` | `φ=0°-90°`、`φ=0°-180°`、`φ=0°-360°` | 極図。上の図は `φ=0°-360°` を選んだ状態です。 |
+| `color check` | `RGB before correction`、`RGB after correction` | 理論色と実測 λ 板色の対応。補正後に対応が改善していれば、色モデルが実測に合っています。 |
+
+右上の `Grain boundaries` のチェックで、マップ上の粒界表示を切り替えられます。
 
 {{< notice info >}}
-粒界抽出は試行錯誤が前提です。`Show grain boundary` チェックボックスを活用し、結果を逐次確認してください。
+COI マップに欠損領域が出るのは正常です。薄片を傾けると視野がずれるため、傾斜前後で対応できないピクセルが発生します。
 {{< /notice >}}
 
-{{< notice warning >}}
-単一の設定で全鉱物ペアを完全に分離できるとは限りません。対象によっては鉱物ごとに条件を変えて処理する必要があります。
-{{< /notice >}}
+### 3.7 結果を保存する
 
-### 4.6 粒界抽出結果の確定
-1. 抽出結果が意図どおりになったことを確認します。
-2. `7 Continue` を押し、次のラベル付与画面へ進みます。
+1. 右上のメニュー（≡）から `Save project` を選び、`.niconavi` プロジェクトを保存します。
+2. 表示中のマップやプロットを図として残す場合は、`Save image as PDF` を使います。
+3. 粒子ごとの数値を後で解析する場合は、`Save grain information as CSV` を使います。
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic6.png" style="width: 100%;">
+## 4. まとめ
 
-## 5. 鉱物ラベルの付与と確認
-
-### 5.1 ラベル付与の準備
-1. パラメータ欄の `8 Label Name` に `mica` などの鉱物名を入力します。
-2. `9 Add Label` を押し、ラベル付与モードへ切り替えます。
-3. 同じ手順で `other minerals` のラベルも追加します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic7.png" style="width: 100%;">
-
-4. ラベル一覧の `10 mica` を選択し、左画面で該当鉱物の粒子をクリックして教師データを 5～10 個程度追加します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic8.png" style="width: 30%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic9.png" style="width: 100%;">
-
-### 5.2 ラベル精度の向上
-
-
-1. `10 mica` と `11 other minerals` のラジオボタンを切り替え、それぞれの粒子に該当する部分を左画面から選択して教師データを追加します。
-2. 初期状態では、誤判定が多数ありますが、ラベルの追加を繰り返すことで誤判定が減少していきます。
-3. 画面表示の透過度や粒界表示はチェックボックスで切り替え、ラベルが正確に割り当てられているか確認してください。
-4. 必要に応じてラベル名横のカラーボックスをクリックし、表示色を変更します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic10.png" style="width: 100%;">
-図：`other minerals` を選択した後の表示例（個々の環境で色分布は異なります）
-
-{{< notice info >}}
-ラベル付与にはラベル伝搬法を使用しています。全粒子数のおよそ 20% 以上を教師データとして指定すると分類結果が得られます。今回の例では 144 個の粒子にラベルを付与しました。
-{{< /notice >}}
-
-### 5.3 ラベル設定の確定
-1. すべての粒界領域に適切なラベルが付いていることを確認します。
-2. `12 Done` を押し、ラベル設定を確定します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic11.png" style="width: 100%;">
-
-## 6. 岩石組織の定量化（雲母の例）
-
-### 6.1 ローズダイアグラムで定向配列を確認する
-1. `13 other minerals` チェックボックスをオフにします。
-2. ビュー選択で `14 rose diagram` および `15 shape preferred orientation` を選びます。
-3. 右画面の `16 information` に表示される統計値を読み取ります。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic12.png" style="width: 30%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic13.png" style="width: 100%;">
-
-表示例：
-
-```text
-Mean orientation: bulk: 171.952°, mica: 171.952°
-Circular variance: bulk: 0.458, mica: 0.458
-```
-
-平均配向角（Mean orientation）は雲母の形状定向配列を示し、円分散（Circular variance）は 0 に近いほど配向が揃い、1 に近いほどランダム性が高いことを表します。
-
-### 6.2 SPO ビューと楕円近似を確認する
-1. `14 rose diagram` の代わりに `SPO` を選択します。
-2. `Image list` から `ellipse` を選び、粒子を楕円近似した図を表示します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic14.png" style="width: 100%;">
-
-### 6.3 粒子形状の散布図を確認する
-1. ビューを `scatter` に切り替えます。
-2. 軸設定を `x: ellipse major axis length`、`y: ellipse minor axis length` に変更します。
-3. 散布図と回帰直線から、粒子形状のおおよその軸比を読み取ります（例：回帰直線 `y = 0.224 x` なら軸比約 0.224:1 = 1:3.2）。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic15.png" style="width: 100%;">
-
-### 6.4 モード組成（面積比）の確認
-1. ビューを `histogram` に変更します。
-2. `16 other minerals` チェックボックスをオンにします。
-3. 解析量を `17 retardation` から `size` に変更し、面積に基づくヒストグラムを表示します。
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic16.png" style="width: 100%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic17.png" style="width: 100%;">
-
-表示例：
-
-```text
-Mean: bulk: 394.808, mica: 558.211, other minerals: 383.620
-Std Dev: bulk: 1807.601, mica: 493.803, other minerals: 1863.461
-Min: bulk: 14.000, mica: 17.000, other minerals: 14.000
-Max: bulk: 36946.000, mica: 1814.000, other minerals: 36946.000
-Mode: bulk: 24.000, mica: 130.000, other minerals: 24.000
-Count: bulk: 593, mica: 38, other minerals: 555
-Integral ratio: mica: 9.06%, other minerals: 90.94%
-Count ratio: mica: 6.41%, other minerals: 93.59%
-```
-
-`Integral ratio` はヒストグラムの積分値を用いた面積比を表します。上記の例では、雲母（mica）のモード組成は約 9.1% と読み取れます。
-
-## 7. まとめ
-- 本書の手順で、ステージ回転動画の前処理から粒界抽出、鉱物ラベル付与、組織解析まで一通り実行できます。
-- 粒界抽出とラベル伝搬は試行錯誤が必要です。結果が安定しない場合はパラメータと教師データのバランスを再調整してください。
-- 解析結果は `information` 欄の数値およびグラフ表示で必ず検証し、撮影条件や試料特性との整合性を確認してください。
+- `video` タブで 5 本の動画と薄片厚さを入力し、前処理を開始します（図 1 の番号 1〜9）。
+- 粒子抽出は、`map` タブの `Clean` → `Segmentation` → `Fill boundary` → `OK` で行います（図 3 の番号 4〜9）。
+- ラベル付けは `filter` タブで、ラベル追加 → 粒子クリック → `Done` の順に行います（図 5 の番号 1〜4）。
+- 図を保存する前に、COI マップと極図の両方で CPO 結果を確認してください。

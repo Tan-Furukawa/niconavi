@@ -1,206 +1,174 @@
 +++
-date = '2025-10-15T13:10:14+09:00'
+date = '2026-08-31T00:00:00+09:00'
 draft = false
-title = 'Tutorial 1 - NicolNavi Basics'
+title = 'Tutorial 1 - CPO Analysis with the GGG3 Dataset'
 +++
 
 ## 1. Overview
 
-Work through this tutorial to learn the core NicolNavi operations using a pelitic schist microscope video. By following the steps you will complete preprocessing, grain-boundary detection, mineral labelling, and basic modal/SPO checks for a rotation video.
+This tutorial runs a CPO (Crystallographic Preferred Orientation) analysis on the GGG3 orthoquartzite dataset. You will load five optical videos, work through the `video` / `center` / `map` / `filter` / `analysis` tabs, and inspect quartz c-axis orientations on a polar plot.
 
-## 2. Prerequisites
+In each figure below, the **yellow numbers** mark the controls to use, in the order they are used on that tab.
 
-- NicolNavi is running and the target project is open.
-- You can access the sample video `nicolnavi_app/Examples/pelitic-schist-xpl.avi`.
+## 2. Video Set
 
-## 3. Layout
-
-- **Left panel**: Image viewer showing the analysed frame, boundaries, and labels.
-- **Right panel**: Buttons, parameter inputs, and checkboxes for each stage.
-- **Center**: `Image list` selector that swaps the map displayed on the left.
-
-## 4. Workflow
-
-### 4.1 Load the Video
-
-1. Click `1 Select` on the right panel.
-2. Choose `nicolnavi_app/Examples/pelitic-schist-xpl.avi` and open it.
-3. Confirm that the left panel shows the first frame resized to a width of 1000 px.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic1.png" style="width: 30%;">
-
-### 4.2 Run Preprocessing
-
-1. Select `2 Start` to launch discretisation and rotation-centre estimation.
-2. When the process finishes, the app switches to the rotation-centre adjustment screen.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic2.png" style="width: 100%;">
-
-### 4.3 Adjust the Rotation Centre
-
-1. Check that the red cross is centred on the concentric pattern.
-2. If it is misaligned, fine-tune the coordinates with the `+` and `−` buttons. In this dataset the default position is almost correct, so you can skip adjustments.
-3. Click `3 Continue` to fix the centre.
-
-### 4.4 Review the Derived Maps
-
-1. After the automatic transition, open `Image list` and review these representative maps.
-
-| Map | Description |
+| NicoNavi input | File |
 | --- | --- |
-| `color` | Brightest colours observed during a full rotation. |
-| `extinction color` | Colours at the darkest instant. If the image never darkens, re-check the previous steps. |
-| `R` | Pixel-level retardation values. The `Video` tab controls the retardation search range. With `max retardation = 300`, non-quartz values are indicative only. |
-| `extinction angle` | Map of extinction angles for each pixel. |
-| `raw image` | Unprocessed frame. Selecting, for example, $\phi = 22.5\degree$ shows the frame at that rotation angle. |
+| `XPL Rotated` | `ggg3_xpl.avi` |
+| `XPL + λ-Plate Rotated` | `ggg3_lambda.avi` |
+| `0° tilt` | `ggg3_tilt_0.avi` |
+| `45° tilt` | `ggg3_tilt_45.avi` |
+| `45° not tilt` | `ggg3_horiz.avi` |
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic3.png" style="width: 100%;">
+## 3. Workflow
 
-{{< notice warning >}}
-If the entire `extinction color` map remains bright, the sensor may be saturating or preprocessing was inadequate. Tutorial 2 covers remedies.
-{{< /notice >}}
+### 3.1 `video` Tab: Load the Videos
 
-### 4.5 Tune Grain-Boundary Parameters
+{{< img src="images/page/tutorial/tutorial1/pic1.png" alt="video tab" >}}
 
-1. Set the initial parameters in the right panel for your target textures.
-2. Press `6 Detect Grain Boundary` to overlay the detected boundaries.
-3. Adjust `4 median filter` and `5 parameters` as shown below.
-4. Click `6 Calculate grain boundaries` again to refresh the result.
+The yellow numbers correspond to the following steps.
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic4.png" style="width: 30%;">
+| No. | Control | Action |
+| --- | --- | --- |
+| **1** | `XPL Rotated` | Click `Select` and choose `ggg3_xpl.avi`. |
+| **2** | `XPL + λ-Plate Rotated` | Choose `ggg3_lambda.avi`. |
+| **3** | `0°` row of `XPL + λ-Plate 0°/45°` | Choose `ggg3_tilt_0.avi`. |
+| **4** | `45°` row (tilt) | Choose `ggg3_tilt_45.avi`. |
+| **5** | `45°` row (horiz) | Choose `ggg3_horiz.avi`. |
+| **6** | `thin section thickness` | The thin-section thickness. Enter `0.022` mm. |
+| **7** | `λ` | The retardation plate value. Keep `530.0` nm unless the data were acquired with a different plate. |
+| **8** | `gray-world white balance` | Check this when the illumination colour cast was not corrected during acquisition. Check it for this dataset. |
+| **9** | `▶ start` | Starts preprocessing. NicoNavi switches to the `center` tab when loading finishes. |
 
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic5.png" style="width: 100%;">
-Left: default settings. Right: after tuning.
+### 3.2 `center` Tab: Confirm the Rotation Centre
 
-| Parameter | Description |
+{{< img src="images/page/tutorial/tutorial1/pic2.png" alt="center tab" >}}
+
+1. The left image stacks the frame-to-frame change over the whole video, so stage rotation appears as a concentric pattern.
+2. Confirm that the red cross sits at the centre of that pattern. Here `cx = 490` and `cy = 266` are already centred, so continue as is.
+3. If it is off-centre, adjust `cx` and `cy` with the `−` / `+` buttons.
+4. Click `▶ continue` to build the angle and colour maps.
+
+### 3.3 `map` Tab: Inspect the Maps and Segment Grains
+
+{{< img src="images/page/tutorial/tutorial1/pic3.png" alt="map tab" >}}
+
+On the `map` tab, first check the results in the image list on the left (numbers 1–3), then segment grains in the right-hand panel (numbers 4–9).
+
+| No. | Control | Action |
+| --- | --- | --- |
+| **1** | `extinction color` in the `extinction` group (red button) | The colour image at extinction. Red marks an important image that has not been opened since the last recalculation. Click it to check the content. |
+| **2** | `original color change (0°)` in the `xpl + λ` group (red button) | How much the colour changed from the original image in the 0° tilted view. A visible change means the tilted images were registered correctly. |
+| **3** | `original color change (45°)` (red button) | The same check for the 45° tilted view. A nearly black result suggests the tilted field of view does not match. |
+
+Once numbers 1–3 look right, segment the angle map into grains in the right-hand panel. Colours in the angle map represent optical orientation, so grouping pixels of similar colour builds the grain regions. Work through numbers 4–9 in order: remove noise (`Clean`) → segment (`Segmentation`) → fill the gaps left by segmentation (`Fill boundary`) → register the result (`OK`).
+
+| No. | Control | Action |
+| --- | --- | --- |
+| **4** | `Clean` | Reduces isolated noisy pixels in the angle map. The counter increases on each click, so click it **10 times**. |
+| **5** | `angle:` | The angle difference treated as the same grain. Keep the default, `5`. |
+| **6** | `Segmentation` | Groups regions of similar angle into grains. Click it after setting numbers 4 and 5. |
+| **7** | `Fill boundary` | Fills the thin dark lines left after segmentation. The first click sets `2.0 px` and each later click adds `0.5 px`, so `5.0 px` takes **seven clicks** in total. |
+| **8** | `OK` | Registers the result as the grain boundary map. |
+| **9** | `▶ Continue` | Moves to the `filter` tab. |
+
+The fan-shaped colour chart at the top right maps combinations of extinction angle θ and retardation φ to colour. The large image on the left is the `Angle map`, where a single colour region corresponds to one grain of uniform optical orientation.
+
+Use the buttons in the image list to check the processing.
+
+| Map | What to check |
 | --- | --- |
-| **median filter** | Smoothing window for noise suppression. Large values remove fine structure. |
-| **boundary detection sensitivity** | Higher values capture finer details but increase false positives. |
-| **boundary connectivity** | Maximum gap (px) treated as connected. Excessive values over-connect regions. |
-| **smallest grain size** | Minimum area in `px^2`. Regions below the threshold are discarded as noise. |
+| `Angle map` | Similar colours should follow coherent optical-orientation domains. |
+| `color` | The quartz interference colours should be continuous, without large saturated regions. |
+| `extinction angle (φex)` | Extinction-angle boundaries should roughly match the visible quartz grain structure. |
+| `azimuth` | The 0–180° azimuth should be resolved where the λ-plate video is valid. |
+| `raw image` (φ=0°/22.5°/45°/67.5°) | The source frame at each rotation angle. Check for blur and focus. |
+| `xpl + λ` tilt images | The tilted views should not be shifted too far from the original field. |
+
+The `output` panel at the bottom shows the processing log. `Image processing completed.` means preprocessing has finished.
+
+The figure below shows the state **right after steps 4–8**. Confirm that `Clean` is `10`, `angle` is `5`, and `Fill boundary` is `5.0 px`, then click `▶ Continue`.
+
+{{< img src="images/page/tutorial/tutorial1/pic4.png" alt="map tab before Continue" width="45%" >}}
+
+### 3.4 `filter` Tab: Label the Quartz Regions
+
+{{< img src="images/page/tutorial/tutorial1/pic5.png" alt="filter tab" >}}
+
+The `filter` tab assigns mineral labels to grains. The white lines are the grain boundaries registered on the `map` tab.
+
+| No. | Control | Action |
+| --- | --- | --- |
+| **1** | `+` button next to `Labels` | Registers the label name you typed (click it after entering number 2). |
+| **2** | `Label name` field | Type the label name. Use `Quartz` here. |
+| **3** | A grain in the image | With the label selected, click any quartz grain. The clicked grain becomes training data. |
+| **4** | `Done` | Confirms the classification and moves to the `analysis` tab. |
+
+Use `Boundaries` (show grain boundaries), `Training boxes` (show training data), and the `Opacity` slider (overlay strength) in the `Display` panel to check the prediction against the training data. `Labeled samples` and `Predicted class distribution` in the `Result` panel update as you work.
+
+The figure below shows the state **after clicking in step 3**.
+
+{{< img src="images/page/tutorial/tutorial1/pic6.png" alt="filter tab after labelling" >}}
+
+### 3.5 `analysis` Tab: Run the CPO Calculation
+
+{{< img src="images/page/tutorial/tutorial1/pic7.png" alt="analysis tab, CPO selected" width="45%" >}}
+
+| No. | Control | Action |
+| --- | --- | --- |
+| **1** | Plot type dropdown | Change it from `rose diagram` (the default) to **`CPO`**. |
+
+Also confirm that `Quartz` is checked at the top. Uncheck any non-quartz label before running the CPO calculation.
+
+Selecting `CPO` changes the parameter panel as shown below. Keep every default and click `calculate`.
+
+{{< img src="images/page/tutorial/tutorial1/pic8.png" alt="CPO parameters" width="45%" >}}
+
+| Item | Value | Meaning |
+| --- | --- | --- |
+| `ω` / `ε` | `1.544` / `1.553` | The ordinary and extraordinary refractive indices of quartz. Keep the defaults when analysing quartz. |
+| `90° normalize` | on | Rescales the inclination using the retardation distribution. Leave it on for a first pass. |
+| `percentile` | `95.0` % | The percentile used for that correction. Keep the default. |
+| `calculate` | — | Starts the CPO calculation. Wait until the progress bar disappears. |
+
+### 3.6 Review the CPO Result
+
+{{< img src="images/page/tutorial/tutorial1/pic9.png" alt="CPO result" >}}
+
+When the calculation finishes, the quartz c-axis polar plot (lower-hemisphere projection) appears on the left.
+
+- **Polar plot**: colour shows the density of c-axis orientations (`density`, the colour bar on the right). This sample has a moderate concentration towards the northwest and north. `N` / `S` / `E` / `W` are directions on the thin section.
+- **`Information` panel**: a summary of the calculation.
+  - `Orientation: addition image + E-down tilt` — the image combination used to resolve the tilt direction.
+  - `Grain samples: 304` — the number of grains used in the plot.
+  - `90 deg normalize: on` / `Theta(P95) -> 90 deg: 56.00 deg` — the applied correction.
+  - `Predicted thickness: 0.01508 mm` — the effective thickness back-calculated from retardation.
+  - `Color fit y = alpha * M @ predicted + b` — the fit between theoretical and measured colours.
+
+Switch between the following in the image list on the left.
+
+| Group | Buttons | Content |
+| --- | --- | --- |
+| `map` | `extinction angle (Φ)`, `azimuth (0°-180°)`, `inclination`, `inclination (0°-180°)` | Extinction angle, azimuth, and inclination maps. |
+| `map coi` | `φ=0°-90°`, `φ=0°-180°`, `φ=0°-360°` | COI maps showing c-axis orientation in pseudo-colour. Start with `φ=0°-360°`. |
+| `polar plot` | `φ=0°-90°`, `φ=0°-180°`, `φ=0°-360°` | Polar plots. The figure above has `φ=0°-360°` selected. |
+| `color check` | `RGB before correction`, `RGB after correction` | Theoretical versus measured λ-plate colours. A better post-correction trend means the colour model matches the measurement. |
+
+The `Grain boundaries` checkbox at the top right toggles the grain boundary overlay on the maps.
 
 {{< notice info >}}
-Expect to iterate when extracting boundaries. Toggle `Show grain boundary` to inspect the overlay frequently.
+Blank regions in COI maps are expected where the tilted and horizontal fields of view do not overlap.
 {{< /notice >}}
 
-{{< notice warning >}}
-A single parameter set rarely isolates all mineral combinations. Some datasets require mineral-specific processing.
-{{< /notice >}}
+### 3.7 Save the Results
 
-### 4.6 Finalise the Grain Boundaries
+1. Choose `Save project` from the top-right menu (≡) to store the `.niconavi` project.
+2. Use `Save image as PDF` to export the currently displayed map or plot.
+3. Use `Save grain information as CSV` for grain-level measurements.
 
-1. Continue adjusting until the result matches your intent.
-2. Click `7 Continue` to proceed to the labelling stage.
+## 4. Wrap-Up
 
-### 4.7 Configure Labels
-
-1. Enter `mica` in `Label Name` and press `+`. Add `bulk` in the same way.
-2. Select `mica`, then click 5–10 representative mica grains in the left panel. Repeat for `bulk`.
-3. If misclassifications remain, extend the training data until predictions stabilise.
-4. Choose `Done` to confirm the labels. In this sample a few dozen grains are sufficient.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic6.png" style="width: 100%;">
-
-### 4.8 Propagate Labels
-
-1. Press `9 Propagate labels` to apply labels to all grains based on the training set.
-2. Inspect the result. If the classification drifts, add training grains and re-run the propagation.
-
-### 4.9 Manual Edits
-
-1. Use `10 edit labels` to switch to manual editing.
-2. Choose the desired label and click regions that require corrections.
-3. Toggle `Show grain boundary` to verify the outline while editing.
-
-### 4.10 Save the Labelling Result
-
-1. When satisfied, select `11 Save` to store the label configuration.
-2. Leaving the screen without saving discards the edits, so save before moving on.
-
-### 4.11 Export Images (Optional)
-
-1. Use `12 Save image` to export the current view.
-2. PNG is recommended for documentation or publications.
-
-## 5. Analyse Modal Composition
-
-### 5.1 Histogram-Based Ratios
-
-1. Open the `analysis` tab.
-2. Select `histogram` view and choose `retardation` as the metric.
-3. Use `13 minerals` to toggle mineral visibility and study the distribution.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic7.png" style="width: 100%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic8.png" style="width: 30%;">
-
-{{< notice info >}}
-The histogram shows the mean, standard deviation, min/max, mode, and count for each group. Use these values to interpret retardation ranges for the labelled minerals.
-{{< /notice >}}
-
-### 5.2 Rose Diagram
-
-1. Switch the view to `rose diagram` to examine preferred orientations.
-2. Enable `14 rose diagram` and keep `retardation` selected.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic9.png" style="width: 30%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic10.png" style="width: 100%;">
-
-### 5.3 Orientation Stats
-
-1. Focus on the mica alignment by selecting only the `mica` label.
-2. Read the statistics in `16 information`. Example output:
-
-```text
-Mean orientation: bulk: 171.952°, mica: 171.952°
-Circular variance: bulk: 0.458, mica: 0.458
-```
-
-Mean orientation indicates the SPO trend for mica. Circular variance approaches 0 for strong alignment and 1 for random orientations.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic12.png" style="width: 30%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic13.png" style="width: 100%;">
-
-### 5.4 SPO View and Ellipse Approximation
-
-1. Switch `14 rose diagram` to `SPO`.
-2. Choose `ellipse` from `Image list` to display ellipse fits for each grain.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic14.png" style="width: 100%;">
-
-### 5.5 Grain-Shape Scatter Plot
-
-1. Change the view to `scatter`.
-2. Set the axes to `x: ellipse major axis length` and `y: ellipse minor axis length`.
-3. Use the regression line to estimate the aspect ratio—for example, `y = 0.224 x` implies ~1:3.2.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic15.png" style="width: 100%;">
-
-### 5.6 Modal Composition (Area Fraction)
-
-1. Switch to `histogram` again.
-2. Enable `16 other minerals`.
-3. Change the metric from `17 retardation` to `size` to plot area-based histograms.
-
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic16.png" style="width: 100%;">
-<img src="https://tan-furukawa.github.io/niconavi/images/page/tutorial/tutorial1/pic17.png" style="width: 100%;">
-
-Example output:
-
-```text
-Mean: bulk: 394.808, mica: 558.211, other minerals: 383.620
-Std Dev: bulk: 1807.601, mica: 493.803, other minerals: 1863.461
-Min: bulk: 14.000, mica: 17.000, other minerals: 14.000
-Max: bulk: 36946.000, mica: 1814.000, other minerals: 36946.000
-Mode: bulk: 24.000, mica: 130.000, other minerals: 24.000
-Count: bulk: 593, mica: 38, other minerals: 555
-Integral ratio: mica: 9.06%, other minerals: 90.94%
-Count ratio: mica: 6.41%, other minerals: 93.59%
-```
-
-`Integral ratio` gives the area fraction based on the histogram integral. In this example mica constitutes about 9.1%.
-
-## 6. Wrap-Up
-
-- Following these steps covers preprocessing, boundary detection, labelling, and structural analysis for a rotation video.
-- Expect to iterate between boundary detection and label propagation. Rebalance parameters and training data if the result is unstable.
-- Always verify the outputs via `information` statistics and plots, and cross-check them with the imaging and sample conditions.
+- On the `video` tab, load the five videos and the thin-section thickness, then start preprocessing (figure 1, numbers 1–9).
+- Grains are extracted on the `map` tab with `Clean` → `Segmentation` → `Fill boundary` → `OK` (figure 3, numbers 4–9).
+- Labelling happens on the `filter` tab: add a label → click a grain → `Done` (figure 5, numbers 1–4).
+- Verify the CPO result on both the COI map and the polar plot before exporting figures.

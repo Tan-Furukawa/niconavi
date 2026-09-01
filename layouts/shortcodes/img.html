@@ -1,0 +1,5 @@
+{{- /* Base-relative image. Works on localhost and under the /niconavi/ GitHub Pages path. */ -}}
+{{- $src := .Get "src" | default (.Get 0) -}}
+{{- $width := .Get "width" | default (.Get 1) | default "100%" -}}
+{{- $alt := .Get "alt" | default "" -}}
+<img src="{{ (strings.TrimPrefix "/" $src) | relURL }}"{{ with $alt }} alt="{{ . }}"{{ end }} style="width: {{ $width }};" loading="lazy">

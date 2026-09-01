@@ -1,0 +1,14 @@
+{
+  "name": "niconavi-page",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NicoNavi documentation site (Hugo)",
+  "scripts": {
+    "dev": "hugo server --renderToMemory --baseURL http://localhost:1313/ --appendPort=false --bind 0.0.0.0 --port 1313 --buildDrafts --buildFuture --disableFastRender --navigateToChanged",
+    "start": "npm run dev",
+    "preview": "hugo server --renderToMemory --baseURL http://localhost:1313/ --appendPort=false --port 1313 --disableFastRender",
+    "build": "hugo --minify --baseURL https://tan-furukawa.github.io/niconavi/",
+    "build:local": "hugo --minify --baseURL http://localhost:1313/ --destination public_local",
+    "clean": "rm -rf public public_local resources/_gen .hugo_build.lock"
+  }
+}

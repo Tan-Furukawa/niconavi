@@ -5,6 +5,11 @@ languagecode = "en"
 defaultcontentlanguage = "en"
 
 [module]
+  # Restore the default project layouts mount. Declaring any layouts mount
+  # below disables it, which would hide layouts/_shortcodes/*.html.
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
   [[module.mounts]]
     source = "themes/hugo-coder/layouts/_partials"
     target = "layouts/partials"
