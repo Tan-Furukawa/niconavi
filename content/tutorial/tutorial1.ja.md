@@ -1,135 +1,80 @@
 +++
 date = '2026-10-21T00:00:00+09:00'
 draft = false
-title = 'Tutorial1 - 石英薄片から c 軸方位を求める'
+title = 'Tutorial 1 - 回転動画1本から Angle map を作る'
 +++
 
-このチュートリアルでは、サンプルデータ `ggg3` を使い、動画の読み込みから粒界の抽出、鉱物相のラベル付け、CPO（結晶方位選択配向）の表示までを順に行います。
+このチュートリアルでは、化石を含む薄片のサンプルデータ `orikabetoge` を使います。直交ニコル下でステージを回転させた動画1本だけを読み込み、c 軸方位を色で示す **Angle map** と、化石の形を観察しやすい **Maximum intensity image** を表示します。
 
-## 1. サンプルデータを準備する
+## 1. サンプル動画を準備する
 
-[NicoNavi の `ggg3` サンプルデータ](https://github.com/Tan-Furukawa/niconavi_app/tree/main/Examples/ggg3)を開き、フォルダー内の5本の動画をダウンロードしてください。
+[NicoNavi の `orikabetoge` サンプルデータ](https://github.com/Tan-Furukawa/niconavi/tree/main/examples/orikabetoge)を開き、`orikabetoge_xpl.avi` をダウンロードしてください。
 
-## 2. 動画と測定条件を入力する
+## 2. 動画と薄片厚さを入力する
 
-NicoNavi を起動し、右側の **Images** パネルで次の項目を設定します。画像内の青い番号と、以下の番号が対応しています。
+NicoNavi を起動し、右側の **Images** パネルで次の項目を設定します。画像内の青い番号と以下の番号が対応しています。
 
-{{< img src="images/page/tutorial/01-input-settings.png" alt="Imagesパネルで動画と測定条件を入力する画面" >}}
+{{< img src="images/page/tutorial1/01-input.png" alt="Rotated XPL動画、薄片厚さ、ホワイトバランスを設定する画面" >}}
 
-1. **Rotated XPL** に、直交ニコルでステージを回転させた動画を指定します。
-2. **Thin section thickness** に薄片の厚さを入力します。今回の薄片は `0.022 mm` です。厚さが厳密に測定できていなくても、後述の補正を利用できるため、結晶方位の測定に大きな問題はありません。
-3. **Rotated XPL + λ plate** に、鋭敏色検板を挿入してステージを回転させた動画を指定します。
-4. **λ** に鋭敏色検板の位相差を入力します。
-5. **0° tilted image** に、0°方向へ傾けた動画を指定します。
-6. **45° tilted image** に、45°方向へ傾けた動画を指定します。
-7. **45° reference image** に、45°傾斜用の参照動画を指定します。
-8. 動画のホワイトバランスが未調整の場合は、**Gray-world white balance** をオンにします。今回のサンプル動画は未調整なので、チェックを入れてください。
+1. **Rotated XPL** の **Select** を押し、直交ニコル下でステージを回転させた動画 `orikabetoge_xpl.avi` を選びます。この動画だけが必須で、ほかの動画はすべてオプションです。
+2. **Thin section thickness** に薄片の厚さ `0.04 mm` を入力します。厚さを入力すると、その下の **Maximum retardation**（最大レタデーション）が自動計算されます。
+3. 動画のホワイトバランスが未調整の場合は **Gray-world white balance** にチェックを入れます。今回の動画は未調整なので、チェックを入れてください。
 
-{{< notice info >}}
-このチュートリアルで使う5本の動画は、手順1でダウンロードした `ggg3` フォルダーに含まれています。
-{{< /notice >}}
+今回は **Rotated XPL + λ plate** と **XPL + λ plate (0°/45°)** の画像は使用しません。これらの入力で何ができるようになるかは、最後に説明します。
 
-すべての入力が終わったら、**Start** をクリックします（画像の9）。
+動画を選ぶと、左側に1フレーム目が表示されます。リング状に光っている部分が化石です。入力を確認したら **Start**（画像の4）を押して計算を始めます。
 
-{{< img src="images/page/tutorial/02-start.png" alt="入力完了後にStartを押す画面" >}}
+{{< img src="images/page/tutorial1/02-preview-start.png" alt="化石を含む動画の1フレーム目を確認してStartを押す画面" >}}
 
 ## 3. 回転中心を確認する
 
-**Center** タブでは、画像に見える同心円状のパターンから回転中心を決めます。赤い「＋」が同心円の中心にあれば問題ありません。
+**Center** タブには、動画の全フレームを重ね合わせて得られた同心円状のパターンが表示されます。この同心円の中心が、ステージの回転中心です。赤い「＋」が同心円の中心に重なっていれば問題ありません。
 
-中心は自動検出されますが、ずれている場合は **X** と **Y** の値を調整して手動で直してください。今回のサンプルでは最初から中心が合っているため、そのまま **Continue** をクリックします（画像の10）。
+中心は自動検出されますが、ずれている場合は **X**、**Y** の −／＋ボタンを押すか、数値を直接入力して調整してください。今回は最初から中心が合っているため、そのまま **Continue** を押します。
 
-{{< img src="images/page/tutorial/03-center.png" alt="同心円の中心と赤い十字を確認するCenterタブ" >}}
+{{< img src="images/page/tutorial1/03-center.png" alt="同心円パターンと赤い十字で回転中心を確認するCenterタブ" >}}
 
-## 4. 計算結果の品質を確認する
+## 4. Angle map を読み取る
 
-**Map** タブを開き、まず赤色で示した3つの画像切り替えボタンを確認します。ここでは、動画どうしの位置合わせと、回転動画の角度推定が正しいかを点検します。
+計算が終わると **Map** タブへ移動し、**Angle map** が表示されます。
 
-{{< img src="images/page/tutorial/04-quality-buttons.png" alt="品質確認に使うextinction colorとoriginal color changeのボタン" >}}
+{{< img src="images/page/tutorial1/04-angle-map.png" alt="化石薄片のAngle mapと画像切り替えボタン" >}}
 
-1. **extinction color**：各ピクセルが最も暗くなったときの色を表示します。正常なら、常に暗い粒界を除いて粒内はおおむね黒くなります。白飛びや回転中心のずれがあると、粒内まで明るく、ざらついた見え方になります。
-2. **original color change (0°)**：回転動画と0°傾斜動画の位置合わせを確認します。
-3. **original color change (45°)**：回転動画と45°傾斜動画の位置合わせを確認します。画像の一部が欠けて見えること自体は正常です。
+Angle map は、**Video** タブで入力した薄片厚さを参考に推定した c 軸の傾き（inclination、0–90°）と、消光角を組み合わせた画像です。右上のカラーチャートが色と角度の対応を示し、θ が inclination、φ が消光角を表します。
 
-位置合わせがずれている場合、**original color change** では粒界付近に赤・緑・青などの鮮やかな色が強く現れる傾向があります。次の比較画像では、左列が正常、右列が失敗例です。失敗例の **extinction color** は回転中心がずれており、粒界以外も明るく、ざらついています。
+Angle map は、角度情報を定性的に観察したいときに便利です。この例では、化石の殻に沿って色が変化していることから、殻を構成する結晶の向きが場所によってどのように変わるかを確認できます。
 
-{{< img src="images/page/tutorial/05-quality-comparison.png" width="80%" alt="品質確認画像の正常例と失敗例の比較" >}}
+続いて、画像内の次のボタンを順に確認します。
 
-## 5. 角度マップを整え、粒界を抽出する
+1. **Images > Maximum intensity image**
+2. **Images > extinction color**（赤色のボタン）
 
-**Angle map**（画像の1）へ戻り、次の順で処理します。
+## 5. extinction color で計算品質を確認する
 
-{{< img src="images/page/tutorial/06-segmentation.png" alt="Angle mapでClean、Segment、Fill、Applyを実行する画面" >}}
+**extinction color** は、各ピクセルが最も暗くなる、つまり消光するときの色を表示します。回転中心などが正しく推定できていれば、次のように画像全体がほぼ黒くなります。
 
-1. **Clean**（画像の2）を10回程度クリックします。これは画像のノイズを除く処理です。クリックするたびに角度マップが徐々に滑らかになる様子を確認できます。
-2. **Segment**（画像の3）をクリックします。隣接する superpixel 間の c 軸のなす角が指定値以下なら、それらを同じ領域として結合します。その結果、隣り合う粒子間の方位差が設定した角度以上になるように分割されます。
-3. **Fill**（画像の4）を、表示値が `5 px` になるまでクリックします。これは、常に消光して黒く見える細い粒界領域を周囲の相へ統合する処理です。目安は `5 px` です。
-4. **Apply**（画像の5）をクリックして粒界を計算します。
+{{< img src="images/page/tutorial1/05-extinction-color.png" alt="正常に計算され全体がほぼ黒く表示されたextinction color画像" >}}
 
-粒界が表示されたら結果を確認し、**Continue**（画像の6）をクリックします。
+この表示は、回転中心の推定や計算結果が妥当かを確認するために使います。うまく計算できていない場合の見え方は Tutorial 2 で説明します。
 
-{{< img src="images/page/tutorial/07-boundaries.png" alt="粒界抽出後にContinueを押す画面" >}}
+## 6. Maximum intensity image で化石を観察する
 
-## 6. 鉱物相をラベル付けする
+**Maximum intensity image** は、各ピクセルが最も明るくなる角度、すなわち消光角＋45°での色を表示します。どの向きの結晶も明るく写るため、化石の形が分かりやすくなります。
 
-今回はすべての粒子を石英として扱います。
+{{< img src="images/page/tutorial1/06-maximum-intensity.png" alt="化石の形が見やすいMaximum intensity image" >}}
 
-1. **Labels** の入力欄に `Quartz` と入力します（画像の1）。
-2. **＋** ボタンをクリックします（画像の2）。
-3. 左側の画像内をクリックします（画像の3）。
+**raw image > φ=0°** と切り替えて比較すると、Maximum intensity image の特徴を確認しやすくなります。
 
-{{< img src="images/page/tutorial/08-label-quartz.png" alt="Quartzラベルを追加して画像をクリックする画面" >}}
+## 7. 動画1本で分かること・分からないこと
 
-画像全体が石英として分類されたら完了です。**Save**（画像の4）をクリックして、次の工程へ進みます。
+直交ニコル下の回転動画1本だけで、Angle map と Maximum intensity image を表示できます。ただし、ステージを1周させる間に消光が4回起こるため、次の向きは区別できません。
 
-{{< img src="images/page/tutorial/09-label-complete.png" alt="すべての粒子をQuartzとして分類した画面" >}}
+- azimuth（c 軸の方位）が 0–90° と 90–180° のどちらにあるか
+- inclination（c 軸の傾き）が 0–90° と 90–180° のどちらにあるか、つまり c 軸が上向きか下向きか
 
-複数の鉱物を区別したい場合は、必要な鉱物名を **Labels** に追加し、それぞれの相を分類できます。
+これらの不定性を解消したい場合は、**Video** タブで追加の動画・画像を読み込みます。
 
-## 7. CPOを計算する
+- **Rotated XPL + λ plate**：鋭敏色板を入れて回転させた動画を追加すると、azimuth の不定性を解消できます。
+- **XPL + λ plate (0°/45°)**：tilt ステージを使って撮影した画像を追加すると、inclination の不定性を解消できます。
 
-**Analysis** タブへ移動し、解析の選択欄（画像の1）から **CPO**（画像の2）を選びます。
-
-{{< img src="images/page/tutorial/10-analysis-cpo.png" alt="AnalysisタブでCPOを選択する画面" >}}
-
-**Normalize to 90°** は、レタデーションが指定した **Percentile** 以上の相を90°として正規化する機能です。薄片厚さを厳密に測定できていない場合にも利用できますが、特別な理由がなければ初期設定のままで構いません。
-
-**Calculate**（画像の3）をクリックし、計算が終わるまで待ちます。
-
-{{< img src="images/page/tutorial/11-calculate-cpo.png" alt="CPOのCalculateボタンを押す画面" >}}
-
-## 8. 結果を表示し、読み取る
-
-計算が終わったら **φ=0–360°**（画像の4）をクリックします。石英の c 軸方位が方位マップとして表示されます。
-
-{{< img src="images/page/tutorial/12-show-results.png" alt="φ=0–360°のCPO計算結果を表示した画面" >}}
-
-### 極図
-
-極図は、測定領域に含まれる c 軸方位の分布をまとめて表示します。同じ計算結果でも、表示形式やデザインを変更できます。
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: start;">
-  <figure style="margin: 0;">
-    {{< img src="images/page/tutorial/13-polar-plot.png" width="100%" alt="c軸方位を示す標準表示の極図" >}}
-    <figcaption><strong>標準表示：</strong>方位ごとの頻度を棒の長さで読み取ります。棒が集中する方向ほど、その方向を向く c 軸が多いことを示します。</figcaption>
-  </figure>
-  <figure style="margin: 0;">
-    {{< img src="images/page/tutorial/14-polar-plot-styled.png" width="100%" alt="デザインを変更したc軸方位の極図" >}}
-    <figcaption><strong>デザイン変更例：</strong>同じ方位データの見せ方を変更した例です。解析結果に応じて、比較しやすい表示形式を選べます。</figcaption>
-  </figure>
-</div>
-
-### 方位マップ
-
-方位マップでは、薄片上の各粒子について、c 軸がどの方向を向いているかを色で確認できます。
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: start;">
-  <figure style="margin: 0;">
-    {{< img src="images/page/tutorial/15-map-0-360.png" width="100%" alt="傾斜情報を含むφ=0–360°の方位マップ" >}}
-    <figcaption><strong>φ=0–360°：</strong>傾斜動画の情報を含めて推定した結果です。c 軸の向きを360°の範囲で表現できます。</figcaption>
-  </figure>
-  <figure style="margin: 0;">
-    {{< img src="images/page/tutorial/16-map-0-180.png" width="100%" alt="傾斜情報を使わないφ=0–180°の方位マップ" >}}
-    <figcaption><strong>φ=0–180°：</strong>傾斜動画の情報を使わずに導出した結果です。傾斜情報の推定は難しいため、左の φ=0–360° はこの結果よりも色が細かく入り混じり、ややばらつきが大きく見えます。</figcaption>
-  </figure>
-</div>
+これらの入力を使った解析は、Tutorial 2 と Tutorial 3 で扱います。
