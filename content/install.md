@@ -4,55 +4,30 @@ draft = false
 title = 'Installation Guide'
 +++
 
-
-**<<<<<<<<<< This software is based on research that is currently under review. >>>>>>>>>>>>**
-
 # NicolNavi Installation Guide
 
-## Requirements
-- uv (Python package manager)
-- Google Chrome (recommended)
+Download the appropriate package for your system from [GitHub Releases](https://github.com/Tan-Furukawa/niconavi_app/releases).
 
-## Install uv
+## Windows
 
-### macOS / Linux
-1. Open Terminal.
-2. Run `curl -LsSf https://astral.sh/uv/install.sh | sh`.
-3. Close Terminal.
+Download and run `NicoNavi-Setup.exe`, then follow the installer instructions.
 
-### Windows (PowerShell)
-1. Open PowerShell.
-2. Run `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`.
-3. Close PowerShell.
+## Linux (x86_64 AppImage)
 
-## Set up NicolNavi
+Download `NicoNavi-<version>-x86_64.AppImage`, make it executable in Terminal, and run it.
 
-1. Open https://github.com/Tan-Furukawa/niconavi_app.
-2. Click `Code` → `Download ZIP`, then extract the ZIP to any location.
+```bash
+chmod +x NicoNavi-*-x86_64.AppImage
+./NicoNavi-*-x86_64.AppImage
+```
 
-### macOS
-1. Right-click the extracted `niconavi_app` folder → Service → New Terminal tab at Finder (or otherwise open Terminal in that folder).
-2. In Terminal, run:
+## Python (macOS and other platforms)
 
-   ```
-   chmod 777 ./run_niconavi_mac.sh
-   ./run_niconavi_mac.sh
-   ```
+Install [uv](https://docs.astral.sh/uv/) and Git, then run the following commands in Terminal or PowerShell. This method also works on Windows and Linux.
 
-### Windows
-Double-click `run_niconavi_Windows.bat`.
-
-### Note
-
-- The required Python environment installs automatically. When installation finishes, Google Chrome will launch and NicolNavi will start. **On the first install, startup can take up to about 5 minutes. Even if Chrome shows `This site can’t be reached`, please wait.**
-- Use the same steps to start the app next time; subsequent launches are faster. The `chmod 777` command is only needed the first time.
-
-### If installation fails
-If you do not have Chrome available or an antivirus blocks the startup scripts, try launching manually:
-1. Open PowerShell (Windows) or Terminal (macOS).
-2. Run `cd path/to/nicolnavi_app`.
-3. Run `uv sync`.
-4. Run `uv run python niconavi.py`.
-5. In your browser, open `http://localhost:8551/app`.
-
-Skip `uv sync` after the first run. If you see `uv: command not found`, add uv to your PATH or restart your shell.
+```bash
+git clone https://github.com/Tan-Furukawa/niconavi_app.git
+cd niconavi_app
+uv sync --frozen
+uv run python niconavi.py
+```

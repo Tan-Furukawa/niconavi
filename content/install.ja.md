@@ -4,58 +4,30 @@ draft = false
 title = 'NicolNavi インストールガイド'
 +++
 
-
-**<<<<<<<<<<本ソフトウェアは、査読中の論文に関連する試験的実装です>>>>>>>>>>>>**
-
 # NicolNavi インストールガイド
 
-## 必要なもの
-- uv（Python のパッケージ管理ツール）
-- Google Chrome（推奨）
+[GitHub Releases](https://github.com/Tan-Furukawa/niconavi_app/releases) から、お使いの環境に合ったファイルをダウンロードしてください。
 
-## uv のインストール
+## Windows
 
-### macOS / Linux
-1. Terminal を開く。
-2. `curl -LsSf https://astral.sh/uv/install.sh | sh` を実行する。
-3. Terminal を閉じる。
+`NicoNavi-Setup.exe` をダウンロードして実行し、インストーラーの案内に従ってください。
 
-### Windows（PowerShell）
-1. PowerShell を開く。
-2. `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"` を実行する。
-3. PowerShell を閉じる。
+## Linux（x86_64 AppImage）
 
-## NicolNavi のセットアップ
+`NicoNavi-<version>-x86_64.AppImage` をダウンロードし、Terminal で実行権限を付けて起動します。
 
-1. https://github.com/Tan-Furukawa/niconavi_app を開く。
-2. `Code` → `Download ZIP` をクリックし、ダウンロードした ZIP を任意の場所に展開する。
-
-### macOS の場合
-1. 展開した `niconavi_app` フォルダを右クリック → Service → New Terminal tab at Finder（などで Terminal を開く）。
-2. Terminal で以下を実行する。
-
-   ```
-   chmod 777 ./run_niconavi_mac.sh
-   ./run_niconavi_mac.sh
-   ```
-
-### Windows の場合
-`run_niconavi_Windows.bat` をダブルクリックする。
-
-### Note
-
-- 必要な Python 環境が自動でインストールされます。インストール完了後、Google Chrome が自動で起動し NicolNavi が開始します。**初回は立ち上がりに最大 5 分ほどかかることがあります。Chrome 上で `This site can’t be reached`または`サイトが見つかりません` と表示されても、そのままお待ちください。**
-
-- 次回以降も同じ手順で起動できます。2 回目以降はより早く立ち上がります。macの場合、`chmod 777 ./run_niconavi_mac.sh` のコマンドは初回のみで構いません。
-
-
-### インストールに失敗した場合
-Chrome を利用できない環境や、アンチウイルスソフトで実行がブロックされる場合は、以下の手順を試してください。PowerShell（Windows）または Terminal（macOS）で次を実行します。
-
+```bash
+chmod +x NicoNavi-*-x86_64.AppImage
+./NicoNavi-*-x86_64.AppImage
 ```
-cd path/to/nicolnavi_app
-uv sync
+
+## Python（macOS・その他の環境）
+
+[uv](https://docs.astral.sh/uv/) と Git をインストールし、Terminal または PowerShell で次を実行します。この方法は Windows と Linux でも利用できます。
+
+```bash
+git clone https://github.com/Tan-Furukawa/niconavi_app.git
+cd niconavi_app
+uv sync --frozen
 uv run python niconavi.py
 ```
-
-実行後、お使いのブラウザで `http://localhost:8551/app` にアクセスしてください。2回目以降の実行には、`uv sync`は不要です。`uv: command not found` などのエラーが出る場合は、uv のインストール先を PATH に通すか、シェルを再起動してください。
