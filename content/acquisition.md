@@ -8,16 +8,29 @@ This page outlines how to capture microscope videos that NicolNavi can process. 
 
 ## Preparation Before Filming
 
-Confirm the following before you begin.
-
-- You can record and save microscope videos on the system in use.
-- The microscope stage has angle markings for rotation.
-- When the stage is set to 0°, the line that joins 0° and 180° is parallel to the camera sensor.
+Before recording, confirm that the microscope stage has angle markings for rotation. Set the stage to 0°, then adjust the camera so that the line joining 0° and 180° is parallel to the camera sensor.
 
 {{< img src="images/page/acquisition/pic1.svg" width="70%" >}}
 Figure: Align the stage with the sensor. Place paper on the stage and adjust the camera until the image appears level on the monitor.
 
-- The lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.
+Also confirm that the lower Nicol vibrates along the east–west direction and the upper Nicol along the north–south direction.
+
+## Coordinate System and Orientation Definitions
+
+The procedures below use the microscope and monitor/video coordinate systems shown here. Before recording, confirm that the directions and stage rotation match the diagrams.
+
+{{< img src="images/page/acquisition/coordinate-microscope.png" width="80%" alt="Microscope coordinate system and polarizer/analyzer arrangements" >}}
+
+Figure: Microscope coordinate system and direction of stage rotation.
+
+- **Microscope setup (a, b):** Panels (a) and (b) show the polarizer and analyzer vibration directions interchanged. Either arrangement produces the same result, so use the one that matches your microscope. Also check the slow and fast axes of the λ plate (sensitive-tint plate), and rotate the stage in the direction shown by the arrow.
+
+{{< img src="images/page/acquisition/coordinate-monitor.png" width="80%" alt="Monitor and video coordinate system with angular definitions" >}}
+
+Figure: Monitor/video coordinate system and the definitions of azimuth and inclination.
+
+- **Monitor/video coordinates (a):** In both the monitor view and the recorded video, confirm that S is at the top, N at the bottom, E at the left, and W at the right. This is the uncorrected camera view, with no image flipping or rotation applied, so the microscope-stage directions appear reversed. NicolNavi expects videos recorded in this orientation.
+- **Angle definitions (b):** `φ` is the c-axis azimuth and `θ` is the c-axis inclination. For `θ < 90°` and `θ > 90°`, the c-axis points in opposite directions.
 
 ## Workflow 1: Capture a Rotation Video (Baseline Texture Analysis)
 
@@ -42,19 +55,7 @@ Figure: Sample rotation video. Aim for roughly one minute per revolution at a st
 
 ## Workflow 2: Quartz c-Axis Orientation Analysis
 
-This workflow compares a tilted thin section with a horizontal one to quantify quartz orientations. The method works even without a universal stage and includes an example of a simple tilting jig. A tilt angle of roughly 10° is sufficient; high precision is not required.
-
-{{< notice warning >}}
-The c-axis orientation is derived from subtle colour changes. Illumination, sensor response, and sample conditions can all introduce misclassification. In particular, camera white balance strongly affects retardation readings: retardations of 0–300 nm should appear grey to pale yellow, but some systems add red or blue tints. Use the retardation chart below and adjust white balance so that the low-retardation reference matches expectations.
-
-{{< img src="images/page/acquisition/pic12.png" width="100%" >}}
-
-Always cross-check your results against samples with known orientations (for example, EBSD data). Record the capture and lighting conditions so that the measurement can be reproduced.
-{{< /notice >}}
-
 ### 2-1. Prepare a Tilting Jig
-
-Prepare a support that lets you tilt the thin section without slipping. Choose one of the two options below, depending on whether you have access to a 3D printer.
 
 | | Option | Notes |
 | --- | --- | --- |
@@ -71,7 +72,7 @@ The STL files and assembly instructions for the dedicated tilt stage are publish
 
 Figure: The assembled tilt stage. Clips hold the thin section, which is observed through the window at the centre of the main plate.
 
-Print four kinds of parts — frame, main plate, bearings, and clips — and assemble them with six M2 × 8 mm screws and two M2 nuts. The frame is stuck to the microscope stage with double-sided tape. The tilt angle is held by how tightly the axis screws are done up: aim for the point where **the plate moves when you push it and stays at that angle when you let go**. A circular bubble level helps when levelling. See the repository for the full parts list and assembly steps.
+Print four kinds of parts — frame, main plate, bearings, and clips — and assemble them with six M2 × 8 mm screws and two M2 nuts. The frame is stuck to the microscope stage with double-sided tape. The tilt angle is held by how tightly the axis screws are done up: aim for the point where **the plate moves when you push it and stays at that angle when you let go**.
 
 With this stage, skip option B below and go to *2-2. Capture Sequence*. Wherever the steps below say to level the section with a weight, move the main plate by hand instead.
 
@@ -119,6 +120,12 @@ The photo shows the tilted thin section on the microscope stage. A weight keeps 
 ### 2-2. Capture Sequence
 
 Record the following five videos in order. Rename each file immediately after recording.
+
+For the tilted recordings, lower the E side of the thin section when the stage is at 0°, and lower the NE side when the stage is at 45°. Before recording Videos 1 and 2, confirm that the tilt stage is oriented as shown below.
+
+{{< img src="images/page/acquisition/coordinate-stage.png" width="90%" alt="Tilt-stage orientations at stage positions of 0 and 45 degrees" >}}
+
+Figure: Tilt-stage orientation. In (a), the E side is lowered with the stage at 0°. In (b), the NE side is lowered with the stage at 45°.
 
 {{< img src="images/page/acquisition/pic8.svg" width="100%" >}}
 
