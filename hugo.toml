@@ -24,19 +24,14 @@ defaultcontentlanguage = "en"
 [pagination]
 pagerSize = 20
 
-[services]
-[services.disqus]
-shortname = "yourdiscussshortname"
-
 [markup.highlight]
 style = "github-dark"
 
 [params]
   author = "NicoNavi"
-  description = "John Doe's personal website"
-  keywords = "blog,developer,personal"
+  description = "NicoNavi: quantitative petrography from thin-section videos, a unified optical workflow for grain-scale microstructure analysis"
+  keywords = "NicoNavi,petrography,thin section,microstructure,optical microscopy"
   avatarurl = "images/avatar.png"
-  #gravatar = "john.doe@example.com"
 
   faviconSVG = "/img/favicon.svg"
   favicon_32 = "/img/favicon-32x32.png"
