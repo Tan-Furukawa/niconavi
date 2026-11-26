@@ -1,0 +1,61 @@
+# Paper describing NicoNavi, shown on the top page.
+# Each style's "text" is HTML (for italics); "plain" styles are shown as code.
+title: "Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis"
+authors: "Tan Furukawa, Tatsuki Tsujimori"
+journal: "Journal of Petrology"
+volume: 67
+issue: 11
+article: "egag099"
+year: 2026
+doi: "10.1093/petrology/egag099"
+url: "https://academic.oup.com/petrology/article/67/11/egag099/9022254"
+
+styles:
+  - name: APA
+    text: >-
+      Furukawa, T., &amp; Tsujimori, T. (2026). Quantitative petrography from thin-section videos: A unified optical workflow for grain-scale microstructure analysis.
+      <i>Journal of Petrology</i>, <i>67</i>(11), egag099. https://doi.org/10.1093/petrology/egag099
+  - name: MLA
+    text: >-
+      Furukawa, Tan, and Tatsuki Tsujimori. “Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis.”
+      <i>Journal of Petrology</i>, vol. 67, no. 11, 2026, egag099, https://doi.org/10.1093/petrology/egag099.
+  - name: Chicago
+    text: >-
+      Furukawa, Tan, and Tatsuki Tsujimori. 2026. “Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis.”
+      <i>Journal of Petrology</i> 67 (11): egag099. https://doi.org/10.1093/petrology/egag099.
+  - name: Harvard
+    text: >-
+      Furukawa, T. and Tsujimori, T. (2026) ‘Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis’,
+      <i>Journal of Petrology</i>, 67(11), egag099. Available at: https://doi.org/10.1093/petrology/egag099.
+  - name: Vancouver
+    text: >-
+      Furukawa T, Tsujimori T. Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis.
+      J Petrol. 2026;67(11):egag099. doi:10.1093/petrology/egag099
+  - name: BibTeX
+    plain: true
+    text: |-
+      @article{Furukawa2026,
+        author  = {Furukawa, Tan and Tsujimori, Tatsuki},
+        title   = {Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis},
+        journal = {Journal of Petrology},
+        volume  = {67},
+        number  = {11},
+        pages   = {egag099},
+        year    = {2026},
+        doi     = {10.1093/petrology/egag099}
+      }
+  - name: RIS
+    plain: true
+    text: |-
+      TY  - JOUR
+      AU  - Furukawa, Tan
+      AU  - Tsujimori, Tatsuki
+      TI  - Quantitative Petrography from Thin-section Videos: A Unified Optical Workflow for Grain-scale Microstructure Analysis
+      JO  - Journal of Petrology
+      VL  - 67
+      IS  - 11
+      SP  - egag099
+      PY  - 2026
+      DO  - 10.1093/petrology/egag099
+      UR  - https://doi.org/10.1093/petrology/egag099
+      ER  -
